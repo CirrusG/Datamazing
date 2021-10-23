@@ -6,6 +6,9 @@ Here is a draft of our project structure, possibly revised for better design
     - src
         - sql
             - tables
+            Table creation may need to be done in advance of running database application functions
+            
+            The following functions may need to be implemented in python, via variables. 
             - queries
             - deletions
             - insertions
