@@ -19,3 +19,14 @@ postgreSQL: {'user': 'RIT_id', 'channel_binding': 'prefer', 'dbname': 'p320_10',
 Psycopg: PostgreSQL database adapter for Python
 
 [Basic modlue usage](https://www.psycopg.org/docs/usage.html)
+
+## Develop Tools
+
+python: a direct one-time procedure for connecting to the starbug database and running functions(executing sql scripts, pulling results, cli application, etc.)
+
+pgAdmin: administers PostgreSQL databases(support both remote and local). In addition to graphical tools, it also has the CLI tool pspl and editor, which is useful for testing sql scripts. 
+
+DataGrip: similar to phpAdmin
+
+PostgreSQL in docker: build local servers, more flexibility in testing (but not essential).
+
