@@ -1,3 +1,8 @@
+/*
+ * file: sample_insert.sql
+ * insert sample data into each table
+ * pspl usage: /i sample_insert.sql
+ */
 -- table account insertion, creation datetime generted automatily
 INSERT INTO account
     VALUES ('pb', 'pb@mail.com', 'password', 'Pixie', 'Blaese');
