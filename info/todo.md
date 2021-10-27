@@ -6,34 +6,55 @@
 
 - [ ] sql script (as external file to implement a single function)
 
-  - [ ] Create table
-  - [ ] Read/Query
-  - [ ] Update
-  - [ ] Deletion
+  - [x] Create table
+        =============> current do <==============
+  - [ ] insert sample sql for test table function
+    - [ ] 3-9 insertion of each table
+    - [ ] 2-5 queries of each table
+
+  - [ ] deploy to database
+        =============> current do <==============
 
 - [ ] application (interface based on requirement using sql function)
 
   For each user
 
-  - [ ] create new accounts
-  - [ ] Access via login
-  - [ ] record date and time of both above activity
+  - [ ] create new accounts (create sql)
 
-  - [ ] create collections of music
-  - [ ] modify collection
+    - [ ] valid input
+      - [ ] if username exist in db: get the sql error message / check the db fristly
+      - [ ] if email has '@'
+        - [Check if email address valid or not in Python](https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/)
+      - [ ] password, first/last_name if empty
+
+  - [ ] Access via login
+
+    - [ ] valid username (if exist in db)
+    - [ ] valid password
+
+  - [x] record date and time of both above activity (automatically added when insert into db)
+
+  - [ ] create collections of music (create)
+  - [ ] modify collection (alter, drop)
     - [ ] change name
     - [ ] delete the entire collection
-  - [ ] query/read list of collections
-  - [ ] add/delete albums, songs from collection
+  - [ ] query/read list of collections (select)
+  - [ ] add/delete albums, songs from collection (insert, drop)
 
-  - [ ] search song / show resulting list
-  - [ ] listen to song
+  - [ ] search song / show resulting list (select)
+  - [ ] listen to song (select)
 
-    - [ ] individually
-    - [ ] entire collection
+    - [ ] maybe make a timer
+    - type
+      - [ ] individually
+      - [ ] entire collection (list)
+    - [ ] mark played and not played
+    - show current play status
 
-  - [ ] follow friend
-  - [ ] un-follow friend
+  - [ ] follow/unfollow friend
+    - [ ] check username at table account
+    - [ ] check following/follows at Follows table
+    - [ ] drop / insert
   - [ ] search for new friends by email
 
 - [ ] insert enough dataset for each table
@@ -60,6 +81,6 @@
   - report.pdf
   - ERDiagram.pdf
   - Reduction.pdf
-    > *above pdf must be in the root*
+    > _above pdf must be in the root_
   - demo.mov (other movie files are fine)
   - src.zip
