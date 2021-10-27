@@ -4,15 +4,16 @@
  * 
  * Since we don't define schema, the following sql statements will be inserted into the public schema by default.
  * The table name will become lowercase after inserting into the database
+ * pspl usage: \i tables.sql
  */
 -- default postgres time zone is `Etc/UTC`, change it to new york time
 -- note: The time zone is already set in the starbug database, 
 -- this is set for test database, but repeated the setting will not affect starbug database. 
-set timezone='America/New_York'
+set timezone='America/New_York';
 
 -- account
 -- email should be unique for searching friends (avoid multiple results)
-CREATE TABLE IF NOT EXISTS Account (
+CREATE TABLE Account (
     username varchar PRIMARY KEY,
     email varchar NOT NULL UNIQUE,
     password VARCHAR NOT NULL,
@@ -45,7 +46,7 @@ CREATE TABLE Artist (
 CREATE SEQUENCE genre_seq
     START 1;
 
-CREATE TABLE Genre (/d
+CREATE TABLE Genre (
     genreID text NOT NULL DEFAULT ('genre' || nextval('genre_seq')) PRIMARY KEY,
     name varchar NOT NULL UNIQUE
 );
