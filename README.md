@@ -30,3 +30,6 @@ DataGrip: similar to phpAdmin
 
 PostgreSQL in docker: build local servers, more flexibility in testing (but not essential).
 
+## Tutorial
+
+[PostgreSQL Python](https://www.postgresqltutorial.com/postgresql-python/)
