@@ -102,8 +102,8 @@ CREATE TABLE IF NOT EXISTS public.song
 CREATE TABLE IF NOT EXISTS public.user_accessdatestimes
 (
     username character varying COLLATE pg_catalog."default" NOT NULL,
-    access_data_time timestamp with time zone NOT NULL DEFAULT now(),
-    CONSTRAINT user_accessdatestimes_pkey PRIMARY KEY (username, access_data_time)
+    access_date_time timestamp with time zone NOT NULL DEFAULT now(),
+    CONSTRAINT user_accessdatestimes_pkey PRIMARY KEY (username, access_date_time)
 );
 
 ALTER TABLE IF EXISTS public.added_to
