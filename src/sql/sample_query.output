@@ -1,0 +1,489 @@
+-- file: sample_query.output
+-- usage: psql --log-file=sample_query.output
+********* QUERY **********
+/*
+ * file: sample_query.sql
+ * \! echo not supports on the query tool on pgadmin, but could use pspl
+ * usage: \i sample_query.sql
+ * default sorting is ascending, add desc at the ending to be descending order
+ */
+SELECT
+    *
+FROM
+    account;
+**************************
+
+ username |    email    | password | first_name | last_name |         creation_date         
+----------+-------------+----------+------------+-----------+-------------------------------
+ pb       | pb@mail.com | password | Pixie      | Blaese    | 2021-10-28 06:24:45.896391+00
+ ta       | ta@mail.com | password | Taya       | Andersen  | 2021-10-28 06:24:45.908937+00
+ sn       | sn@mail.com | password | Spike      | Noel      | 2021-10-28 06:24:45.910668+00
+(3 rows)
+
+********* QUERY **********
+SELECT
+    first_name,
+    last_name
+FROM
+    account
+WHERE
+    creation_date BETWEEN (now() - '3 hours'::interval)
+    AND now();
+**************************
+
+ first_name | last_name 
+------------+-----------
+ Pixie      | Blaese
+ Taya       | Andersen
+ Spike      | Noel
+(3 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    user_accessdatestimes;
+**************************
+
+ username |       access_date_time        
+----------+-------------------------------
+ pb       | 2021-10-28 06:24:45.912133+00
+ ta       | 2021-10-28 06:24:45.9144+00
+ sn       | 2021-10-28 06:24:45.915991+00
+(3 rows)
+
+********* QUERY **********
+SELECT
+    access_date_time
+FROM
+    user_accessDatesTimes
+WHERE
+    username LIKE 'pb'
+ORDER BY
+    access_date_time DESC
+LIMIT 1;
+**************************
+
+       access_date_time        
+-------------------------------
+ 2021-10-28 06:24:45.912133+00
+(1 row)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    follows;
+**************************
+
+ following | follower 
+-----------+----------
+ pb        | ta
+ pb        | sn
+ ta        | sn
+(3 rows)
+
+********* QUERY **********
+SELECT
+    account.first_name,
+    account.last_name
+FROM
+    account
+    INNER JOIN follows ON account.username = follows.follower
+WHERE
+    follows.following LIKE 'pb';
+**************************
+
+ first_name | last_name 
+------------+-----------
+ Taya       | Andersen
+ Spike      | Noel
+(2 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    artist;
+**************************
+
+         name         
+----------------------
+ Stan Getz
+ Joao Gilberto
+ Antonio Carlos Jobim
+(3 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    genre;
+**************************
+
+ genreid |    name    
+---------+------------
+ genre1  | Jazz
+ genre2  | Pop
+ genre3  | Bossa Nova
+(3 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    album;
+**************************
+
+ albumid |         name          | release_date 
+---------+-----------------------+--------------
+ album1  | The girl From Ipanema | 1989-01-01
+ album2  | Amoroso               | 1977-01-26
+ album3  | Wave                  | 1967-06-15
+(3 rows)
+
+********* QUERY **********
+SELECT
+    name
+FROM
+    album
+WHERE (extract(month FROM release_date) = 6);
+**************************
+
+ name 
+------
+ Wave
+(1 row)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    alb_gen;
+**************************
+
+ genreid | albumid 
+---------+---------
+ genre1  | album1
+ genre2  | album1
+ genre2  | album2
+ genre3  | album3
+ genre1  | album3
+(5 rows)
+
+********* QUERY **********
+SELECT
+    album.name,
+    album.release_date,
+    genre.name
+FROM
+    alb_gen
+    JOIN album ON alb_gen.albumID = album.albumID
+    JOIN genre ON alb_gen.genreID = genre.genreID;
+**************************
+
+         name          | release_date |    name    
+-----------------------+--------------+------------
+ The girl From Ipanema | 1989-01-01   | Jazz
+ The girl From Ipanema | 1989-01-01   | Pop
+ Amoroso               | 1977-01-26   | Pop
+ Wave                  | 1967-06-15   | Bossa Nova
+ Wave                  | 1967-06-15   | Jazz
+(5 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    included_in;
+**************************
+
+ albumid |      artistname      
+---------+----------------------
+ album1  | Joao Gilberto
+ album1  | Antonio Carlos Jobim
+ album1  | Stan Getz
+ album2  | Joao Gilberto
+ album3  | Antonio Carlos Jobim
+(5 rows)
+
+********* QUERY **********
+SELECT
+    album.name,
+    included_in.artistname
+FROM
+    included_in
+    JOIN album ON included_in.albumID = album.albumID;
+**************************
+
+         name          |      artistname      
+-----------------------+----------------------
+ The girl From Ipanema | Joao Gilberto
+ The girl From Ipanema | Antonio Carlos Jobim
+ The girl From Ipanema | Stan Getz
+ Amoroso               | Joao Gilberto
+ Wave                  | Antonio Carlos Jobim
+(5 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    song;
+**************************
+
+ songid |      title      |  length  | release_date | genreid |      artistname      
+--------+-----------------+----------+--------------+---------+----------------------
+ song1  | Doralice        | 02:44:00 | 1964-05-01   | genre1  | Joao Gilberto
+ song2  | Desafinado      | 05:50:00 | 1989-01-01   | genre1  | Stan Getz
+ song3  | Look To The Sky | 02:20:00 | 1967-06-15   | genre3  | Antonio Carlos Jobim
+ song4  | Wave            | 04:41:00 | 1977-11-26   | genre3  | Joao Gilberto
+(4 rows)
+
+********* QUERY **********
+SELECT
+    title,
+    length,
+    release_date,
+    artistname
+FROM
+    song
+WHERE
+    length > '3:00:00';
+**************************
+
+   title    |  length  | release_date |  artistname   
+------------+----------+--------------+---------------
+ Desafinado | 05:50:00 | 1989-01-01   | Stan Getz
+ Wave       | 04:41:00 | 1977-11-26   | Joao Gilberto
+(2 rows)
+
+********* QUERY **********
+SELECT
+    title,
+    length
+FROM
+    song
+ORDER BY
+    length;
+**************************
+
+      title      |  length  
+-----------------+----------
+ Look To The Sky | 02:20:00
+ Doralice        | 02:44:00
+ Wave            | 04:41:00
+ Desafinado      | 05:50:00
+(4 rows)
+
+********* QUERY **********
+SELECT
+    album.name,
+    song.title,
+    song.artistname,
+    song.length,
+    song.release_date
+FROM
+    included_in
+    JOIN song ON song.artistName = included_in.artistName
+    JOIN album ON album.albumID = included_in.albumID;
+**************************
+
+         name          |      title      |      artistname      |  length  | release_date 
+-----------------------+-----------------+----------------------+----------+--------------
+ The girl From Ipanema | Wave            | Joao Gilberto        | 04:41:00 | 1977-11-26
+ The girl From Ipanema | Doralice        | Joao Gilberto        | 02:44:00 | 1964-05-01
+ The girl From Ipanema | Look To The Sky | Antonio Carlos Jobim | 02:20:00 | 1967-06-15
+ The girl From Ipanema | Desafinado      | Stan Getz            | 05:50:00 | 1989-01-01
+ Amoroso               | Wave            | Joao Gilberto        | 04:41:00 | 1977-11-26
+ Amoroso               | Doralice        | Joao Gilberto        | 02:44:00 | 1964-05-01
+ Wave                  | Look To The Sky | Antonio Carlos Jobim | 02:20:00 | 1967-06-15
+(7 rows)
+
+********* QUERY **********
+SELECT
+    title,
+    release_date
+FROM
+    song
+ORDER BY
+    date_trunc('year', release_date);
+**************************
+
+      title      | release_date 
+-----------------+--------------
+ Doralice        | 1964-05-01
+ Look To The Sky | 1967-06-15
+ Wave            | 1977-11-26
+ Desafinado      | 1989-01-01
+(4 rows)
+
+********* QUERY **********
+SELECT
+    song.title,
+    genre.name
+FROM
+    song
+    JOIN genre ON song.genreID = genre.genreID
+ORDER BY
+    genre.name;
+**************************
+
+      title      |    name    
+-----------------+------------
+ Look To The Sky | Bossa Nova
+ Wave            | Bossa Nova
+ Doralice        | Jazz
+ Desafinado      | Jazz
+(4 rows)
+
+********* QUERY **********
+SELECT
+    song.title AS song_name,
+    count(plays.songID) AS Listen_Count
+FROM
+    plays
+    JOIN song ON song.songID = plays.songID
+GROUP BY
+    song.title;
+**************************
+
+ song_name | listen_count 
+-----------+--------------
+ Doralice  |            3
+(1 row)
+
+********* QUERY **********
+SELECT
+    song.title AS song_name,
+    artist.name AS artist_name,
+    album.name AS album_name,
+    song.length AS song_length,
+    count(plays.songID) AS listen_count
+FROM
+    song
+    JOIN artist ON song.artistname = artist.name
+    JOIN features ON song.songID = features.songID
+    JOIN album ON features.albumID = album.albumID
+    JOIN plays ON song.songID = plays.songID
+GROUP BY
+    song.songID,
+    artist.name,
+    album.name;
+**************************
+
+ song_name |  artist_name  |      album_name       | song_length | listen_count 
+-----------+---------------+-----------------------+-------------+--------------
+ Doralice  | Joao Gilberto | Amoroso               | 02:44:00    |            3
+ Doralice  | Joao Gilberto | The girl From Ipanema | 02:44:00    |            3
+(2 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    features;
+**************************
+
+ track_number | albumid | songid 
+--------------+---------+--------
+            1 | album1  | song1
+            1 | album2  | song1
+            1 | album3  | song3
+            2 | album1  | song4
+(4 rows)
+
+********* QUERY **********
+SELECT
+    *
+FROM
+    collection;
+**************************
+
+ collectionid | username |          name          
+--------------+----------+------------------------
+ collection1  | pb       | My Favorite
+ collection2  | ta       | Running playlist
+ collection3  | sn       | Afternoon Tea Playlist
+(3 rows)
+
+********* QUERY **********
+SELECT
+    collection.name AS collection_name,
+    count(added_to.songID) AS song_count,
+    sum(song.length) AS total_length
+FROM
+    collection
+    JOIN added_to ON collection.collectionID = added_to.collectionID
+    JOIN song ON added_to.songID = song.songID
+GROUP BY
+    collection.name;
+**************************
+
+    collection_name     | song_count | total_length 
+------------------------+------------+--------------
+ Running playlist       |          1 | 02:20:00
+ Afternoon Tea Playlist |          2 | 08:34:00
+ My Favorite            |          3 | 10:54:00
+(3 rows)
+
+********* QUERY **********
+DELETE FROM alb_gen
+WHERE albumID = 'album1';
+**************************
+
+DELETE 2
+********* QUERY **********
+DELETE FROM included_in
+WHERE albumID = 'album1';
+**************************
+
+DELETE 3
+********* QUERY **********
+DELETE FROM features
+WHERE albumID = 'album1';
+**************************
+
+DELETE 2
+********* QUERY **********
+DELETE FROM album
+WHERE albumID = 'album1';
+**************************
+
+DELETE 1
+********* QUERY **********
+DELETE FROM added_to
+WHERE collectionID = 'collection3';
+**************************
+
+DELETE 2
+********* QUERY **********
+DELETE FROM collection
+WHERE collectionID = 'collection3';
+**************************
+
+DELETE 1
+********* QUERY **********
+UPDATE
+    collection
+SET
+    name = 'Sleep Playlist'
+WHERE
+    collectionID = 'collection1';
+**************************
+
+UPDATE 1
+********* QUERY **********
+SELECT
+    *
+FROM
+    collection
+WHERE
+    collectionID = 'collection1';
+**************************
+
+ collectionid | username |      name      
+--------------+----------+----------------
+ collection1  | pb       | Sleep Playlist
+(1 row)
+
