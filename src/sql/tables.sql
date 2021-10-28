@@ -93,7 +93,7 @@ CREATE SEQUENCE song_seq
 CREATE TABLE Song (
     songID text NOT NULL DEFAULT ('song' || nextval('song_seq')) PRIMARY KEY,
     title varchar NOT NULL,
-    /*may be length reserved*/
+    -- time: minute:second:milliseconds
     length time NOT NULL,
     release_date date NOT NULL,
     genreID text REFERENCES Genre,
