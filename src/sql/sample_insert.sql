@@ -145,7 +145,13 @@ INSERT INTO added_to
     VALUES (1, 'pb', 'collection1', 'song1');
 
 INSERT INTO added_to
-    VALUES (2, 'ta', 'collection2', 'song3');
+    VALUES (2, 'pb', 'collection1', 'song2');
+
+INSERT INTO added_to
+    VALUES (3, 'pb', 'collection1', 'song3');
+
+INSERT INTO added_to
+    VALUES (1, 'ta', 'collection2', 'song3');
 
 INSERT INTO added_to
     VALUES (1, 'sn', 'collection3', 'song1');
