@@ -2,18 +2,16 @@
 
 - [x] revise phase 2
 
-- [ ] design of overall database/project structure
+- [x] design of overall database/project structure
 
-- [ ] sql script (as external file to implement a single function)
+- [x] sql script (as external file to implement a single function)
 
   - [x] Create table
-        =============> current do <==============
-  - [ ] insert sample sql for test table function
-    - [ ] 3-9 insertion of each table
-    - [ ] 2-5 queries of each table
+  - [x] insert sample sql for test table function
+    - [x] 3-9 insertion of each table
+    - [x] 2-5 queries of each table
 
   - [ ] deploy to database
-        =============> current do <==============
 
 - [ ] application (interface based on requirement using sql function)
 
