@@ -33,3 +33,10 @@ PostgreSQL in docker: build local servers, more flexibility in testing (but not 
 ## Tutorial
 
 [PostgreSQL Python](https://www.postgresqltutorial.com/postgresql-python/)
+
+## API Reference
+
+[https://spotipy.readthedocs.io/en/latest/#](https://spotipy.readthedocs.io/en/latest/#)
+
+[https://developer.spotify.com/documentation/web-api/](https://developer.spotify.com/documentation/web-api/)
+
