@@ -20,7 +20,7 @@
   - [ ] create new accounts (create sql)
 
     - [ ] valid input
-      - [ ] if username exist in db: get the sql error message / check the db fristly
+      - [ ] if username exist in db: get the sql error message / check the db firstly
       - [ ] if email has '@'
         - [Check if email address valid or not in Python](https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/)
       - [ ] password, first/last_name if empty

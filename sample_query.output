@@ -1,0 +1,3185 @@
+********* QUERY **********
+select * from artist
+d
+;
+**************************
+
+                     name                      
+-----------------------------------------------
+ Drake
+ Ed Sheeran
+ The Weeknd
+ Bad Bunny
+ The Kid LAROI
+ Post Malone
+ Eminem
+ Taylor Swift
+ Nio Garcia
+ Casper Magico
+ Pusho
+ Coldplay
+ Kanye West
+ KIDS SEE GHOSTS
+ Billie Eilish
+ Jhay Cortez
+ XXXTENTACION
+ Juice WRLD
+ Rihanna
+ Imagine Dragons
+ Elton John
+ Maroon 5
+ Shawn Mendes
+ Galantis
+ Calvin Harris
+ Ben Platt
+ Sam Smith
+ Bruno Mars
+ Red Velvet
+ Baby Keem
+ The Chainsmokers
+ Beyoncé
+ Chris Brown
+ One Direction
+ Flo Rida
+ BIA
+ Tony Bennett
+ Lady Gaga
+ J. Cole
+ Dreamville
+ The Beatles
+ Maluma
+ Twenty One Pilots
+ Kygo
+ Marshmello
+ Linkin Park
+ Avicii
+ Future
+ Katy Perry
+ Adele
+ Camila Cabello
+ Farruko
+ Lana Del Rey
+ Jason Derulo
+ Red Hot Chili Peppers
+ Duki
+ Bizarrap
+ Savage Ga$p
+ 1nonly
+ Arctic Monkeys
+ Demi Lovato
+ Martin Garrix
+ AREA21
+ G-Eazy
+ Miley Cyrus
+ Major Lazer
+ OneRepublic
+ Michael Jackson
+ Panic! At The Disco
+ Rauw Alejandro
+ Pitbull
+ Stephen Oaks
+ Ellie Goulding
+ Harry Styles
+ Lizzo
+ Wiz Khalifa
+ Tiësto
+ DaBaby
+ Sebastian Yatra
+ Dua Lipa
+ Young Thug
+ Young Stoner Life
+ Logic
+ Mustard
+ Alan Walker
+ Fall Out Boy
+ Diplo
+ Blxst
+ John Mayer
+ Metallica
+ J Balvin
+ Macklemore
+ P!nk
+ ZAYN
+ 88rising
+ DJ Snake
+ Mac Miller
+ Lauv
+ Doja Cat
+ Pop Smoke
+ James Arthur
+ Zedd
+ Little Mix
+ AC/DC
+ Lil Peep
+ 5 Seconds of Summer
+ Trippie Redd
+ A Boogie Wit da Hoodie
+ Kodak Black
+ Mr. Probz
+ NF
+ Justin Timberlake
+ Green Day
+ Billie Joe Armstrong
+ DJ Khaled
+ Frank Ocean
+ Zara Larsson
+ Romeo Santos
+ Offset
+ 21 Savage
+ Clean Bandit
+ Bob Marley & The Wailers
+ Anne-Marie
+ Lil Nas X
+ Bebe Rexha
+ Lewis Capaldi
+ Enrique Iglesias
+ Luis Miguel
+ Tyler, The Creator
+ Pink Floyd
+ Black Eyed Peas
+ Luis Fonsi
+ BLACKPINK
+ Machine Gun Kelly
+ The Rolling Stones
+ Nirvana
+ Fleetwood Mac
+ Michael Bublé
+ Olivia Rodrigo
+ Young Dolph
+ Key Glock
+ Jonas Blue
+ R3HAB
+ Guns N' Roses
+ Britney Spears
+ Bastille
+ Childish Gambino
+ Big Sean
+ Alessia Cara
+ $uicideboy$
+ Lunay
+ Boza
+ 2Pac
+ Dead Prez
+ Lorde
+ Usher
+ Reik
+ Xavier Wulf
+ Queen
+ KAROL G
+ Gorillaz
+ Hozier
+ Becky G
+ Christina Aguilera
+ Play-N-Skillz
+ French Montana
+ The Killers
+ Foo Fighters
+ Meek Mill
+ blink-182
+ Tory Lanez
+ Mariah Carey
+ Banda MS de Sergio Lizárraga
+ John Legend
+ U2
+ Meghan Trainor
+ Led Zeppelin
+ Rae Sremmurd
+ Iggy Azalea
+ The 1975
+ Mumford & Sons
+ Ava Max
+ Manuel Turizo
+ Fuego
+ BIN
+ Luke Combs
+ System Of A Down
+ Jack Johnson
+ Muse
+ Elvis Presley
+ Radiohead
+ The Neighbourhood
+ Polo G
+ Roddy Ricch
+ Bino Rideaux
+ Bazzi
+ Hailee Steinfeld
+ Chen Linong
+ Dr. Dre
+ The Notorious B.I.G.
+ Faith Evans
+ Jorge & Mateus
+ Paramore
+ Shotgun Willy
+ Tate McRae
+ Virginia To Vegas
+ NOTD
+ Frank Sinatra
+ Regard
+ Joji
+ Disclosure
+ Fifth Harmony
+ Julia Michaels
+ Oasis
+ Don Omar
+ Bon Jovi
+ Justin Bieber
+ Nelly
+ Dalex
+ Rich Music LTD
+ Tame Impala
+ Tove Lo
+ JAY-Z
+ The Lumineers
+ Kings of Leon
+ Jordan Davis
+ The Script
+ Five Finger Death Punch
+ Melanie Martinez
+ Lil Tjay
+ Daddy Yankee
+ Jason Mraz
+ Megan Thee Stallion
+ Florence + The Machine
+ Glee Cast
+ Nanpa Básico
+ Gera MX
+ Paulo Londra
+ Nickelback
+ Justin Quiles
+ Playboi Carti
+ Creedence Clearwater Revival
+ Bruce Springsteen
+ Kehlani
+ Whitney Houston
+ Rammstein
+ Cro
+ Kane Brown
+ Zé Neto & Cristiano
+ ABBA
+ Camilo
+ MEDUZA
+ Piso 21
+ My Chemical Romance
+ Dímelo Flow
+ Masego
+ TINI
+ Bring Me The Horizon
+ James Bay
+ Thomas Rhett
+ Labrinth
+ Vance Joy
+ Chance the Rapper
+ MihTy
+ Henrique & Juliano
+ Kelly Clarkson
+ Wisin
+ Disturbed
+ Aerosmith
+ Kevin Gates
+ Jennifer Lopez
+ Avril Lavigne
+ Bon Iver
+ Lil Skies
+ Amy Winehouse
+ Stevie Wonder
+ TWICE
+ Tones And I
+ Miguel
+ Hans Zimmer
+ Backstreet Boys
+ YNW Melly
+ Alejandro Fernández
+ Morgan Wallen
+ Fetty Wap
+ Sean Paul
+ Kesha
+ BTS
+ Lil Tecca
+ Prince Royce
+ Three Days Grace
+ Phil Collins
+ Jason Aldean
+ Josh Turner
+ Mike Posner
+ Gwen Stefani
+ Lil Mosey
+ George Ezra
+ Dan + Shay
+ Wesley Safadão
+ Jessie J
+ Billy Joel
+ Eagles
+ Pearl Jam
+ Trey Songz
+ benny blanco
+ Deftones
+ CNCO
+ The Strokes
+ Mark Ronson
+ Geoff Zanelli
+ Lin-Manuel Miranda
+ Lukas Graham
+ Avenged Sevenfold
+ Céline Dion
+ The Offspring
+ Ricky Martin
+ Matheus & Kauan
+ 2 Chainz
+ T.R.U.
+ Aventura
+ Noah Cyrus
+ PJ Harding
+ Foster The People
+ Bob Dylan
+ Pablo Alborán
+ Ricardo Arjona
+ Cartel De Santa
+ 24kGoldn
+ Daniel Caesar
+ ScHoolboy Q
+ James Blunt
+ Rudimental
+ Pentatonix
+ Marc Anthony
+ Conor Matthews
+ Social House
+ Alesso
+ Shakira
+ Ingrid Andress
+ Dire Straits
+ Sigala
+ Bryan Adams
+ Calibre 50
+ DJ Scheme
+ Blake Shelton
+ Zac Brown Band
+ Dean Lewis
+ Bee Gees
+ BROCKHAMPTON
+ Jhené Aiko
+ Don Toliver
+ Jeremy Zucker
+ The Vamps
+ Carlos Vives
+ Kelsea Ballerini
+ PARTYNEXTDOOR
+ The Black Keys
+ Charli XCX
+ Skillet
+ Hornet La Frappe
+ Danny Ocean
+ Birdy
+ The Police
+ Marvin Gaye
+ Ghostface Killah
+ CZARFACE
+ Boyce Avenue
+ Lost Frequencies
+ Ryan Hurd
+ The Doors
+ Carly Rae Jepsen
+ Vishal-Shekhar
+ Arijit Singh
+ Rise Against
+ John Williams
+ John Powell
+ A$AP Ferg
+ Soda Stereo
+ Bibi Blocksberg
+ Juanes
+ Mau y Ricky
+ Glass Animals
+ SAINt JHN
+ RAF Camora
+ Madison Beer
+ Chris Stapleton
+ Mabel
+ alt-J
+ Cage The Elephant
+ Weezer
+ Alec Benjamin
+ Nick Jonas
+ Hillsong Worship
+ Journey
+ Kenny Chesney
+ Eric Church
+ La Arrolladora Banda El Limón De Rene Camacho
+ Los Ángeles Azules
+ Norah Jones
+ Rex Orange County
+ Destiny's Child
+ Kxllswxtch
+ Jesse & Joy
+ Normani
+ Sam Feldt
+ JP Cooper
+ Simon & Garfunkel
+ Paul McCartney
+ Jon Bellion
+ Depeche Mode
+ Zé Felipe
+ Juan Gabriel
+ Eric Clapton
+ Delaney & Bonnie
+ Conan Gray
+ X Ambassadors
+ Lil Wayne
+ Marília Mendonça
+ Ufo361
+ Dimitri Vegas & Like Mike
+ Aminé
+ Aleman
+ Måneskin
+ AJR
+ Summer Walker
+ Love Renaissance (LVRN)
+ KYLE
+ Outkast
+ Breaking Benjamin
+ The Beach Boys
+ Korn
+ Hillsong UNITED
+ Sabrina Carpenter
+ NLE Choppa
+ Jimi Hendrix
+ Ariana Grande
+ Joel Corry
+ Alok
+ Denzel Curry
+ Volbeat
+ Papa Roach
+ DOPE LEMON
+ George Michael
+ DNCE
+ Robbie Williams
+ Christina Perri
+ Rag'n'Bone Man
+ The Fray
+ Van Morrison
+ Cali Y El Dandee
+ Shinedown
+ Ludovico Einaudi
+ bbno$
+ Yung Gravy
+ KHEA
+ Hollywood Undead
+ Lynyrd Skynyrd
+ Rage Against The Machine
+ The Smiths
+ Earth, Wind & Fire
+ Of Monsters and Men
+ Axwell /\ Ingrosso
+ The Cranberries
+ Aya Nakamura
+ BRELAND
+ A Day To Remember
+ Black Sabbath
+ TOTO
+ Daryl Hall & John Oates
+ GIMS
+ Brytiago
+ Alex Rose
+ Andy Grammer
+ Vicente Fernández
+ Kodaline
+ PnB Rock
+ 2gunspank
+ Pity Party (Girls Club)
+ ilyTOMMY
+ The White Stripes
+ Scorpions
+ BRONSON
+ ODESZA
+ Melendi
+ BLANCO
+ Milky Chance
+ Kali Uchis
+ A$AP Rocky
+ Enya
+ Aretha Franklin
+ Sabaton
+ Bibi und Tina
+ Tainy
+ Evanescence
+ Pedro Capó
+ El Alfa
+ Van Halen
+ Damso
+ C. Tangana
+ WALK THE MOON
+ Shaggy
+ gnash
+ Nelly Furtado
+ Cascada
+ Don Diablo
+ Sublime
+ Marilyn Manson
+ Samra
+ Capital Bra
+ Sum 41
+ Two Door Cinema Club
+ Carlos Rivera
+ George Strait
+ Mac DeMarco
+ 3 Doors Down
+ Ozzy Osbourne
+ Ella Mai
+ Jon Z
+ De La Ghetto
+ Kid Cudi
+ Dave Matthews Band
+ Ali Gatie
+ MAX
+ Colbie Caillat
+ Fergie
+ José José
+ Desiigner
+ R. Kelly
+ Bethel Music
+ Louis Tomlinson
+ Wallows
+ Sueco
+ Arizona Zervas
+ Rascal Flatts
+ Gotye
+ Stray Kids
+ Wizard of Loneliness
+ Jaden
+ OMI
+ MC Kevinho
+ Daniel Caon
+ Luan Santana
+ Vampire Weekend
+ The Smashing Pumpkins
+ Joyner Lucas
+ Fugees
+ The Clash
+ Giacomo Puccini
+ Limp Bizkit
+ M83
+ Joan Sebastian
+ Eurythmics
+ Mike WiLL Made-It
+ Trouble
+ Sleeping At Last
+ Thirty Seconds To Mars
+ The Kooks
+ Lord Huron
+ Portugal. The Man
+ Olly Murs
+ Rod Wave
+ grandson
+ El Fantasma
+ Kacey Musgraves
+ Westlife
+ Loud Luxury
+ DMX
+ Tom Odell
+ Keane
+ Beast Coast
+ Joey Bada$$
+ 1986zig
+ Ashnikko
+ Jay Wheeler
+ Natanael Cano
+ Laylow
+ Michael Silverman
+ Topic
+ Becky Hill
+ Queens of the Stone Age
+ Owl City
+ Santana
+ Ladytron
+ Snow Patrol
+ Gerardo Ortiz
+ Swedish House Mafia
+ Dierks Bentley
+ Ben Howard
+ Moneybagg Yo
+ David Guetta
+ Booba
+ Incubus
+ Gryffin
+ Party Pupils
+ Apache 207
+ Elevation Worship
+ Ciara
+ Powfu
+ Tee Grizzley
+ Lil Dicky
+ Sara Bareilles
+ Yo Gotti
+ Los Tigres Del Norte
+ Dynoro
+ La Oreja de Van Gogh
+ Cosculluela
+ Thalia
+ Trevor Daniel
+ TKKG Junior
+ Mötley Crüe
+ $NOT
+ Kevin Abstract
+ ANAVITÓRIA
+ Kollegah
+ Asche
+ Frédéric Chopin
+ Charlie Brown Jr.
+ Silver
+ Santo Trafficante
+ Wale
+ Blueface
+ Conor Maynard
+ Leona Lewis
+ Old Dominion
+ Bryant Myers
+ Lady A
+ Gente De Zona
+ Martin Jensen
+ W&W
+ The Jackson 5
+ Kurt Weill
+ Sufjan Stevens
+ John Lennon
+ Matheus Fernandes
+ Chief Keef
+ Arcade Fire
+ David Bisbal
+ Niska
+ Lee Brice
+ Jack Ü
+ Felipe Araújo
+ Diego & Victor Hugo
+ Ginuwine
+ The Pussycat Dolls
+ Ice Cube
+ Neil Young
+ Mon Laferte
+ Paul Simon
+ Kevin Roldan
+ Taio Cruz
+ Internet Money
+ Sean Kingston
+ Alan Jackson
+ Roxette
+ zzoilo
+ Martin Solveig
+ Shania Twain
+ MKTO
+ Stromae
+ Murda
+ Banda El Recodo
+ Yusuf / Cat Stevens
+ Yellow Claw
+ Nat King Cole
+ Chayanne
+ Kiiara
+ Rosa Linn
+ League of Legends
+ Plan B
+ Lionel Richie
+ Saweetie
+ Simple Plan
+ Nina Simone
+ Granular
+ Nipsey Hussle
+ Qveen Herby
+ VINCINT
+ Darkiel
+ Arcangel
+ Electric Light Orchestra
+ *NSYNC
+ Los Temerarios
+ Calle 13
+ Kylie Minogue
+ Tech N9ne
+ Marco Antonio Solís
+ Anuel AA
+ Ozuna
+ Bullet For My Valentine
+ Classical Music Radio
+ Baby Lullaby Academy
+ Dolly Parton
+ Jimmie Allen
+ girl in red
+ Rezz
+ Bea Miller
+ The Goo Goo Dolls
+ Jay Chou
+ Mike Perry
+ Tom Walker
+ Elle King
+ Ghostemane
+ Brett Young
+ Ruth B.
+ Cigarettes After Sex
+ Greeicy
+ Fonseca
+ KSI
+ James TW
+ The Who
+ Audioslave
+ Tears For Fears
+ Dennis Lloyd
+ Toby Keith
+ Scorpion Gang
+ KC Rebell
+ Lalo Ebratt
+ Brasa
+ Angus & Julia Stone
+ Tina Turner
+ Cyndi Lauper
+ Bing Crosby
+ Lil Kleine
+ Tracy Chapman
+ Will Smith
+ Jack & Jack
+ Grover Washington, Jr.
+ Surfaces
+ Sofía Reyes
+ Sia
+ Jeezy
+ Wolfgang Amadeus Mozart
+ Alina Baraz
+ LUDMILLA
+ Grupo Firme
+ Puddle Of Mudd
+ Alvaro Soler
+ Luísa Sonza
+ Ella Fitzgerald
+ Jon Pardi
+ Chris Lane
+ Lenny Kravitz
+ IU
+ Grimes
+ Camila
+ Sin Bandera
+ TLC
+ Lil Xan
+ Emily Vaughn
+ Mary J. Blige
+ Brantley Gilbert
+ ZZ Top
+ Ramin Djawadi
+ Louis Armstrong
+ Snakehips
+ Anitta
+ Natiruts
+ Bruno Martini
+ Oliver Heldens
+ HI-LO
+ Nina Kraviz
+ NEFFEX
+ Talib Kweli
+ Lupe Fiasco
+ Spice Girls
+ Dean Martin
+ The Head And The Heart
+ Benjamin Blümchen
+ Lykke Li
+ Tinie Tempah
+ Beck
+ Lauren Daigle
+ ZHU
+ The All-American Rejects
+ Alice In Chains
+ Melim
+ Chris Young
+ Lucas & Steve
+ Afrojack
+ Los Bukis
+ NCT 127
+ Kina
+ Mokita
+ Seether
+ Cheat Codes
+ Max Richter
+ Brent Faiyaz
+ Tems
+ Cash Cash
+ Timmy Trumpet
+ Aleks Syntek
+ Su Presencia
+ Un Corazón
+ BØRNS
+ Supertramp
+ a-ha
+ A Tribe Called Quest
+ Pixies
+ Daughtry
+ AWOLNATION
+ Dominic Fike
+ Los Enanitos Verdes
+ Hombres G
+ Otis Redding
+ A R I Z O N A
+ Louis The Child
+ Jacquees
+ Petit Biscuit
+ Foals
+ Emeli Sandé
+ Death Cab for Cutie
+ Jake Owen
+ Alanis Morissette
+ Wu-Tang Clan
+ TOOL
+ Dadju
+ Craig David
+ Frenna
+ Gustavo Mioto
+ Counting Crows
+ Cesar Mc
+ Pineapple StormTv
+ Grouplove
+ Megadeth
+ Gloria Trevi
+ Sam Cooke
+ Beastie Boys
+ Talking Heads
+ KALEO
+ Gemitaiz
+ Dustin Lynch
+ TOMORROW X TOGETHER
+ Oliver Tree
+ The Score
+ Cole Swindell
+ Río Roma
+ The Temptations
+ Banda Los Recoditos
+ Matuê
+ Doode
+ Grateful Dead
+ Kungs
+ Chaya
+ Zoé
+ Stone Sour
+ EDEN
+ Brett Eldredge
+ Canserbero
+ Two Feet
+ Lindsey Stirling
+ La Adictiva Banda San José de Mesillas
+ Icona Pop
+ Jakey
+ Darius Rucker
+ MadeinTYO
+ Famous Dex
+ Rich The Kid
+ Tom Petty and the Heartbreakers
+ Official HIGE DANdism
+ Ella Eyre
+ ONE OK ROCK
+ LMFAO
+ Eros Ramazzotti
+ Duran Duran
+ Gym Class Heroes
+ Ben&Ben
+ M.I.A.
+ BIGBANG
+ GoldLink
+ KSHMR
+ A Great Big World
+ Fat Joe
+ Roy Woods
+ James Blake
+ Smuff Tha Quiz
+ K.A.A.N.
+ Vintage Culture
+ BURNS
+ Kasablanca
+ Iron & Wine
+ Calexico
+ James Taylor
+ Jamiroquai
+ Deep Purple
+ Marc E. Bassy
+ Great Good Fine Ok
+ UB40
+ Cozz
+(889 rows)
+
+********* QUERY **********
+select * from artist;
+**************************
+
+                     name                      
+-----------------------------------------------
+ Drake
+ Ed Sheeran
+ The Weeknd
+ Bad Bunny
+ The Kid LAROI
+ Post Malone
+ Eminem
+ Taylor Swift
+ Nio Garcia
+ Casper Magico
+ Pusho
+ Coldplay
+ Kanye West
+ KIDS SEE GHOSTS
+ Billie Eilish
+ Jhay Cortez
+ XXXTENTACION
+ Juice WRLD
+ Rihanna
+ Imagine Dragons
+ Elton John
+ Maroon 5
+ Shawn Mendes
+ Galantis
+ Calvin Harris
+ Ben Platt
+ Sam Smith
+ Bruno Mars
+ Red Velvet
+ Baby Keem
+ The Chainsmokers
+ Beyoncé
+ Chris Brown
+ One Direction
+ Flo Rida
+ BIA
+ Tony Bennett
+ Lady Gaga
+ J. Cole
+ Dreamville
+ The Beatles
+ Maluma
+ Twenty One Pilots
+ Kygo
+ Marshmello
+ Linkin Park
+ Avicii
+ Future
+ Katy Perry
+ Adele
+ Camila Cabello
+ Farruko
+ Lana Del Rey
+ Jason Derulo
+ Red Hot Chili Peppers
+ Duki
+ Bizarrap
+ Savage Ga$p
+ 1nonly
+ Arctic Monkeys
+ Demi Lovato
+ Martin Garrix
+ AREA21
+ G-Eazy
+ Miley Cyrus
+ Major Lazer
+ OneRepublic
+ Michael Jackson
+ Panic! At The Disco
+ Rauw Alejandro
+ Pitbull
+ Stephen Oaks
+ Ellie Goulding
+ Harry Styles
+ Lizzo
+ Wiz Khalifa
+ Tiësto
+ DaBaby
+ Sebastian Yatra
+ Dua Lipa
+ Young Thug
+ Young Stoner Life
+ Logic
+ Mustard
+ Alan Walker
+ Fall Out Boy
+ Diplo
+ Blxst
+ John Mayer
+ Metallica
+ J Balvin
+ Macklemore
+ P!nk
+ ZAYN
+ 88rising
+ DJ Snake
+ Mac Miller
+ Lauv
+ Doja Cat
+ Pop Smoke
+ James Arthur
+ Zedd
+ Little Mix
+ AC/DC
+ Lil Peep
+ 5 Seconds of Summer
+ Trippie Redd
+ A Boogie Wit da Hoodie
+ Kodak Black
+ Mr. Probz
+ NF
+ Justin Timberlake
+ Green Day
+ Billie Joe Armstrong
+ DJ Khaled
+ Frank Ocean
+ Zara Larsson
+ Romeo Santos
+ Offset
+ 21 Savage
+ Clean Bandit
+ Bob Marley & The Wailers
+ Anne-Marie
+ Lil Nas X
+ Bebe Rexha
+ Lewis Capaldi
+ Enrique Iglesias
+ Luis Miguel
+ Tyler, The Creator
+ Pink Floyd
+ Black Eyed Peas
+ Luis Fonsi
+ BLACKPINK
+ Machine Gun Kelly
+ The Rolling Stones
+ Nirvana
+ Fleetwood Mac
+ Michael Bublé
+ Olivia Rodrigo
+ Young Dolph
+ Key Glock
+ Jonas Blue
+ R3HAB
+ Guns N' Roses
+ Britney Spears
+ Bastille
+ Childish Gambino
+ Big Sean
+ Alessia Cara
+ $uicideboy$
+ Lunay
+ Boza
+ 2Pac
+ Dead Prez
+ Lorde
+ Usher
+ Reik
+ Xavier Wulf
+ Queen
+ KAROL G
+ Gorillaz
+ Hozier
+ Becky G
+ Christina Aguilera
+ Play-N-Skillz
+ French Montana
+ The Killers
+ Foo Fighters
+ Meek Mill
+ blink-182
+ Tory Lanez
+ Mariah Carey
+ Banda MS de Sergio Lizárraga
+ John Legend
+ U2
+ Meghan Trainor
+ Led Zeppelin
+ Rae Sremmurd
+ Iggy Azalea
+ The 1975
+ Mumford & Sons
+ Ava Max
+ Manuel Turizo
+ Fuego
+ BIN
+ Luke Combs
+ System Of A Down
+ Jack Johnson
+ Muse
+ Elvis Presley
+ Radiohead
+ The Neighbourhood
+ Polo G
+ Roddy Ricch
+ Bino Rideaux
+ Bazzi
+ Hailee Steinfeld
+ Chen Linong
+ Dr. Dre
+ The Notorious B.I.G.
+ Faith Evans
+ Jorge & Mateus
+ Paramore
+ Shotgun Willy
+ Tate McRae
+ Virginia To Vegas
+ NOTD
+ Frank Sinatra
+ Regard
+ Joji
+ Disclosure
+ Fifth Harmony
+ Julia Michaels
+ Oasis
+ Don Omar
+ Bon Jovi
+ Justin Bieber
+ Nelly
+ Dalex
+ Rich Music LTD
+ Tame Impala
+ Tove Lo
+ JAY-Z
+ The Lumineers
+ Kings of Leon
+ Jordan Davis
+ The Script
+ Five Finger Death Punch
+ Melanie Martinez
+ Lil Tjay
+ Daddy Yankee
+ Jason Mraz
+ Megan Thee Stallion
+ Florence + The Machine
+ Glee Cast
+ Nanpa Básico
+ Gera MX
+ Paulo Londra
+ Nickelback
+ Justin Quiles
+ Playboi Carti
+ Creedence Clearwater Revival
+ Bruce Springsteen
+ Kehlani
+ Whitney Houston
+ Rammstein
+ Cro
+ Kane Brown
+ Zé Neto & Cristiano
+ ABBA
+ Camilo
+ MEDUZA
+ Piso 21
+ My Chemical Romance
+ Dímelo Flow
+ Masego
+ TINI
+ Bring Me The Horizon
+ James Bay
+ Thomas Rhett
+ Labrinth
+ Vance Joy
+ Chance the Rapper
+ MihTy
+ Henrique & Juliano
+ Kelly Clarkson
+ Wisin
+ Disturbed
+ Aerosmith
+ Kevin Gates
+ Jennifer Lopez
+ Avril Lavigne
+ Bon Iver
+ Lil Skies
+ Amy Winehouse
+ Stevie Wonder
+ TWICE
+ Tones And I
+ Miguel
+ Hans Zimmer
+ Backstreet Boys
+ YNW Melly
+ Alejandro Fernández
+ Morgan Wallen
+ Fetty Wap
+ Sean Paul
+ Kesha
+ BTS
+ Lil Tecca
+ Prince Royce
+ Three Days Grace
+ Phil Collins
+ Jason Aldean
+ Josh Turner
+ Mike Posner
+ Gwen Stefani
+ Lil Mosey
+ George Ezra
+ Dan + Shay
+ Wesley Safadão
+ Jessie J
+ Billy Joel
+ Eagles
+ Pearl Jam
+ Trey Songz
+ benny blanco
+ Deftones
+ CNCO
+ The Strokes
+ Mark Ronson
+ Geoff Zanelli
+ Lin-Manuel Miranda
+ Lukas Graham
+ Avenged Sevenfold
+ Céline Dion
+ The Offspring
+ Ricky Martin
+ Matheus & Kauan
+ 2 Chainz
+ T.R.U.
+ Aventura
+ Noah Cyrus
+ PJ Harding
+ Foster The People
+ Bob Dylan
+ Pablo Alborán
+ Ricardo Arjona
+ Cartel De Santa
+ 24kGoldn
+ Daniel Caesar
+ ScHoolboy Q
+ James Blunt
+ Rudimental
+ Pentatonix
+ Marc Anthony
+ Conor Matthews
+ Social House
+ Alesso
+ Shakira
+ Ingrid Andress
+ Dire Straits
+ Sigala
+ Bryan Adams
+ Calibre 50
+ DJ Scheme
+ Blake Shelton
+ Zac Brown Band
+ Dean Lewis
+ Bee Gees
+ BROCKHAMPTON
+ Jhené Aiko
+ Don Toliver
+ Jeremy Zucker
+ The Vamps
+ Carlos Vives
+ Kelsea Ballerini
+ PARTYNEXTDOOR
+ The Black Keys
+ Charli XCX
+ Skillet
+ Hornet La Frappe
+ Danny Ocean
+ Birdy
+ The Police
+ Marvin Gaye
+ Ghostface Killah
+ CZARFACE
+ Boyce Avenue
+ Lost Frequencies
+ Ryan Hurd
+ The Doors
+ Carly Rae Jepsen
+ Vishal-Shekhar
+ Arijit Singh
+ Rise Against
+ John Williams
+ John Powell
+ A$AP Ferg
+ Soda Stereo
+ Bibi Blocksberg
+ Juanes
+ Mau y Ricky
+ Glass Animals
+ SAINt JHN
+ RAF Camora
+ Madison Beer
+ Chris Stapleton
+ Mabel
+ alt-J
+ Cage The Elephant
+ Weezer
+ Alec Benjamin
+ Nick Jonas
+ Hillsong Worship
+ Journey
+ Kenny Chesney
+ Eric Church
+ La Arrolladora Banda El Limón De Rene Camacho
+ Los Ángeles Azules
+ Norah Jones
+ Rex Orange County
+ Destiny's Child
+ Kxllswxtch
+ Jesse & Joy
+ Normani
+ Sam Feldt
+ JP Cooper
+ Simon & Garfunkel
+ Paul McCartney
+ Jon Bellion
+ Depeche Mode
+ Zé Felipe
+ Juan Gabriel
+ Eric Clapton
+ Delaney & Bonnie
+ Conan Gray
+ X Ambassadors
+ Lil Wayne
+ Marília Mendonça
+ Ufo361
+ Dimitri Vegas & Like Mike
+ Aminé
+ Aleman
+ Måneskin
+ AJR
+ Summer Walker
+ Love Renaissance (LVRN)
+ KYLE
+ Outkast
+ Breaking Benjamin
+ The Beach Boys
+ Korn
+ Hillsong UNITED
+ Sabrina Carpenter
+ NLE Choppa
+ Jimi Hendrix
+ Ariana Grande
+ Joel Corry
+ Alok
+ Denzel Curry
+ Volbeat
+ Papa Roach
+ DOPE LEMON
+ George Michael
+ DNCE
+ Robbie Williams
+ Christina Perri
+ Rag'n'Bone Man
+ The Fray
+ Van Morrison
+ Cali Y El Dandee
+ Shinedown
+ Ludovico Einaudi
+ bbno$
+ Yung Gravy
+ KHEA
+ Hollywood Undead
+ Lynyrd Skynyrd
+ Rage Against The Machine
+ The Smiths
+ Earth, Wind & Fire
+ Of Monsters and Men
+ Axwell /\ Ingrosso
+ The Cranberries
+ Aya Nakamura
+ BRELAND
+ A Day To Remember
+ Black Sabbath
+ TOTO
+ Daryl Hall & John Oates
+ GIMS
+ Brytiago
+ Alex Rose
+ Andy Grammer
+ Vicente Fernández
+ Kodaline
+ PnB Rock
+ 2gunspank
+ Pity Party (Girls Club)
+ ilyTOMMY
+ The White Stripes
+ Scorpions
+ BRONSON
+ ODESZA
+ Melendi
+ BLANCO
+ Milky Chance
+ Kali Uchis
+ A$AP Rocky
+ Enya
+ Aretha Franklin
+ Sabaton
+ Bibi und Tina
+ Tainy
+ Evanescence
+ Pedro Capó
+ El Alfa
+ Van Halen
+ Damso
+ C. Tangana
+ WALK THE MOON
+ Shaggy
+ gnash
+ Nelly Furtado
+ Cascada
+ Don Diablo
+ Sublime
+ Marilyn Manson
+ Samra
+ Capital Bra
+ Sum 41
+ Two Door Cinema Club
+ Carlos Rivera
+ George Strait
+ Mac DeMarco
+ 3 Doors Down
+ Ozzy Osbourne
+ Ella Mai
+ Jon Z
+ De La Ghetto
+ Kid Cudi
+ Dave Matthews Band
+ Ali Gatie
+ MAX
+ Colbie Caillat
+ Fergie
+ José José
+ Desiigner
+ R. Kelly
+ Bethel Music
+ Louis Tomlinson
+ Wallows
+ Sueco
+ Arizona Zervas
+ Rascal Flatts
+ Gotye
+ Stray Kids
+ Wizard of Loneliness
+ Jaden
+ OMI
+ MC Kevinho
+ Daniel Caon
+ Luan Santana
+ Vampire Weekend
+ The Smashing Pumpkins
+ Joyner Lucas
+ Fugees
+ The Clash
+ Giacomo Puccini
+ Limp Bizkit
+ M83
+ Joan Sebastian
+ Eurythmics
+ Mike WiLL Made-It
+ Trouble
+ Sleeping At Last
+ Thirty Seconds To Mars
+ The Kooks
+ Lord Huron
+ Portugal. The Man
+ Olly Murs
+ Rod Wave
+ grandson
+ El Fantasma
+ Kacey Musgraves
+ Westlife
+ Loud Luxury
+ DMX
+ Tom Odell
+ Keane
+ Beast Coast
+ Joey Bada$$
+ 1986zig
+ Ashnikko
+ Jay Wheeler
+ Natanael Cano
+ Laylow
+ Michael Silverman
+ Topic
+ Becky Hill
+ Queens of the Stone Age
+ Owl City
+ Santana
+ Ladytron
+ Snow Patrol
+ Gerardo Ortiz
+ Swedish House Mafia
+ Dierks Bentley
+ Ben Howard
+ Moneybagg Yo
+ David Guetta
+ Booba
+ Incubus
+ Gryffin
+ Party Pupils
+ Apache 207
+ Elevation Worship
+ Ciara
+ Powfu
+ Tee Grizzley
+ Lil Dicky
+ Sara Bareilles
+ Yo Gotti
+ Los Tigres Del Norte
+ Dynoro
+ La Oreja de Van Gogh
+ Cosculluela
+ Thalia
+ Trevor Daniel
+ TKKG Junior
+ Mötley Crüe
+ $NOT
+ Kevin Abstract
+ ANAVITÓRIA
+ Kollegah
+ Asche
+ Frédéric Chopin
+ Charlie Brown Jr.
+ Silver
+ Santo Trafficante
+ Wale
+ Blueface
+ Conor Maynard
+ Leona Lewis
+ Old Dominion
+ Bryant Myers
+ Lady A
+ Gente De Zona
+ Martin Jensen
+ W&W
+ The Jackson 5
+ Kurt Weill
+ Sufjan Stevens
+ John Lennon
+ Matheus Fernandes
+ Chief Keef
+ Arcade Fire
+ David Bisbal
+ Niska
+ Lee Brice
+ Jack Ü
+ Felipe Araújo
+ Diego & Victor Hugo
+ Ginuwine
+ The Pussycat Dolls
+ Ice Cube
+ Neil Young
+ Mon Laferte
+ Paul Simon
+ Kevin Roldan
+ Taio Cruz
+ Internet Money
+ Sean Kingston
+ Alan Jackson
+ Roxette
+ zzoilo
+ Martin Solveig
+ Shania Twain
+ MKTO
+ Stromae
+ Murda
+ Banda El Recodo
+ Yusuf / Cat Stevens
+ Yellow Claw
+ Nat King Cole
+ Chayanne
+ Kiiara
+ Rosa Linn
+ League of Legends
+ Plan B
+ Lionel Richie
+ Saweetie
+ Simple Plan
+ Nina Simone
+ Granular
+ Nipsey Hussle
+ Qveen Herby
+ VINCINT
+ Darkiel
+ Arcangel
+ Electric Light Orchestra
+ *NSYNC
+ Los Temerarios
+ Calle 13
+ Kylie Minogue
+ Tech N9ne
+ Marco Antonio Solís
+ Anuel AA
+ Ozuna
+ Bullet For My Valentine
+ Classical Music Radio
+ Baby Lullaby Academy
+ Dolly Parton
+ Jimmie Allen
+ girl in red
+ Rezz
+ Bea Miller
+ The Goo Goo Dolls
+ Jay Chou
+ Mike Perry
+ Tom Walker
+ Elle King
+ Ghostemane
+ Brett Young
+ Ruth B.
+ Cigarettes After Sex
+ Greeicy
+ Fonseca
+ KSI
+ James TW
+ The Who
+ Audioslave
+ Tears For Fears
+ Dennis Lloyd
+ Toby Keith
+ Scorpion Gang
+ KC Rebell
+ Lalo Ebratt
+ Brasa
+ Angus & Julia Stone
+ Tina Turner
+ Cyndi Lauper
+ Bing Crosby
+ Lil Kleine
+ Tracy Chapman
+ Will Smith
+ Jack & Jack
+ Grover Washington, Jr.
+ Surfaces
+ Sofía Reyes
+ Sia
+ Jeezy
+ Wolfgang Amadeus Mozart
+ Alina Baraz
+ LUDMILLA
+ Grupo Firme
+ Puddle Of Mudd
+ Alvaro Soler
+ Luísa Sonza
+ Ella Fitzgerald
+ Jon Pardi
+ Chris Lane
+ Lenny Kravitz
+ IU
+ Grimes
+ Camila
+ Sin Bandera
+ TLC
+ Lil Xan
+ Emily Vaughn
+ Mary J. Blige
+ Brantley Gilbert
+ ZZ Top
+ Ramin Djawadi
+ Louis Armstrong
+ Snakehips
+ Anitta
+ Natiruts
+ Bruno Martini
+ Oliver Heldens
+ HI-LO
+ Nina Kraviz
+ NEFFEX
+ Talib Kweli
+ Lupe Fiasco
+ Spice Girls
+ Dean Martin
+ The Head And The Heart
+ Benjamin Blümchen
+ Lykke Li
+ Tinie Tempah
+ Beck
+ Lauren Daigle
+ ZHU
+ The All-American Rejects
+ Alice In Chains
+ Melim
+ Chris Young
+ Lucas & Steve
+ Afrojack
+ Los Bukis
+ NCT 127
+ Kina
+ Mokita
+ Seether
+ Cheat Codes
+ Max Richter
+ Brent Faiyaz
+ Tems
+ Cash Cash
+ Timmy Trumpet
+ Aleks Syntek
+ Su Presencia
+ Un Corazón
+ BØRNS
+ Supertramp
+ a-ha
+ A Tribe Called Quest
+ Pixies
+ Daughtry
+ AWOLNATION
+ Dominic Fike
+ Los Enanitos Verdes
+ Hombres G
+ Otis Redding
+ A R I Z O N A
+ Louis The Child
+ Jacquees
+ Petit Biscuit
+ Foals
+ Emeli Sandé
+ Death Cab for Cutie
+ Jake Owen
+ Alanis Morissette
+ Wu-Tang Clan
+ TOOL
+ Dadju
+ Craig David
+ Frenna
+ Gustavo Mioto
+ Counting Crows
+ Cesar Mc
+ Pineapple StormTv
+ Grouplove
+ Megadeth
+ Gloria Trevi
+ Sam Cooke
+ Beastie Boys
+ Talking Heads
+ KALEO
+ Gemitaiz
+ Dustin Lynch
+ TOMORROW X TOGETHER
+ Oliver Tree
+ The Score
+ Cole Swindell
+ Río Roma
+ The Temptations
+ Banda Los Recoditos
+ Matuê
+ Doode
+ Grateful Dead
+ Kungs
+ Chaya
+ Zoé
+ Stone Sour
+ EDEN
+ Brett Eldredge
+ Canserbero
+ Two Feet
+ Lindsey Stirling
+ La Adictiva Banda San José de Mesillas
+ Icona Pop
+ Jakey
+ Darius Rucker
+ MadeinTYO
+ Famous Dex
+ Rich The Kid
+ Tom Petty and the Heartbreakers
+ Official HIGE DANdism
+ Ella Eyre
+ ONE OK ROCK
+ LMFAO
+ Eros Ramazzotti
+ Duran Duran
+ Gym Class Heroes
+ Ben&Ben
+ M.I.A.
+ BIGBANG
+ GoldLink
+ KSHMR
+ A Great Big World
+ Fat Joe
+ Roy Woods
+ James Blake
+ Smuff Tha Quiz
+ K.A.A.N.
+ Vintage Culture
+ BURNS
+ Kasablanca
+ Iron & Wine
+ Calexico
+ James Taylor
+ Jamiroquai
+ Deep Purple
+ Marc E. Bassy
+ Great Good Fine Ok
+ UB40
+ Cozz
+(889 rows)
+
+********* QUERY **********
+select * from genre;
+**************************
+
+ genreid |  name   
+---------+---------
+ default | hip hop
+(1 row)
+
+********* QUERY **********
+insert into track values (default, 'test', '5.61', '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', '5.61', '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', 207959, '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', data_trunc('minute', 207959), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', cast(207959 AS time), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', cast(207959 AS time), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', cast(207959 AS length), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', tochar(interval '207959 ms' 'MI:SS'), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', tochar(interval '207959 ms', 'MI:SS'), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', to_timesample('207959 ms', 'MI:SS'), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+insert into song values (default, 'test', to_timesample('207959', 'MI:SS'), '1992/3/2', 'genre1');
+**************************
+
+********* QUERY **********
+select * from genre;
+**************************
+
+ genreid  |              name              
+----------+--------------------------------
+ default  | hip hop
+ genre6   | rap
+ genre7   | toronto rap
+ genre8   | canadian pop
+ genre9   | canadian hip hop
+ genre10  | uk pop
+ genre11  | pop
+ genre12  | canadian contemporary r&b
+ genre13  | reggaeton
+ genre14  | trap latino
+ genre15  | latin
+ genre16  | australian hip hop
+ genre17  | melodic rap
+ genre18  | dfw rap
+ genre19  | detroit hip hop
+ genre20  | permanent wave
+ genre21  | chicago rap
+ genre22  | electropop
+ genre23  | miami hip hop
+ genre24  | emo rap
+ genre25  | pop rap
+ genre26  | barbadian pop
+ genre27  | urban contemporary
+ genre28  | dance pop
+ genre29  | modern rock
+ genre30  | rock
+ genre31  | mellow gold
+ genre32  | glam rock
+ genre33  | piano rock
+ genre34  | pop rock
+ genre35  | viral pop
+ genre36  | pop dance
+ genre37  | tropical house
+ genre38  | electro house
+ genre39  | edm
+ genre40  | house
+ genre41  | progressive house
+ genre42  | k-pop
+ genre43  | k-pop girl group
+ genre44  | r&b
+ genre45  | post-teen pop
+ genre46  | talent show
+ genre47  | boy band
+ genre48  | rap latina
+ genre49  | escape room
+ genre50  | trap queen
+ genre51  | north carolina hip hop
+ genre52  | conscious hip hop
+ genre53  | merseybeat
+ genre54  | beatlesque
+ genre55  | british invasion
+ genre56  | classic rock
+ genre57  | psychedelic rock
+ genre58  | reggaeton colombiano
+ genre59  | progressive electro house
+ genre60  | brostep
+ genre61  | rap metal
+ genre62  | post-grunge
+ genre63  | nu metal
+ genre64  | alternative metal
+ genre65  | trap
+ genre66  | philly rap
+ genre67  | pop soul
+ genre68  | british soul
+ genre69  | art pop
+ genre70  | funk rock
+ genre71  | alternative rock
+ genre72  | funk metal
+ genre73  | pop venezolano
+ genre74  | trap argentino
+ genre75  | aesthetic rap
+ genre76  | sad rap
+ genre77  | garage rock
+ genre78  | sheffield indie
+ genre79  | dutch edm
+ genre80  | oakland hip hop
+ genre81  | indie pop rap
+ genre82  | moombahton
+ genre83  | neo mellow
+ genre84  | soul
+ genre85  | puerto rican pop
+ genre86  | metropopolis
+ genre87  | indietronica
+ genre88  | minnesota hip hop
+ genre89  | southern hip hop
+ genre90  | pittsburgh rap
+ genre91  | slap house
+ genre92  | trance
+ genre93  | big room
+ genre94  | colombian pop
+ genre95  | atl hip hop
+ genre96  | gangster rap
+ genre97  | atl trap
+ genre98  | dmv rap
+ genre99  | cali rap
+ genre100 | emo
+ genre101 | ninja
+ genre102 | singer-songwriter
+ genre103 | old school thrash
+ genre104 | thrash metal
+ genre105 | hard rock
+ genre106 | metal
+ genre107 | seattle hip hop
+ genre108 | electronic trap
+ genre109 | brooklyn drill
+ genre110 | complextro
+ genre111 | german techno
+ genre112 | girl group
+ genre113 | australian rock
+ genre114 | lgbtq+ hip hop
+ genre115 | florida rap
+ genre116 | dutch hip hop
+ genre117 | punk
+ genre118 | neo soul
+ genre119 | alternative r&b
+ genre120 | swedish electropop
+ genre121 | swedish pop
+ genre122 | scandipop
+ genre123 | bachata
+ genre124 | uk funky
+ genre125 | uk dance
+ genre126 | reggae
+ genre127 | roots reggae
+ genre128 | mexican pop
+ genre129 | latin pop
+ genre130 | bolero
+ genre131 | progressive rock
+ genre132 | album rock
+ genre133 | symphonic rock
+ genre134 | art rock
+ genre135 | ohio hip hop
+ genre136 | grunge
+ genre137 | yacht rock
+ genre138 | soft rock
+ genre139 | lounge
+ genre140 | jazz pop
+ genre141 | adult standards
+ genre142 | memphis hip hop
+ genre143 | tennessee hip hop
+ genre144 | glam metal
+ genre145 | dark trap
+ genre146 | underground hip hop
+ genre147 | new orleans rap
+ genre148 | latin hip hop
+ genre149 | reggaeton flow
+ genre150 | west coast rap
+ genre151 | g funk
+ genre152 | nz pop
+ genre153 | south carolina hip hop
+ genre154 | latin arena pop
+ genre155 | vapor trap
+ genre156 | alternative hip hop
+ genre157 | irish singer-songwriter
+ genre158 | latin viral pop
+ genre159 | dance rock
+ genre160 | pop punk
+ genre161 | socal pop punk
+ genre162 | canadian trap
+ genre163 | norteno
+ genre164 | corrido
+ genre165 | banda
+ genre166 | regional mexican
+ genre167 | irish rock
+ genre168 | hip pop
+ genre169 | mississippi hip hop
+ genre170 | modern alternative rock
+ genre171 | stomp and holler
+ genre172 | uk americana
+ genre173 | modern folk rock
+ genre174 | rap baixada fluminense
+ genre175 | funk carioca
+ genre176 | trap carioca
+ genre177 | contemporary country
+ genre178 | country
+ genre179 | rockabilly
+ genre180 | rock-and-roll
+ genre181 | oxford indie
+ genre182 | melancholia
+ genre183 | hardcore hip hop
+ genre184 | east coast hip hop
+ genre185 | sertanejo
+ genre186 | sertanejo universitario
+ genre187 | pixie
+ genre188 | pop emo
+ genre189 | candy pop
+ genre190 | sad lo-fi
+ genre191 | meme rap
+ genre192 | easy listening
+ genre193 | alt z
+ genre194 | britpop
+ genre195 | madchester
+ genre196 | st louis rap
+ genre197 | r&b en espanol
+ genre198 | australian psych
+ genre199 | neo-psychedelic
+ genre200 | swedish synthpop
+ genre201 | folk-pop
+ genre202 | celtic rock
+ genre203 | groove metal
+ genre204 | nyc rap
+ genre205 | acoustic pop
+ genre206 | houston rap
+ genre207 | uk alternative pop
+ genre208 | baroque pop
+ genre209 | hollywood
+ genre210 | glee club
+ genre211 | mexican hip hop
+ genre212 | rap conciencia
+ genre213 | argentine hip hop
+ genre214 | canadian rock
+ genre215 | plugg
+ genre216 | southern rock
+ genre217 | swamp rock
+ genre218 | country rock
+ genre219 | heartland rock
+ genre220 | industrial metal
+ genre221 | german metal
+ genre222 | industrial rock
+ genre223 | industrial
+ genre224 | neue deutsche harte
+ genre225 | german hip hop
+ genre226 | country road
+ genre227 | europop
+ genre228 | pop house
+ genre229 | pop argentino
+ genre230 | melodic metalcore
+ genre231 | uk metalcore
+ genre232 | metalcore
+ genre233 | modern country rock
+ genre234 | indie poptimism
+ genre235 | baton rouge rap
+ genre236 | indie folk
+ genre237 | eau claire indie
+ genre238 | motown
+ genre239 | funk
+ genre240 | quiet storm
+ genre241 | indie r&b
+ genre242 | australian pop
+ genre243 | german soundtrack
+ genre244 | soundtrack
+ genre245 | ranchera
+ genre246 | mariachi
+ genre247 | new jersey rap
+ genre248 | dancehall
+ genre249 | k-pop boy group
+ genre250 | canadian metal
+ genre251 | rock drums
+ genre252 | rap conscient
+ genre253 | neo-singer-songwriter
+ genre254 | forro
+ genre255 | sertanejo pop
+ genre256 | folk rock
+ genre257 | sacramento indie
+ genre258 | show tunes
+ genre259 | danish pop
+ genre260 | skate punk
+ genre261 | pop nacional
+ genre262 | bachata dominicana
+ genre263 | tropical
+ genre264 | folk
+ genre265 | roots rock
+ genre266 | spanish pop
+ genre267 | rock en espanol
+ genre268 | cantautor
+ genre269 | a cappella
+ genre270 | modern salsa
+ genre271 | salsa
+ genre272 | NULL
+ genre273 | country pop
+ genre274 | canadian singer-songwriter
+ genre275 | classic canadian rock
+ genre276 | oklahoma country
+ genre277 | disco
+ genre278 | vallenato
+ genre279 | champeta
+ genre280 | blues rock
+ genre281 | modern blues rock
+ genre282 | punk blues
+ genre283 | hyperpop
+ genre284 | dutch house
+ genre285 | christian music
+ genre286 | christian rock
+ genre287 | christian alternative rock
+ genre288 | pop urbaine
+ genre289 | francoton
+ genre290 | rap francais
+ genre291 | french hip hop
+ genre292 | new wave
+ genre293 | classic soul
+ genre294 | northern soul
+ genre295 | acoustic cover
+ genre296 | belgian edm
+ genre297 | acid rock
+ genre298 | modern bollywood
+ genre299 | desi pop
+ genre300 | filmi
+ genre301 | chicago punk
+ genre302 | chicago hardcore
+ genre303 | hardcore punk
+ genre304 | ska argentino
+ genre305 | latin alternative
+ genre306 | latin rock
+ genre307 | argentine rock
+ genre308 | post-punk argentina
+ genre309 | hoerspiel
+ genre310 | gauze pop
+ genre311 | shiver pop
+ genre312 | outlaw country
+ genre313 | indie rock
+ genre314 | modern power pop
+ genre315 | dream smp
+ genre316 | worship
+ genre317 | ccm
+ genre318 | russian ccm
+ genre319 | world worship
+ genre320 | gruperas inmortales
+ genre321 | nu-cumbia
+ genre322 | contemporary vocal jazz
+ genre323 | vocal jazz
+ genre324 | bedroom pop
+ genre325 | oc rap
+ genre326 | scream rap
+ genre327 | pop edm
+ genre328 | synthpop
+ genre329 | new romantic
+ genre330 | cancion melodica
+ genre331 | electric blues
+ genre332 | indie pop
+ genre333 | stomp pop
+ genre334 | german cloud rap
+ genre335 | belgian dance
+ genre336 | portland hip hop
+ genre337 | trap mexicano
+ genre338 | indie rock italiano
+ genre339 | italian pop
+ genre340 | social media pop
+ genre341 | dirty south rap
+ genre342 | sunshine pop
+ genre343 | brill building pop
+ genre344 | drill
+ genre345 | danish metal
+ genre346 | danish rock
+ genre347 | rap rock
+ genre348 | indie soul
+ genre349 | electro latino
+ genre350 | compositional ambient
+ genre351 | bow pop
+ genre352 | neo-classical
+ genre353 | trap triste
+ genre354 | political hip hop
+ genre355 | uk post-punk
+ genre356 | jazz funk
+ genre357 | basshall
+ genre358 | screamo
+ genre359 | birmingham metal
+ genre360 | stoner rock
+ genre361 | uk doom metal
+ genre362 | french pop
+ genre363 | irish pop
+ genre364 | detroit rock
+ genre365 | german hard rock
+ genre366 | german rock
+ genre367 | chillwave
+ genre368 | spanish pop rock
+ genre369 | german pop
+ genre370 | middle earth
+ genre371 | celtic
+ genre372 | memphis soul
+ genre373 | jazz blues
+ genre374 | southern soul
+ genre375 | power metal
+ genre376 | swedish metal
+ genre377 | swedish power metal
+ genre378 | kleine hoerspiel
+ genre379 | pop reggaeton
+ genre380 | dembow
+ genre381 | rap dominicano
+ genre382 | belgian hip hop
+ genre383 | rap belge
+ genre384 | urbano espanol
+ genre385 | reggae fusion
+ genre386 | canadian latin
+ genre387 | melbourne bounce international
+ genre388 | bubblegum dance
+ genre389 | eurodance
+ genre390 | future house
+ genre391 | ska mexicano
+ genre392 | ska punk
+ genre393 | wrestling
+ genre394 | canadian punk
+ genre395 | canadian pop punk
+ genre396 | northern irish indie
+ genre397 | alternative dance
+ genre398 | lo-fi indie
+ genre399 | edmonton indie
+ genre400 | pop r&b
+ genre401 | uk contemporary r&b
+ genre402 | jam band
+ genre403 | viral trap
+ genre404 | ambient worship
+ genre405 | deep ccm
+ genre406 | rhode island rap
+ genre407 | lo-fi vgm
+ genre408 | funk pop
+ genre409 | funk ostentacao
+ genre410 | boston hip hop
+ genre411 | classical
+ genre412 | post-romantic era
+ genre413 | italian opera
+ genre414 | italian romanticism
+ genre415 | french synthpop
+ genre416 | neo-synthpop
+ genre417 | french shoegaze
+ genre418 | grupera
+ genre419 | new wave pop
+ genre420 | sophisti-pop
+ genre421 | chamber pop
+ genre422 | brighton indie
+ genre423 | nuevo regional mexicano
+ genre424 | texas country
+ genre425 | country dawn
+ genre426 | chill pop
+ genre427 | sierreno
+ genre428 | corridos tumbados
+ genre429 | pianissimo
+ genre430 | stoner metal
+ genre431 | palm desert scene
+ genre432 | mexican classic rock
+ genre433 | electronica
+ genre434 | new rave
+ genre435 | electroclash
+ genre436 | british singer-songwriter
+ genre437 | old school rap francais
+ genre438 | detroit trap
+ genre439 | comedy rap
+ genre440 | lilith
+ genre441 | perreo
+ genre442 | sleaze rock
+ genre443 | nova mpb
+ genre444 | pop lgbtq+ brasileira
+ genre445 | folk brasileiro
+ genre446 | polish classical
+ genre447 | early romantic era
+ genre448 | rock alternativo brasileiro
+ genre449 | rock nacional brasileiro
+ genre450 | hard rock brasileiro
+ genre451 | brazilian rock
+ genre452 | cubaton
+ genre453 | early modern classical
+ genre454 | austro-german modernism
+ genre455 | freak folk
+ genre456 | chicago drill
+ genre457 | chicago bop
+ genre458 | canadian indie
+ genre459 | quebec indie
+ genre460 | new jack swing
+ genre461 | vocal house
+ genre462 | filter house
+ genre463 | disco house
+ genre464 | canadian country
+ genre465 | g-house
+(461 rows)
+
+********* QUERY **********
+DELETE FROM genre;
+**************************
+
+DELETE 461
+********* QUERY **********
+select * from genre;
+**************************
+
+  genreid  |              name              
+-----------+--------------------------------
+ genre821  | screamo
+ genre822  | birmingham metal
+ genre823  | stoner rock
+ genre824  | uk doom metal
+ genre825  | french pop
+ genre826  | irish pop
+ genre827  | detroit rock
+ genre828  | german hard rock
+ genre829  | german rock
+ genre830  | chillwave
+ genre831  | spanish pop rock
+ genre832  | german pop
+ genre833  | middle earth
+ genre834  | celtic
+ genre835  | memphis soul
+ genre836  | jazz blues
+ genre837  | southern soul
+ genre838  | power metal
+ genre839  | swedish metal
+ genre840  | swedish power metal
+ genre841  | kleine hoerspiel
+ genre842  | pop reggaeton
+ genre843  | dembow
+ genre844  | rap dominicano
+ genre845  | belgian hip hop
+ genre846  | rap belge
+ genre847  | urbano espanol
+ genre848  | reggae fusion
+ genre849  | canadian latin
+ genre850  | melbourne bounce international
+ genre851  | bubblegum dance
+ genre852  | eurodance
+ genre853  | future house
+ genre854  | ska mexicano
+ genre855  | ska punk
+ genre856  | wrestling
+ genre857  | canadian punk
+ genre858  | canadian pop punk
+ genre859  | northern irish indie
+ genre860  | alternative dance
+ genre861  | lo-fi indie
+ genre862  | edmonton indie
+ genre863  | pop r&b
+ genre864  | uk contemporary r&b
+ genre865  | jam band
+ genre866  | viral trap
+ genre867  | ambient worship
+ genre868  | deep ccm
+ genre869  | rhode island rap
+ genre870  | lo-fi vgm
+ genre871  | funk pop
+ genre872  | funk ostentacao
+ genre873  | boston hip hop
+ genre874  | classical
+ genre875  | post-romantic era
+ genre876  | italian opera
+ genre877  | italian romanticism
+ genre878  | french synthpop
+ genre879  | neo-synthpop
+ genre880  | french shoegaze
+ genre881  | grupera
+ genre882  | new wave pop
+ genre883  | sophisti-pop
+ genre884  | chamber pop
+ genre885  | brighton indie
+ genre886  | nuevo regional mexicano
+ genre887  | texas country
+ genre888  | country dawn
+ genre889  | chill pop
+ genre890  | sierreno
+ genre891  | corridos tumbados
+ genre892  | pianissimo
+ genre893  | stoner metal
+ genre894  | palm desert scene
+ genre895  | mexican classic rock
+ genre896  | electronica
+ genre897  | new rave
+ genre898  | electroclash
+ genre899  | british singer-songwriter
+ genre900  | old school rap francais
+ genre901  | detroit trap
+ genre902  | comedy rap
+ genre903  | lilith
+ genre904  | perreo
+ genre905  | sleaze rock
+ genre906  | nova mpb
+ genre907  | pop lgbtq+ brasileira
+ genre908  | folk brasileiro
+ genre909  | polish classical
+ genre910  | early romantic era
+ genre911  | rock alternativo brasileiro
+ genre912  | rock nacional brasileiro
+ genre913  | hard rock brasileiro
+ genre914  | brazilian rock
+ genre915  | cubaton
+ genre916  | early modern classical
+ genre917  | austro-german modernism
+ genre918  | freak folk
+ genre919  | chicago drill
+ genre920  | chicago bop
+ genre921  | canadian indie
+ genre922  | quebec indie
+ genre923  | new jack swing
+ genre924  | vocal house
+ genre925  | filter house
+ genre926  | disco house
+ genre927  | canadian country
+ genre928  | g-house
+ genre929  | belgian pop
+ genre930  | turkish hip hop
+ genre931  | turkish trap
+ genre932  | british folk
+ genre933  | bass trap
+ genre934  | video game music
+ genre935  | speedrun
+ genre936  | torch song
+ genre937  | soul jazz
+ genre938  | sleep
+ genre939  | white noise
+ genre940  | puerto rican rock
+ genre941  | latin afrobeat
+ genre942  | australian dance
+ genre943  | kansas city hip hop
+ genre944  | welsh metal
+ genre945  | lullaby
+ genre946  | classic country pop
+ genre947  | bubblegrunge
+ genre948  | norwegian indie
+ genre949  | electra
+ genre950  | canadian electronic
+ genre951  | taiwan pop
+ genre952  | c-pop
+ genre953  | zhongguo feng
+ genre954  | mandopop
+ genre955  | indie anthem-folk
+ genre956  | ambient pop
+ genre957  | dream pop
+ genre958  | el paso indie
+ genre959  | shoegaze
+ genre960  | uk hip hop
+ genre961  | supergroup
+ genre962  | israeli pop
+ genre963  | australian indie folk
+ genre964  | dutch rap pop
+ genre965  | dutch pop
+ genre966  | women's music
+ genre967  | teen pop
+ genre968  | smooth jazz
+ genre969  | bedroom soul
+ genre970  | crunk
+ genre971  | classical era
+ genre972  | etherpop
+ genre973  | pagode baiano
+ genre974  | swing
+ genre975  | grave wave
+ genre976  | canadian electropop
+ genre977  | redneck
+ genre978  | scorecore
+ genre979  | dixieland
+ genre980  | harlem renaissance
+ genre981  | jazz trumpet
+ genre982  | new orleans jazz
+ genre983  | reggae tuga
+ genre984  | brazilian reggae
+ genre985  | brazilian edm
+ genre986  | seattle indie
+ genre987  | new americana
+ genre988  | swedish indie pop
+ genre989  | grime
+ genre990  | anti-folk
+ genre991  | mpb
+ genre992  | south african rock
+ genre993  | post-minimalism
+ genre994  | electropowerpop
+ genre995  | melbourne bounce
+ genre996  | latin christian
+ genre997  | latin worship
+ genre998  | jazz rap
+ genre999  | golden age hip hop
+ genre1000 | queens hip hop
+ genre1001 | boston rock
+ genre1002 | la indie
+ genre1003 | alternative pop rock
+ genre1004 | soul blues
+ genre1005 | new french touch
+ genre1006 | washington indie
+ genre1007 | progressive metal
+ genre1008 | trap baiano
+ genre1009 | rap baiano
+ genre1010 | trap brasileiro
+ genre1011 | melodic thrash
+ genre1012 | speed metal
+ genre1013 | spanish rock
+ genre1014 | old school hip hop
+ genre1015 | post-punk
+ genre1016 | art punk
+ genre1017 | zolo
+ genre1018 | icelandic rock
+ genre1019 | icelandic indie
+ genre1020 | italian hip hop
+ genre1021 | r&b brasileiro
+ genre1022 | rap cearense
+ genre1023 | double drumming
+ genre1024 | cosmic american
+ genre1025 | mexican rock
+ genre1026 | morelos indie
+ genre1027 | venezuelan hip hop
+ genre1028 | boom bap espanol
+ genre1029 | pop violin
+ genre1030 | j-pop
+ genre1031 | anime
+ genre1032 | anime rock
+ genre1033 | j-rock
+ genre1034 | visual kei
+ genre1035 | japanese emo
+ genre1036 | italian adult pop
+ genre1037 | opm
+ genre1038 | indian edm
+ genre1039 | indiecoustica
+ genre1040 | bronx hip hop
+ genre1041 | german drill
+ genre1042 | trap soul
+ genre1043 | jazz boom bap
+ genre1044 | indie electropop
+ genre1045 | nyc pop
+ genre1046 | hopebeat
+ genre1047 | shimmer pop
+ genre1048 | vapor soul
+ genre1049 | uk reggae
+ genre468  | hip hop
+ genre469  | rap
+ genre470  | toronto rap
+ genre471  | canadian pop
+ genre472  | canadian hip hop
+ genre473  | uk pop
+ genre474  | pop
+ genre475  | canadian contemporary r&b
+ genre476  | reggaeton
+ genre477  | trap latino
+ genre478  | latin
+ genre479  | australian hip hop
+ genre480  | melodic rap
+ genre481  | dfw rap
+ genre482  | detroit hip hop
+ genre483  | permanent wave
+ genre484  | chicago rap
+ genre485  | electropop
+ genre486  | miami hip hop
+ genre487  | emo rap
+ genre488  | pop rap
+ genre489  | barbadian pop
+ genre490  | urban contemporary
+ genre491  | dance pop
+ genre492  | modern rock
+ genre493  | rock
+ genre494  | mellow gold
+ genre495  | glam rock
+ genre496  | piano rock
+ genre497  | pop rock
+ genre498  | viral pop
+ genre499  | pop dance
+ genre500  | tropical house
+ genre501  | electro house
+ genre502  | edm
+ genre503  | house
+ genre504  | progressive house
+ genre505  | k-pop
+ genre506  | k-pop girl group
+ genre507  | r&b
+ genre508  | post-teen pop
+ genre509  | talent show
+ genre510  | boy band
+ genre511  | rap latina
+ genre512  | escape room
+ genre513  | trap queen
+ genre514  | north carolina hip hop
+ genre515  | conscious hip hop
+ genre516  | merseybeat
+ genre517  | beatlesque
+ genre518  | british invasion
+ genre519  | classic rock
+ genre520  | psychedelic rock
+ genre521  | reggaeton colombiano
+ genre522  | progressive electro house
+ genre523  | brostep
+ genre524  | rap metal
+ genre525  | post-grunge
+ genre526  | nu metal
+ genre527  | alternative metal
+ genre528  | trap
+ genre529  | philly rap
+ genre530  | pop soul
+ genre531  | british soul
+ genre532  | art pop
+ genre533  | funk rock
+ genre534  | alternative rock
+ genre535  | funk metal
+ genre536  | pop venezolano
+ genre537  | trap argentino
+ genre538  | aesthetic rap
+ genre539  | sad rap
+ genre540  | garage rock
+ genre541  | sheffield indie
+ genre542  | dutch edm
+ genre543  | oakland hip hop
+ genre544  | indie pop rap
+ genre545  | moombahton
+ genre546  | neo mellow
+ genre547  | soul
+ genre548  | puerto rican pop
+ genre549  | metropopolis
+ genre550  | indietronica
+ genre551  | minnesota hip hop
+ genre552  | southern hip hop
+ genre553  | pittsburgh rap
+ genre554  | slap house
+ genre555  | trance
+ genre556  | big room
+ genre557  | colombian pop
+ genre558  | atl hip hop
+ genre559  | gangster rap
+ genre560  | atl trap
+ genre561  | dmv rap
+ genre562  | cali rap
+ genre563  | emo
+ genre564  | ninja
+ genre565  | singer-songwriter
+ genre566  | old school thrash
+ genre567  | thrash metal
+ genre568  | hard rock
+ genre569  | metal
+ genre570  | seattle hip hop
+ genre571  | electronic trap
+ genre572  | brooklyn drill
+ genre573  | complextro
+ genre574  | german techno
+ genre575  | girl group
+ genre576  | australian rock
+ genre577  | lgbtq+ hip hop
+ genre578  | florida rap
+ genre579  | dutch hip hop
+ genre580  | punk
+ genre581  | neo soul
+ genre582  | alternative r&b
+ genre583  | swedish electropop
+ genre584  | swedish pop
+ genre585  | scandipop
+ genre586  | bachata
+ genre587  | uk funky
+ genre588  | uk dance
+ genre589  | reggae
+ genre590  | roots reggae
+ genre591  | mexican pop
+ genre592  | latin pop
+ genre593  | bolero
+ genre594  | progressive rock
+ genre595  | album rock
+ genre596  | symphonic rock
+ genre597  | art rock
+ genre598  | ohio hip hop
+ genre599  | grunge
+ genre600  | yacht rock
+ genre601  | soft rock
+ genre602  | lounge
+ genre603  | jazz pop
+ genre604  | adult standards
+ genre605  | memphis hip hop
+ genre606  | tennessee hip hop
+ genre607  | glam metal
+ genre608  | dark trap
+ genre609  | underground hip hop
+ genre610  | new orleans rap
+ genre611  | latin hip hop
+ genre612  | reggaeton flow
+ genre613  | west coast rap
+ genre614  | g funk
+ genre615  | nz pop
+ genre616  | south carolina hip hop
+ genre617  | latin arena pop
+ genre618  | vapor trap
+ genre619  | alternative hip hop
+ genre620  | irish singer-songwriter
+ genre621  | latin viral pop
+ genre622  | dance rock
+ genre623  | pop punk
+ genre624  | socal pop punk
+ genre625  | canadian trap
+ genre626  | norteno
+ genre627  | corrido
+ genre628  | banda
+ genre629  | regional mexican
+ genre630  | irish rock
+ genre631  | hip pop
+ genre632  | mississippi hip hop
+ genre633  | modern alternative rock
+ genre634  | stomp and holler
+ genre635  | uk americana
+ genre636  | modern folk rock
+ genre637  | rap baixada fluminense
+ genre638  | funk carioca
+ genre639  | trap carioca
+ genre640  | contemporary country
+ genre641  | country
+ genre642  | rockabilly
+ genre643  | rock-and-roll
+ genre644  | oxford indie
+ genre645  | melancholia
+ genre646  | hardcore hip hop
+ genre647  | east coast hip hop
+ genre648  | sertanejo
+ genre649  | sertanejo universitario
+ genre650  | pixie
+ genre651  | pop emo
+ genre652  | candy pop
+ genre653  | sad lo-fi
+ genre654  | meme rap
+ genre655  | easy listening
+ genre656  | alt z
+ genre657  | britpop
+ genre658  | madchester
+ genre659  | st louis rap
+ genre660  | r&b en espanol
+ genre661  | australian psych
+ genre662  | neo-psychedelic
+ genre663  | swedish synthpop
+ genre664  | folk-pop
+ genre665  | celtic rock
+ genre666  | groove metal
+ genre667  | nyc rap
+ genre668  | acoustic pop
+ genre669  | houston rap
+ genre670  | uk alternative pop
+ genre671  | baroque pop
+ genre672  | hollywood
+ genre673  | glee club
+ genre674  | mexican hip hop
+ genre675  | rap conciencia
+ genre676  | argentine hip hop
+ genre677  | canadian rock
+ genre678  | plugg
+ genre679  | southern rock
+ genre680  | swamp rock
+ genre681  | country rock
+ genre682  | heartland rock
+ genre683  | industrial metal
+ genre684  | german metal
+ genre685  | industrial rock
+ genre686  | industrial
+ genre687  | neue deutsche harte
+ genre688  | german hip hop
+ genre689  | country road
+ genre690  | europop
+ genre691  | pop house
+ genre692  | pop argentino
+ genre693  | melodic metalcore
+ genre694  | uk metalcore
+ genre695  | metalcore
+ genre696  | modern country rock
+ genre697  | indie poptimism
+ genre698  | baton rouge rap
+ genre699  | indie folk
+ genre700  | eau claire indie
+ genre701  | motown
+ genre702  | funk
+ genre703  | quiet storm
+ genre704  | indie r&b
+ genre705  | australian pop
+ genre706  | german soundtrack
+ genre707  | soundtrack
+ genre708  | ranchera
+ genre709  | mariachi
+ genre710  | new jersey rap
+ genre711  | dancehall
+ genre712  | k-pop boy group
+ genre713  | canadian metal
+ genre714  | rock drums
+ genre715  | rap conscient
+ genre716  | neo-singer-songwriter
+ genre717  | forro
+ genre718  | sertanejo pop
+ genre719  | folk rock
+ genre720  | sacramento indie
+ genre721  | show tunes
+ genre722  | danish pop
+ genre723  | skate punk
+ genre724  | pop nacional
+ genre725  | bachata dominicana
+ genre726  | tropical
+ genre727  | folk
+ genre728  | roots rock
+ genre729  | spanish pop
+ genre730  | rock en espanol
+ genre731  | cantautor
+ genre732  | a cappella
+ genre733  | modern salsa
+ genre734  | salsa
+ genre735  | NULL
+ genre736  | country pop
+ genre737  | canadian singer-songwriter
+ genre738  | classic canadian rock
+ genre739  | oklahoma country
+ genre740  | disco
+ genre741  | vallenato
+ genre742  | champeta
+ genre743  | blues rock
+ genre744  | modern blues rock
+ genre745  | punk blues
+ genre746  | hyperpop
+ genre747  | dutch house
+ genre748  | christian music
+ genre749  | christian rock
+ genre750  | christian alternative rock
+ genre751  | pop urbaine
+ genre752  | francoton
+ genre753  | rap francais
+ genre754  | french hip hop
+ genre755  | new wave
+ genre756  | classic soul
+ genre757  | northern soul
+ genre758  | acoustic cover
+ genre759  | belgian edm
+ genre760  | acid rock
+ genre761  | modern bollywood
+ genre762  | desi pop
+ genre763  | filmi
+ genre764  | chicago punk
+ genre765  | chicago hardcore
+ genre766  | hardcore punk
+ genre767  | ska argentino
+ genre768  | latin alternative
+ genre769  | latin rock
+ genre770  | argentine rock
+ genre771  | post-punk argentina
+ genre772  | hoerspiel
+ genre773  | gauze pop
+ genre774  | shiver pop
+ genre775  | outlaw country
+ genre776  | indie rock
+ genre777  | modern power pop
+ genre778  | dream smp
+ genre779  | worship
+ genre780  | ccm
+ genre781  | russian ccm
+ genre782  | world worship
+ genre783  | gruperas inmortales
+ genre784  | nu-cumbia
+ genre785  | contemporary vocal jazz
+ genre786  | vocal jazz
+ genre787  | bedroom pop
+ genre788  | oc rap
+ genre789  | scream rap
+ genre790  | pop edm
+ genre791  | synthpop
+ genre792  | new romantic
+ genre793  | cancion melodica
+ genre794  | electric blues
+ genre795  | indie pop
+ genre796  | stomp pop
+ genre797  | german cloud rap
+ genre798  | belgian dance
+ genre799  | portland hip hop
+ genre800  | trap mexicano
+ genre801  | indie rock italiano
+ genre802  | italian pop
+ genre803  | social media pop
+ genre804  | dirty south rap
+ genre805  | sunshine pop
+ genre806  | brill building pop
+ genre807  | drill
+ genre808  | danish metal
+ genre809  | danish rock
+ genre810  | rap rock
+ genre811  | indie soul
+ genre812  | electro latino
+ genre813  | compositional ambient
+ genre814  | bow pop
+ genre815  | neo-classical
+ genre816  | trap triste
+ genre817  | political hip hop
+ genre818  | uk post-punk
+ genre819  | jazz funk
+ genre820  | basshall
+(582 rows)
+
+********* QUERY **********
+/*
+ * file: sample_insert.sql
+ * insert sample data into each table
+ * pspl usage: /i sample_insert.sql
+ */
+
+INSERT INTO account
+    VALUES ('pb', 'pb@mail.com', 'password', 'Pixie', 'Blaese');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO account
+    VALUES ('ta', 'ta@mail.com', 'password', 'Taya', 'Andersen');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO account
+    VALUES ('sn', 'sn@mail.com', 'password', 'Spike', 'Noel');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO user_accessdatestimes
+    VALUES ('pb');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO user_accessdatestimes
+    VALUES ('ta');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO user_accessdatestimes
+    VALUES ('sn');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO follows
+    VALUES ('pb', 'ta');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO follows
+    VALUES ('pb', 'sn');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO follows
+    VALUES ('ta', 'sn');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO artist
+    VALUES ('Stan Getz');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO artist
+    VALUES ('Joao Gilberto');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO artist
+    VALUES ('Antonio Carlos Jobim');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO album (name, release_date)
+    VALUES ('The girl From Ipanema', '1/1/1989');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO album (name, release_date)
+    VALUES ('Amoroso', '1977-1-26');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO album (name, release_date)
+    VALUES ('Wave', 'June 15, 1967');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO genre
+    VALUES (DEFAULT, 'Jazz');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO genre
+    VALUES (DEFAULT, 'Pop');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO genre
+    VALUES (DEFAULT, 'Bossa Nova');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO alb_gen
+    VALUES ('genre1', 'album1');
+**************************
+
+********* QUERY **********
+INSERT INTO alb_gen
+    VALUES ('genre2', 'album1');
+**************************
+
+********* QUERY **********
+INSERT INTO alb_gen
+    VALUES ('genre2', 'album2');
+**************************
+
+********* QUERY **********
+INSERT INTO alb_gen
+    VALUES ('genre3', 'album3');
+**************************
+
+********* QUERY **********
+INSERT INTO alb_gen
+    VALUES ('genre1', 'album3');
+**************************
+
+********* QUERY **********
+INSERT INTO included_in
+    VALUES ('album1', 'Joao Gilberto');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO included_in
+    VALUES ('album1', 'Antonio Carlos Jobim');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO included_in
+    VALUES ('album1', 'Stan Getz');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO included_in
+    VALUES ('album2', 'Joao Gilberto');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO included_in
+    VALUES ('album3', 'Antonio Carlos Jobim');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO song
+    VALUES (DEFAULT, 'Doralice', '2:44', 'May 1,1964', 'genre1', 'Joao Gilberto');
+**************************
+
+********* QUERY **********
+INSERT INTO song
+    VALUES (DEFAULT, 'Desafinado', '5:50', '1989/1/1', 'genre1', 'Stan Getz');
+**************************
+
+********* QUERY **********
+INSERT INTO song
+    VALUES (DEFAULT, 'Look To The Sky', '2:20', 'june 15, 1967', 'genre3', 'Antonio Carlos Jobim');
+**************************
+
+********* QUERY **********
+INSERT INTO song
+    VALUES (DEFAULT, 'Wave', '4:41', '11/26/1977', 'genre3', 'Joao Gilberto');
+**************************
+
+********* QUERY **********
+INSERT INTO features
+    VALUES (1, 'album1', 'song1');
+**************************
+
+********* QUERY **********
+INSERT INTO features
+    VALUES (1, 'album2', 'song1');
+**************************
+
+********* QUERY **********
+INSERT INTO features
+    VALUES (1, 'album3', 'song3');
+**************************
+
+********* QUERY **********
+INSERT INTO features
+    VALUES (2, 'album1', 'song4');
+**************************
+
+********* QUERY **********
+INSERT INTO collection
+    VALUES (DEFAULT, 'pb', 'My Favorite');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO collection
+    VALUES (DEFAULT, 'ta', 'Running playlist');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO collection
+    VALUES (DEFAULT, 'sn', 'Afternoon Tea Playlist');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO added_to
+    VALUES (1, 'pb', 'collection1', 'song1');
+**************************
+
+********* QUERY **********
+INSERT INTO added_to
+    VALUES (2, 'pb', 'collection1', 'song2');
+**************************
+
+********* QUERY **********
+INSERT INTO added_to
+    VALUES (3, 'pb', 'collection1', 'song3');
+**************************
+
+********* QUERY **********
+INSERT INTO added_to
+    VALUES (1, 'ta', 'collection2', 'song3');
+**************************
+
+********* QUERY **********
+INSERT INTO added_to
+    VALUES (1, 'sn', 'collection3', 'song1');
+**************************
+
+********* QUERY **********
+INSERT INTO added_to
+    VALUES (2, 'sn', 'collection3', 'song2');
+**************************
+
+********* QUERY **********
+INSERT INTO plays
+    VALUES (DEFAULT, 'pb', 'song1');
+**************************
+
+********* QUERY **********
+INSERT INTO plays
+    VALUES (DEFAULT, 'ta', 'song1');
+**************************
+
+********* QUERY **********
+INSERT INTO plays
+    VALUES (DEFAULT, 'sn', 'song1');
+**************************
+
