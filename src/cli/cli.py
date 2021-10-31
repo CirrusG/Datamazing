@@ -21,7 +21,7 @@ def login():
             while not query.pass_correct(uname, pw):
                 print("Incorrect password.")
                 pw = input("\nPlease enter your password.\nPassword: ")
-            user = uname
+            # user = uname # never use
             print("Logging in.")
     elif choice == 2:
         poss_uname = input("\nPlease choose a username: ")
@@ -67,9 +67,10 @@ class DatamazingShell(cmd.Cmd):
         # If it is useful to make it unique in the database, I need to modify the table to make the name column to be unique
         return
 
+    # TOTEST
     def do_list_collec(self, arg):
         'List the users collections: list_collec asc/des'
-        collecs = query.list_collec(user, arg)
+        collecs = query.list_collec(user)
         if(not collecs):
             print("No collections found")
         else:
@@ -79,37 +80,43 @@ class DatamazingShell(cmd.Cmd):
                 collecs.sort(reverse=True)
             i = 1
             for collec in collecs:
-                print(i + ": " + collec)
+                print(i, ": ", collec)
                 i += 1
 
+    # TODO
     def do_search_song(self, arg):
-        """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
-        \tsong\n\tartist\n\talbum\n\tgenre"""
-        args = parse(arg)
-        last_search = query.song_list(args[0], args[1], user)
-        DatamazingShell.print_songs()   
+        # """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
+        # \tsong\n\tartist\n\talbum\n\tgenre"""
+        # args = parse(arg)
+        # last_search = query.song_list(args[0], args[1], user)
+        # DatamazingShell.print_songs()
         return
 
+    # TODO
     def do_sort_search(self, arg):
         """Sort previous search results by various criteria: sort_search sortBy asc/desc\nsortBy:
         \tsong\n\tartist\n\tgenre\n\treleased"""
-        if (last_search is None):
-            print("Please preform song search before sorting")
-        else:
-            args = parse(arg)
-            last_search = query.song_list_sort(args[0],args[1])
-            DatamazingShell.print_songs()
+        # if (last_search is None):
+        #     print("Please preform song search before sorting")
+        # else:
+        #     args = parse(arg)
+        #     last_search = query.song_list_sort(args[0],args[1])
+        #     DatamazingShell.print_songs()
         return
 
-    def print_songs():
-        print("{:<3}{:<15}{:<15}{:<15}{:<15}".format("#","Song","Artist","Album","Length","Plays"))
-        i = 1
-        for s,a,al,l,c in last_search:
-            print("{:<3}{:<15}{:<15}{:<15}{:<15}".format(i,s,a,al,l,c))
-            i+=1
+    # TODO
+    def print_songs(self, last_search):
+        # print("{:<3}{:<15}{:<15}{:<15}{:<15}".format("#","Song","Artist","Album","Length","Plays"))
+        # i = 1
+        # for s,a,al,l,c in last_search:
+        #     print("{:<3}{:<15}{:<15}{:<15}{:<15}".format(i,s,a,al,l,c))
+        #     i+=1
+        return
 
     def do_add_collec_album(self, arg):
+        # TODO may show a list of exist collection with ID, then let user to choose
         'Adds all songs in an album to a collection: add_collec_album collectionName albumID'
+        #query.album_to_add(collectionName, albumID)
         return
 
     def do_add_collec_song(self, args):
