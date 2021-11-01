@@ -11,7 +11,8 @@
     - [x] 3-9 insertion of each table
     - [x] 2-5 queries of each table
 
-  - [ ] deploy to database
+  - [x] deploy to database
+  - [x] grant permission
 
 - [ ] application (interface based on requirement using sql function)
 

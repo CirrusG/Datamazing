@@ -1,0 +1,890 @@
+,spotify_artist_id,derived_artist_id,artist_name
+0,spotify:artist:3TVXtAsR1Inumwj472S9r4,artist000,Drake
+1,spotify:artist:6eUKZXaKkcviH0Ku9w2n3V,artist001,Ed Sheeran
+2,spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ,artist002,The Weeknd
+3,spotify:artist:4q3ewBCX7sLwd24euuV69X,artist003,Bad Bunny
+4,spotify:artist:2tIP7SsRs7vjIcLrU85W8J,artist004,The Kid LAROI
+5,spotify:artist:246dkjvS1zLTtiykXe5h60,artist005,Post Malone
+6,spotify:artist:7dGJo4pcD2V6oG8kP0tJRR,artist006,Eminem
+7,spotify:artist:06HL4z0CvFAxyc27GXpf02,artist007,Taylor Swift
+8,spotify:artist:5hdhHgpxyniooUiQVaPxQ0,artist008,Nio Garcia
+9,spotify:artist:1fux65HMCBvfJHqlBc4Nno,artist009,Casper Magico
+10,spotify:artist:2qbEtwBVyobgpNP5KcHE9J,artist010,Pusho
+11,spotify:artist:4gzpq5DPGxSnKTe4SA8HAU,artist011,Coldplay
+12,spotify:artist:5K4W6rqBFWDnAN6FQUkS6x,artist012,Kanye West
+13,spotify:artist:2hPgGN4uhvXAxiXQBIXOmE,artist013,KIDS SEE GHOSTS
+14,spotify:artist:6qqNVTkY8uBg9cP3Jd7DAH,artist014,Billie Eilish
+15,spotify:artist:0EFisYRi20PTADoJrifHrz,artist015,Jhay Cortez
+16,spotify:artist:15UsOTVnJzReFVN1VCnxy4,artist016,XXXTENTACION
+17,spotify:artist:4MCBfE4596Uoi2O4DtmEMz,artist017,Juice WRLD
+18,spotify:artist:5pKCCKE2ajJHZ9KAiaK11H,artist018,Rihanna
+19,spotify:artist:53XhwfbYqKCa1cC15pYq2q,artist019,Imagine Dragons
+20,spotify:artist:3PhoLpVuITZKcymswpck5b,artist020,Elton John
+21,spotify:artist:04gDigrS5kc9YWfZHwBETP,artist021,Maroon 5
+22,spotify:artist:7n2wHs1TKAczGzO7Dd2rGr,artist022,Shawn Mendes
+23,spotify:artist:4sTQVOfp9vEMCemLw50sbu,artist023,Galantis
+24,spotify:artist:7CajNmpbOovFoOoasH2HaY,artist024,Calvin Harris
+25,spotify:artist:6qGkLCMQkNGOJ079iEcC5k,artist025,Ben Platt
+26,spotify:artist:2wY79sveU1sp5g7SokKOiI,artist026,Sam Smith
+27,spotify:artist:0du5cEVh5yTK9QJze8zA0C,artist027,Bruno Mars
+28,spotify:artist:1z4g3DjTBBZKhvAroFlhOM,artist028,Red Velvet
+29,spotify:artist:5SXuuuRpukkTvsLuUknva1,artist029,Baby Keem
+30,spotify:artist:69GGBxA162lTqCwzJG5jLp,artist030,The Chainsmokers
+31,spotify:artist:6vWDO969PvNqNYHIOW5v0m,artist031,Beyoncé
+32,spotify:artist:7bXgB6jMjp9ATFy66eO08Z,artist032,Chris Brown
+33,spotify:artist:4AK6F7OLvEQ5QYCBNiQWHq,artist033,One Direction
+34,spotify:artist:0jnsk9HBra6NMjO2oANoPY,artist034,Flo Rida
+35,spotify:artist:6veh5zbFpm31XsPdjBgPER,artist035,BIA
+36,spotify:artist:2lolQgalUvZDfp5vvVtTYV,artist036,Tony Bennett
+37,spotify:artist:1HY2Jd0NmPuamShAr6KMms,artist037,Lady Gaga
+38,spotify:artist:6l3HvQ5sa6mXTsMTB19rO5,artist038,J. Cole
+39,spotify:artist:1iNqsUDUraNWrj00bqssQG,artist039,Dreamville
+40,spotify:artist:3WrFJ7ztbogyGnTHbHJFl2,artist040,The Beatles
+41,spotify:artist:1r4hJ1h58CWwUQe3MxPuau,artist041,Maluma
+42,spotify:artist:3YQKmKGau1PzlVlkL1iodx,artist042,Twenty One Pilots
+43,spotify:artist:23fqKkggKUBHNkbKtXEls4,artist043,Kygo
+44,spotify:artist:64KEffDW9EtZ1y2vBYgq8T,artist044,Marshmello
+45,spotify:artist:6XyY86QOPPrYVGvF9ch6wz,artist045,Linkin Park
+46,spotify:artist:1vCWHaC5f2uS3yhpwWbIA6,artist046,Avicii
+47,spotify:artist:1RyvyyTE3xzB2ZywiAwp0i,artist047,Future
+48,spotify:artist:6jJ0s89eD6GaHleKKya26X,artist048,Katy Perry
+49,spotify:artist:4dpARuHxo51G3z768sgnrY,artist049,Adele
+50,spotify:artist:4nDoRrQiYLoBzwC5BhVJzF,artist050,Camila Cabello
+51,spotify:artist:329e4yvIujISKGKz1BZZbO,artist051,Farruko
+52,spotify:artist:00FQb4jTyendYWaN8pK0wa,artist052,Lana Del Rey
+53,spotify:artist:07YZf4WDAMNwqr4jfgOZ8y,artist053,Jason Derulo
+54,spotify:artist:0L8ExT028jH3ddEcZwqJJ5,artist054,Red Hot Chili Peppers
+55,spotify:artist:1bAftSH8umNcGZ0uyV7LMg,artist055,Duki
+56,spotify:artist:716NhGYqD1jl2wI1Qkgq36,artist056,Bizarrap
+57,spotify:artist:0x7qiZJaal6j8qS7yCydFk,artist057,Savage Ga$p
+58,spotify:artist:3ZHU5AKrUmIPnCFfr82QER,artist058,1nonly
+59,spotify:artist:7Ln80lUS6He07XvHI8qqHH,artist059,Arctic Monkeys
+60,spotify:artist:6S2OmqARrzebs0tKUEyXyp,artist060,Demi Lovato
+61,spotify:artist:60d24wfXkVzDSfLS6hyCjZ,artist061,Martin Garrix
+62,spotify:artist:76YIoWHp3Ri3q1ocOPtFzp,artist062,AREA21
+63,spotify:artist:02kJSzxNuaWGqwubyUba0Z,artist063,G-Eazy
+64,spotify:artist:5YGY8feqx7naU7z4HrwZM6,artist064,Miley Cyrus
+65,spotify:artist:738wLrAtLtCtFOLvQBXOXp,artist065,Major Lazer
+66,spotify:artist:5Pwc4xIPtQLFEnJriah9YJ,artist066,OneRepublic
+67,spotify:artist:3fMbdgg4jU18AjLCKBhRSm,artist067,Michael Jackson
+68,spotify:artist:20JZFwl6HVl6yg8a4H3ZqK,artist068,Panic! At The Disco
+69,spotify:artist:1mcTU81TzQhprhouKaTkpq,artist069,Rauw Alejandro
+70,spotify:artist:0TnOYISbd1XYRBk9myaseg,artist070,Pitbull
+71,spotify:artist:3VXwGdv0OXpHOg5rXtgso1,artist071,Stephen Oaks
+72,spotify:artist:0X2BH1fck6amBIoJhDVmmJ,artist072,Ellie Goulding
+73,spotify:artist:6KImCVD70vtIoJWnq6nGn3,artist073,Harry Styles
+74,spotify:artist:56oDRnqbIiwx4mymNEv7dS,artist074,Lizzo
+75,spotify:artist:137W8MRPWKqSmrBGDBFSop,artist075,Wiz Khalifa
+76,spotify:artist:2o5jDhtHVPhrJdv3cEQ99Z,artist076,Tiësto
+77,spotify:artist:4r63FhuTkUYltbVAg5TQnk,artist077,DaBaby
+78,spotify:artist:07YUOmWljBTXwIseAUd9TW,artist078,Sebastian Yatra
+79,spotify:artist:6M2wZ9GZgrQXHCFfjv46we,artist079,Dua Lipa
+80,spotify:artist:50co4Is1HCEo8bhOyUWKpn,artist080,Young Thug
+81,spotify:artist:1xr2G8Hlx4QWmT9HaUbmoO,artist081,Young Stoner Life
+82,spotify:artist:4xRYI6VqpkE3UwrDrAZL8L,artist082,Logic
+83,spotify:artist:0YinUQ50QDB7ZxSCLyQ40k,artist083,Mustard
+84,spotify:artist:7vk5e3vY1uw9plTHJAMwjN,artist084,Alan Walker
+85,spotify:artist:4UXqAaa6dQYAk18Lv7PEgX,artist085,Fall Out Boy
+86,spotify:artist:5fMUXHkw8R8eOP2RNVYEZX,artist086,Diplo
+87,spotify:artist:4qXC0i02bSFstECuXP2ZpL,artist087,Blxst
+88,spotify:artist:0hEurMDQu99nJRq8pTxO14,artist088,John Mayer
+89,spotify:artist:2ye2Wgw4gimLv2eAKyk1NB,artist089,Metallica
+90,spotify:artist:1vyhD5VmyZ7KMfW5gqLgo5,artist090,J Balvin
+91,spotify:artist:3JhNCzhSMTxs9WLGJJxWOY,artist091,Macklemore
+92,spotify:artist:1KCSPY1glIKqW2TotWuXOR,artist092,P!nk
+93,spotify:artist:5ZsFI1h6hIdQRw2ti0hz81,artist093,ZAYN
+94,spotify:artist:1AhjOkOLkbHUfcHDSErXQs,artist094,88rising
+95,spotify:artist:540vIaP2JwjQb9dm3aArA4,artist095,DJ Snake
+96,spotify:artist:4LLpKhyESsyAXpc4laK94U,artist096,Mac Miller
+97,spotify:artist:5JZ7CnR6gTvEMKX4g70Amv,artist097,Lauv
+98,spotify:artist:5cj0lLjcoR7YOSnhnX0Po5,artist098,Doja Cat
+99,spotify:artist:0eDvMgVFoNV3TpwtrVCoTj,artist099,Pop Smoke
+100,spotify:artist:4IWBUUAFIplrNtaOHcJPRM,artist100,James Arthur
+101,spotify:artist:2qxJFvFYMEDqd7ui6kSAcq,artist101,Zedd
+102,spotify:artist:3e7awlrlDSwF3iM0WBjGMp,artist102,Little Mix
+103,spotify:artist:711MCceyCBcFnzjGY4Q7Un,artist103,AC/DC
+104,spotify:artist:2kCcBybjl3SAtIcwdWpUe3,artist104,Lil Peep
+105,spotify:artist:5Rl15oVamLq7FbSb0NNBNy,artist105,5 Seconds of Summer
+106,spotify:artist:6Xgp2XMz1fhVYe7i6yNAax,artist106,Trippie Redd
+107,spotify:artist:31W5EY0aAly4Qieq6OFu6I,artist107,A Boogie Wit da Hoodie
+108,spotify:artist:46SHBwWsqBkxI7EeeBEQG7,artist108,Kodak Black
+109,spotify:artist:33W1pnW9zScZtYTnAoWnOT,artist109,Mr. Probz
+110,spotify:artist:6fOMl44jA4Sp5b9PpYCkzz,artist110,NF
+111,spotify:artist:31TPClRtHm23RisEBtV3X7,artist111,Justin Timberlake
+112,spotify:artist:7oPftvlwr6VrsViSDV7fJY,artist112,Green Day
+113,spotify:artist:1MrEurzLcL8ugfP1PrUPWG,artist113,Billie Joe Armstrong
+114,spotify:artist:0QHgL1lAIqAw0HtD7YldmP,artist114,DJ Khaled
+115,spotify:artist:2h93pZq0e7k5yf4dywlkpM,artist115,Frank Ocean
+116,spotify:artist:1Xylc3o4UrD53lo9CvFvVg,artist116,Zara Larsson
+117,spotify:artist:5lwmRuXgjX8xIwlnauTZIP,artist117,Romeo Santos
+118,spotify:artist:4DdkRBBYG6Yk9Ka8tdJ9BW,artist118,Offset
+119,spotify:artist:1URnnhqYAYcrqrcwql10ft,artist119,21 Savage
+120,spotify:artist:6MDME20pz9RveH9rEXvrOM,artist120,Clean Bandit
+121,spotify:artist:2QsynagSdAqZj3U9HgDzjD,artist121,Bob Marley & The Wailers
+122,spotify:artist:1zNqDE7qDGCsyzJwohVaoX,artist122,Anne-Marie
+123,spotify:artist:7jVv8c5Fj3E9VhNjxT4snq,artist123,Lil Nas X
+124,spotify:artist:64M6ah0SkkRsnPGtGiRAbb,artist124,Bebe Rexha
+125,spotify:artist:4GNC7GD6oZMSxPGyXy4MNB,artist125,Lewis Capaldi
+126,spotify:artist:7qG3b048QCHVRO5Pv1T5lw,artist126,Enrique Iglesias
+127,spotify:artist:2nszmSgqreHSdJA3zWPyrW,artist127,Luis Miguel
+128,spotify:artist:4V8LLVI7PbaPR0K2TGSxFF,artist128,"Tyler, The Creator"
+129,spotify:artist:0k17h0D3J5VfsdmQ1iZtE9,artist129,Pink Floyd
+130,spotify:artist:1yxSLGMDHlW21z4YXirZDS,artist130,Black Eyed Peas
+131,spotify:artist:4V8Sr092TqfHkfAA5fXXqG,artist131,Luis Fonsi
+132,spotify:artist:41MozSoPIsD1dJM0CLPjZF,artist132,BLACKPINK
+133,spotify:artist:6TIYQ3jFPwQSRmorSezPxX,artist133,Machine Gun Kelly
+134,spotify:artist:22bE4uQ6baNwSHPVcDxLCe,artist134,The Rolling Stones
+135,spotify:artist:6olE6TJLqED3rqDCT0FyPh,artist135,Nirvana
+136,spotify:artist:08GQAI4eElDnROBrJRGE0X,artist136,Fleetwood Mac
+137,spotify:artist:1GxkXlMwML1oSg5eLPiAz3,artist137,Michael Bublé
+138,spotify:artist:1McMsnEElThX1knmY4oliG,artist138,Olivia Rodrigo
+139,spotify:artist:3HiuzBlSW7pGDXlSFMhO2g,artist139,Young Dolph
+140,spotify:artist:0RESbWvOMyua0yuyVrztJ5,artist140,Key Glock
+141,spotify:artist:1HBjj22wzbscIZ9sEb5dyf,artist141,Jonas Blue
+142,spotify:artist:6cEuCEZu7PAE9ZSzLLc2oQ,artist142,R3HAB
+143,spotify:artist:3qm84nBOXUEQ2vnTfUTTFC,artist143,Guns N' Roses
+144,spotify:artist:26dSoYclwsYLMAKD3tpOr4,artist144,Britney Spears
+145,spotify:artist:7EQ0qTo7fWT7DPxmxtSYEc,artist145,Bastille
+146,spotify:artist:73sIBHcqh3Z3NyqHKZ7FOL,artist146,Childish Gambino
+147,spotify:artist:0c173mlxpT3dSFRgMO8XPh,artist147,Big Sean
+148,spotify:artist:2wUjUUtkb5lvLKcGKsKqsR,artist148,Alessia Cara
+149,spotify:artist:1VPmR4DJC1PlOtd0IADAO0,artist149,$uicideboy$
+150,spotify:artist:47MpMsUfWtgyIIBEFOr4FE,artist150,Lunay
+151,spotify:artist:2NfSBtmWe7oPw1EmetJVso,artist151,Boza
+152,spotify:artist:1ZwdS5xdxEREPySFridCfh,artist152,2Pac
+153,spotify:artist:2UBt0GWBuPVXlPisRvWzlD,artist153,Dead Prez
+154,spotify:artist:163tK9Wjr9P9DmM0AVK7lm,artist154,Lorde
+155,spotify:artist:23zg3TcAtWQy7J6upgbUnj,artist155,Usher
+156,spotify:artist:0vR2qb8m9WHeZ5ByCbimq2,artist156,Reik
+157,spotify:artist:3uo0ix4Y67XHVWBhXXIY1S,artist157,Xavier Wulf
+158,spotify:artist:1dfeR4HaWDbWqFHLkxsg1d,artist158,Queen
+159,spotify:artist:790FomKkXshlbRYZFtlgla,artist159,KAROL G
+160,spotify:artist:3AA28KZvwAUcZuOKwyblJQ,artist160,Gorillaz
+161,spotify:artist:2FXC3k01G6Gw61bmprjgqS,artist161,Hozier
+162,spotify:artist:4obzFoKoKRHIphyHzJ35G3,artist162,Becky G
+163,spotify:artist:1l7ZsJRRS8wlW3WfJfPfNS,artist163,Christina Aguilera
+164,spotify:artist:7MP4jhYmFEgb0AtiOkw55s,artist164,Play-N-Skillz
+165,spotify:artist:6vXTefBL93Dj5IqAWq6OTv,artist165,French Montana
+166,spotify:artist:0C0XlULifJtAgn6ZNCW2eu,artist166,The Killers
+167,spotify:artist:7jy3rLJdDQY21OgRLCZ9sD,artist167,Foo Fighters
+168,spotify:artist:20sxb77xiYeusSH8cVdatc,artist168,Meek Mill
+169,spotify:artist:6FBDaR13swtiWwGhX1WQsP,artist169,blink-182
+170,spotify:artist:2jku7tDXc6XoB6MO2hFuqg,artist170,Tory Lanez
+171,spotify:artist:4iHNK0tOyZPYnBU7nGAgpQ,artist171,Mariah Carey
+172,spotify:artist:2C6i0I5RiGzDKN9IAF8reh,artist172,Banda MS de Sergio Lizárraga
+173,spotify:artist:5y2Xq6xcjJb2jVM54GHK3t,artist173,John Legend
+174,spotify:artist:51Blml2LZPmy7TTiAg47vQ,artist174,U2
+175,spotify:artist:6JL8zeS1NmiOftqZTRgdTz,artist175,Meghan Trainor
+176,spotify:artist:36QJpDe2go2KgaRleHCDTp,artist176,Led Zeppelin
+177,spotify:artist:7iZtZyCzp3LItcw1wtPI3D,artist177,Rae Sremmurd
+178,spotify:artist:5yG7ZAZafVaAlMTeBybKAL,artist178,Iggy Azalea
+179,spotify:artist:3mIj9lX2MWuHmhNCA7LSCW,artist179,The 1975
+180,spotify:artist:3gd8FJtBJtkRxdfbTu19U2,artist180,Mumford & Sons
+181,spotify:artist:4npEfmQ6YuiwW1GpUmaq3F,artist181,Ava Max
+182,spotify:artist:0tmwSHipWxN12fsoLcFU3B,artist182,Manuel Turizo
+183,spotify:artist:7wU2WGCJ8HxkekHHE2QLul,artist183,Fuego
+184,spotify:artist:1WXbiUMl1AT9Inb619xPUg,artist184,BIN
+185,spotify:artist:718COspgdWOnwOFpJHRZHS,artist185,Luke Combs
+186,spotify:artist:5eAWCfyUhZtHHtBdNk56l1,artist186,System Of A Down
+187,spotify:artist:3GBPw9NK25X1Wt2OUvOwY3,artist187,Jack Johnson
+188,spotify:artist:12Chz98pHFMPJEknJQMWvI,artist188,Muse
+189,spotify:artist:43ZHCT0cAZBISjO8DG9PnE,artist189,Elvis Presley
+190,spotify:artist:4Z8W4fKeB5YxbusRsdQVPb,artist190,Radiohead
+191,spotify:artist:77SW9BnxLY8rJ0RciFqkHh,artist191,The Neighbourhood
+192,spotify:artist:6AgTAQt8XS6jRWi4sX7w49,artist192,Polo G
+193,spotify:artist:757aE44tKEUQEqRuT6GnEB,artist193,Roddy Ricch
+194,spotify:artist:3pcerTbRFAPvWWtAfySFWB,artist194,Bino Rideaux
+195,spotify:artist:4GvEc3ANtPPjt1ZJllr5Zl,artist195,Bazzi
+196,spotify:artist:5p7f24Rk5HkUZsaS3BLG5F,artist196,Hailee Steinfeld
+197,spotify:artist:33L43pzLHkc0qhwnfPLWAt,artist197,Chen Linong
+198,spotify:artist:6DPYiyq5kWVQS4RGwxzPC7,artist198,Dr. Dre
+199,spotify:artist:5me0Irg2ANcsgc93uaYrpb,artist199,The Notorious B.I.G.
+200,spotify:artist:5NDMothbpdpq2xHqSjrrWn,artist200,Faith Evans
+201,spotify:artist:1elUiq4X7pxej6FRlrEzjM,artist201,Jorge & Mateus
+202,spotify:artist:74XFHRwlV6OrjEM0A2NCMF,artist202,Paramore
+203,spotify:artist:7Gz6VlTVwlNtBNMYV4OI3w,artist203,Shotgun Willy
+204,spotify:artist:45dkTj5sMRSjrmBSBeiHym,artist204,Tate McRae
+205,spotify:artist:3v9wPA58IVrX2dg6AjSPgi,artist205,Virginia To Vegas
+206,spotify:artist:5jAMCwdNHWr7JThxtMuEyy,artist206,NOTD
+207,spotify:artist:1Mxqyy3pSjf8kZZL4QVxS0,artist207,Frank Sinatra
+208,spotify:artist:4ofCBoyEiGSePFAG500xev,artist208,Regard
+209,spotify:artist:3MZsBdqDrRTJihTHQrO6Dq,artist209,Joji
+210,spotify:artist:6nS5roXSAGhTGr34W6n7Et,artist210,Disclosure
+211,spotify:artist:1l8Fu6IkuTP0U5QetQJ5Xt,artist211,Fifth Harmony
+212,spotify:artist:0ZED1XzwlLHW4ZaG4lOT6m,artist212,Julia Michaels
+213,spotify:artist:2DaxqgrOhkeH0fpeiQq2f4,artist213,Oasis
+214,spotify:artist:33ScadVnbm2X8kkUqOkC6Z,artist214,Don Omar
+215,spotify:artist:58lV9VcRSjABbAbfWS6skp,artist215,Bon Jovi
+216,spotify:artist:1uNFoZAHBGtllmzznpCI3s,artist216,Justin Bieber
+217,spotify:artist:2gBjLmx6zQnFGQJCAQpRgw,artist217,Nelly
+218,spotify:artist:0KPX4Ucy9dk82uj4GpKesn,artist218,Dalex
+219,spotify:artist:2kqUKsTuEj1lPbm6BSn1AU,artist219,Rich Music LTD
+220,spotify:artist:5INjqkS1o8h1imAzPqGZBb,artist220,Tame Impala
+221,spotify:artist:4NHQUGzhtTLFvgF5SZesLK,artist221,Tove Lo
+222,spotify:artist:3nFkdlSjzX9mRTtwJOzDYB,artist222,JAY-Z
+223,spotify:artist:16oZKvXb6WkQlVAjwo2Wbg,artist223,The Lumineers
+224,spotify:artist:2qk9voo8llSGYcZ6xrBzKx,artist224,Kings of Leon
+225,spotify:artist:77kULmXAQ6vWer7IIHdGzI,artist225,Jordan Davis
+226,spotify:artist:3AQRLZ9PuTAozP28Skbq8V,artist226,The Script
+227,spotify:artist:5t28BP42x2axFnqOOMg3CM,artist227,Five Finger Death Punch
+228,spotify:artist:63yrD80RY3RNEM2YDpUpO8,artist228,Melanie Martinez
+229,spotify:artist:6jGMq4yGs7aQzuGsMgVgZR,artist229,Lil Tjay
+230,spotify:artist:4VMYDCV2IEDYJArk749S6m,artist230,Daddy Yankee
+231,spotify:artist:4phGZZrJZRo4ElhRtViYdl,artist231,Jason Mraz
+232,spotify:artist:181bsRPaVXVlUKXrxwZfHK,artist232,Megan Thee Stallion
+233,spotify:artist:1moxjboGR7GNWYIMWsRjgG,artist233,Florence + The Machine
+234,spotify:artist:0SCbttzoZTnLFebDYmAWCm,artist234,Glee Cast
+235,spotify:artist:1cUpGtXcSQsovNYEZOQgOG,artist235,Nanpa Básico
+236,spotify:artist:2hejA1Dkf8v8R0koF44FvW,artist236,Gera MX
+237,spotify:artist:3vQ0GE3mI0dAaxIMYe5g7z,artist237,Paulo Londra
+238,spotify:artist:6deZN1bslXzeGvOLaLMOIF,artist238,Nickelback
+239,spotify:artist:14zUHaJZo1mnYtn6IBRaRP,artist239,Justin Quiles
+240,spotify:artist:699OTQXzgjhIYAHMy9RyPD,artist240,Playboi Carti
+241,spotify:artist:3IYUhFvPQItj6xySrBmZkd,artist241,Creedence Clearwater Revival
+242,spotify:artist:3eqjTLE0HfPfh78zjh6TqT,artist242,Bruce Springsteen
+243,spotify:artist:0cGUm45nv7Z6M6qdXYQGTX,artist243,Kehlani
+244,spotify:artist:6XpaIBNiVzIetEPCWDvAFP,artist244,Whitney Houston
+245,spotify:artist:6wWVKhxIU2cEi0K81v7HvP,artist245,Rammstein
+246,spotify:artist:3utZ2yeQk0Z3BCOBWP7Vlu,artist246,Cro
+247,spotify:artist:3oSJ7TBVCWMDMiYjXNiCKE,artist247,Kane Brown
+248,spotify:artist:487N2T9nIPEHrlTZLL3SQs,artist248,Zé Neto & Cristiano
+249,spotify:artist:0LcJLqbBmaGUft1e9Mm8HV,artist249,ABBA
+250,spotify:artist:28gNT5KBp7IjEOQoevXf9N,artist250,Camilo
+251,spotify:artist:0xRXCcSX89eobfrshSVdyu,artist251,MEDUZA
+252,spotify:artist:4bw2Am3p9ji3mYsXNXtQcd,artist252,Piso 21
+253,spotify:artist:7FBcuc1gsnv6Y1nwFtNRCb,artist253,My Chemical Romance
+254,spotify:artist:3fZk3Gm5dN5v5yfYMQ04Bx,artist254,Dímelo Flow
+255,spotify:artist:3ycxRkcZ67ALN3GQJ57Vig,artist255,Masego
+256,spotify:artist:7vXDAI8JwjW531ouMGbfcp,artist256,TINI
+257,spotify:artist:1Ffb6ejR6Fe5IamqA5oRUF,artist257,Bring Me The Horizon
+258,spotify:artist:4EzkuveR9pLvDVFNx6foYD,artist258,James Bay
+259,spotify:artist:6x2LnllRG5uGarZMsD4iO8,artist259,Thomas Rhett
+260,spotify:artist:2feDdbD5araYcm6JhFHHw7,artist260,Labrinth
+261,spotify:artist:10exVja0key0uqUkk6LJRT,artist261,Vance Joy
+262,spotify:artist:1anyVhU62p31KFi8MEzkbf,artist262,Chance the Rapper
+263,spotify:artist:3UrWALysNWwb24BnlAzSwm,artist263,MihTy
+264,spotify:artist:3p7PcrEHaaKLJnPUGOtRlT,artist264,Henrique & Juliano
+265,spotify:artist:3BmGtnKgCSGYIUhmivXKWX,artist265,Kelly Clarkson
+266,spotify:artist:3E6xrwgnVfYCrCs0ePERDz,artist266,Wisin
+267,spotify:artist:3TOqt5oJwL9BE2NG9MEwDa,artist267,Disturbed
+268,spotify:artist:7Ey4PD4MYsKc5I2dolUwbH,artist268,Aerosmith
+269,spotify:artist:1gPhS1zisyXr5dHTYZyiMe,artist269,Kevin Gates
+270,spotify:artist:2DlGxzQSjYe5N6G9nkYghR,artist270,Jennifer Lopez
+271,spotify:artist:0p4nmQO2msCgU4IF37Wi3j,artist271,Avril Lavigne
+272,spotify:artist:4LEiUm1SRbFMgfqnQTwUbQ,artist272,Bon Iver
+273,spotify:artist:7d3WFRME3vBY2cgoP38RDo,artist273,Lil Skies
+274,spotify:artist:6Q192DXotxtaysaqNPy5yR,artist274,Amy Winehouse
+275,spotify:artist:7guDJrEfX3qb6FEbdPA5qi,artist275,Stevie Wonder
+276,spotify:artist:7n2Ycct7Beij7Dj7meI4X0,artist276,TWICE
+277,spotify:artist:2NjfBq1NflQcKSeiDooVjY,artist277,Tones And I
+278,spotify:artist:360IAlyVv4PCEVjgyMZrxK,artist278,Miguel
+279,spotify:artist:0YC192cP3KPCRWx8zr8MfZ,artist279,Hans Zimmer
+280,spotify:artist:5rSXSAkZ67PYJSvpUpkOr7,artist280,Backstreet Boys
+281,spotify:artist:1cNDP5yjU5vjeR8qMf4grg,artist281,YNW Melly
+282,spotify:artist:6sq1yF0OZEWA4xoXVKW1L9,artist282,Alejandro Fernández
+283,spotify:artist:4oUHIQIBe0LHzYfvXNW4QM,artist283,Morgan Wallen
+284,spotify:artist:6PXS4YHDkKvl1wkIl4V8DL,artist284,Fetty Wap
+285,spotify:artist:3Isy6kedDrgPYoTS1dazA9,artist285,Sean Paul
+286,spotify:artist:6LqNN22kT3074XbTVUrhzX,artist286,Kesha
+287,spotify:artist:3Nrfpe0tUJi4K4DXYWgMUX,artist287,BTS
+288,spotify:artist:4Ga1P7PMIsmqEZqhYZQgDo,artist288,Lil Tecca
+289,spotify:artist:3MHaV05u0io8fQbZ2XPtlC,artist289,Prince Royce
+290,spotify:artist:2xiIXseIJcq3nG7C8fHeBj,artist290,Three Days Grace
+291,spotify:artist:4lxfqrEsLX6N1N4OCSkILp,artist291,Phil Collins
+292,spotify:artist:3FfvYsEGaIb52QPXhg4DcH,artist292,Jason Aldean
+293,spotify:artist:7vCtweS8UVAXTyau2j0rDT,artist293,Josh Turner
+294,spotify:artist:2KsP6tYLJlTBvSUxnwlVWa,artist294,Mike Posner
+295,spotify:artist:4yiQZ8tQPux8cPriYMWUFP,artist295,Gwen Stefani
+296,spotify:artist:5zctI4wO9XSKS8XwcnqEHk,artist296,Lil Mosey
+297,spotify:artist:2ysnwxxNtSgbb9t1m2Ur4j,artist297,George Ezra
+298,spotify:artist:7z5WFjZAIYejWy0NI5lv4T,artist298,Dan + Shay
+299,spotify:artist:1AL2GKpmRrKXkYIcASuRFa,artist299,Wesley Safadão
+300,spotify:artist:2gsggkzM5R49q6jpPvazou,artist300,Jessie J
+301,spotify:artist:6zFYqv1mOsgBRQbae3JJ9e,artist301,Billy Joel
+302,spotify:artist:0ECwFtbIWEVNwjlrfc6xoL,artist302,Eagles
+303,spotify:artist:1w5Kfo2jwwIPruYS2UWh56,artist303,Pearl Jam
+304,spotify:artist:2iojnBLj0qIMiKPvVhLnsH,artist304,Trey Songz
+305,spotify:artist:5CiGnKThu5ctn9pBxv7DGa,artist305,benny blanco
+306,spotify:artist:6Ghvu1VvMGScGpOUJBAHNH,artist306,Deftones
+307,spotify:artist:0eecdvMrqBftK0M1VKhaF4,artist307,CNCO
+308,spotify:artist:0epOFNiUfyON9EYx7Tpr6V,artist308,The Strokes
+309,spotify:artist:3hv9jJF3adDNsBSIQDqcjp,artist309,Mark Ronson
+310,spotify:artist:0X5jj08FYkWPtmzUhhjOJd,artist310,Geoff Zanelli
+311,spotify:artist:4aXXDj9aZnlshx7mzj3W1N,artist311,Lin-Manuel Miranda
+312,spotify:artist:25u4wHJWxCA9vO0CzxAbK7,artist312,Lukas Graham
+313,spotify:artist:0nmQIMXWTXfhgOBdNzhGOs,artist313,Avenged Sevenfold
+314,spotify:artist:4S9EykWXhStSc15wEx8QFK,artist314,Céline Dion
+315,spotify:artist:5LfGQac0EIXyAN8aUwmNAQ,artist315,The Offspring
+316,spotify:artist:7slfeZO9LsJbWgpkIoXBUJ,artist316,Ricky Martin
+317,spotify:artist:2Z0lRIqr997lIUiPtrpKCr,artist317,Matheus & Kauan
+318,spotify:artist:17lzZA2AlOHwCwFALHttmp,artist318,2 Chainz
+319,spotify:artist:7uwQPQsBYgrSd63xgeMyuM,artist319,T.R.U.
+320,spotify:artist:1qto4hHid1P71emI6Fd8xi,artist320,Aventura
+321,spotify:artist:55fhWPvDiMpLnE4ZzNXZyW,artist321,Noah Cyrus
+322,spotify:artist:1RryIbDjpwt00AKkSpCGvP,artist322,PJ Harding
+323,spotify:artist:7gP3bB2nilZXLfPHJhMdvc,artist323,Foster The People
+324,spotify:artist:74ASZWbe4lXaubB36ztrGX,artist324,Bob Dylan
+325,spotify:artist:5M9Bb4adKAgrOFOhc05Y50,artist325,Pablo Alborán
+326,spotify:artist:0h1zs4CTlU9D2QtgPxptUD,artist326,Ricardo Arjona
+327,spotify:artist:07PdYoE4jVRF6Ut40GgVSP,artist327,Cartel De Santa
+328,spotify:artist:6fWVd57NKTalqvmjRd2t8Z,artist328,24kGoldn
+329,spotify:artist:20wkVLutqVOYrc0kxFs7rA,artist329,Daniel Caesar
+330,spotify:artist:5IcR3N7QB1j6KBL8eImZ8m,artist330,ScHoolboy Q
+331,spotify:artist:7KMqksf0UMdyA0UCf4R3ux,artist331,James Blunt
+332,spotify:artist:4WN5naL3ofxrVBgFpguzKo,artist332,Rudimental
+333,spotify:artist:26AHtbjWKiwYzsoGoUZq53,artist333,Pentatonix
+334,spotify:artist:4wLXwxDeWQ8mtUIRPxGiD6,artist334,Marc Anthony
+335,spotify:artist:5iWU68xnsNiacwbt1fYEcq,artist335,Conor Matthews
+336,spotify:artist:5UjifI1TYefXWn9GdqDOHl,artist336,Social House
+337,spotify:artist:4AVFqumd2ogHFlRbKIjp1t,artist337,Alesso
+338,spotify:artist:0EmeFodog0BfCgMzAIvKQp,artist338,Shakira
+339,spotify:artist:0jPnVIasXzBYjrlpO5irii,artist339,Ingrid Andress
+340,spotify:artist:0WwSkZ7LtFUFjGjMZBMt6T,artist340,Dire Straits
+341,spotify:artist:1IueXOQyABrMOprrzwQJWN,artist341,Sigala
+342,spotify:artist:3Z02hBLubJxuFJfhacLSDc,artist342,Bryan Adams
+343,spotify:artist:4jogXSSvlyMkODGSZ2wc2P,artist343,Calibre 50
+344,spotify:artist:1m7LSAMIB1BErIHYSOn32W,artist344,DJ Scheme
+345,spotify:artist:1UTPBmNbXNTittyMJrNkvw,artist345,Blake Shelton
+346,spotify:artist:6yJCxee7QumYr820xdIsjo,artist346,Zac Brown Band
+347,spotify:artist:3QSQFmccmX81fWCUSPTS7y,artist347,Dean Lewis
+348,spotify:artist:1LZEQNv7sE11VDY3SdxQeN,artist348,Bee Gees
+349,spotify:artist:1Bl6wpkWCQ4KVgnASpvzzA,artist349,BROCKHAMPTON
+350,spotify:artist:5ZS223C6JyBfXasXxrRqOk,artist350,Jhené Aiko
+351,spotify:artist:4Gso3d4CscCijv0lmajZWs,artist351,Don Toliver
+352,spotify:artist:3gIRvgZssIb9aiirIg0nI3,artist352,Jeremy Zucker
+353,spotify:artist:7gAppWoH7pcYmphCVTXkzs,artist353,The Vamps
+354,spotify:artist:4vhNDa5ycK0ST968ek7kRr,artist354,Carlos Vives
+355,spotify:artist:3RqBeV12Tt7A8xH3zBDDUF,artist355,Kelsea Ballerini
+356,spotify:artist:2HPaUgqeutzr3jx5a9WyDV,artist356,PARTYNEXTDOOR
+357,spotify:artist:7mnBLXK823vNxN3UWB7Gfz,artist357,The Black Keys
+358,spotify:artist:25uiPmTg16RbhZWAqwLBy5,artist358,Charli XCX
+359,spotify:artist:49bzE5vRBRIota4qeHtQM8,artist359,Skillet
+360,spotify:artist:1kwzW1IszUiq4Gs9BFesvW,artist360,Hornet La Frappe
+361,spotify:artist:5H1nN1SzW0qNeUEZvuXjAj,artist361,Danny Ocean
+362,spotify:artist:2WX2uTcsvV5OnS0inACecP,artist362,Birdy
+363,spotify:artist:5NGO30tJxFlKixkPSgXcFE,artist363,The Police
+364,spotify:artist:3koiLjNrgRTNbOwViDipeA,artist364,Marvin Gaye
+365,spotify:artist:6FD0unjzGQhX3b6eMccMJe,artist365,Ghostface Killah
+366,spotify:artist:4John8fJ3LKqFho0pselVr,artist366,CZARFACE
+367,spotify:artist:7CQwac16i1W5ej8YpuL3dv,artist367,Boyce Avenue
+368,spotify:artist:7f5Zgnp2spUuuzKplmRkt7,artist368,Lost Frequencies
+369,spotify:artist:7lDVEkjIURPMyUYwoQRrpw,artist369,Ryan Hurd
+370,spotify:artist:22WZ7M8sxp5THdruNY3gXt,artist370,The Doors
+371,spotify:artist:6sFIWsNpZYqfjUpaCgueju,artist371,Carly Rae Jepsen
+372,spotify:artist:6Mv8GjQa7LKUGCAqa9qqdb,artist372,Vishal-Shekhar
+373,spotify:artist:4YRxDV8wJFPHPTeXepOstw,artist373,Arijit Singh
+374,spotify:artist:6Wr3hh341P84m3EI8qdn9O,artist374,Rise Against
+375,spotify:artist:3dRfiJ2650SZu6GbydcHNb,artist375,John Williams
+376,spotify:artist:3EAHF3jdnHHdko5DBrhRUP,artist376,John Powell
+377,spotify:artist:5dHt1vcEm9qb8fCyLcB3HL,artist377,A$AP Ferg
+378,spotify:artist:7An4yvF7hDYDolN4m5zKBp,artist378,Soda Stereo
+379,spotify:artist:3t2iKODSDyzoDJw7AsD99u,artist379,Bibi Blocksberg
+380,spotify:artist:0UWZUmn7sybxMCqrw9tGa7,artist380,Juanes
+381,spotify:artist:2wkoKEfS6dXwThbyTnZWFU,artist381,Mau y Ricky
+382,spotify:artist:4yvcSjfu4PC0CYQyLy4wSq,artist382,Glass Animals
+383,spotify:artist:0H39MdGGX6dbnnQPt6NQkZ,artist383,SAINt JHN
+384,spotify:artist:0Dvx6p8JDyzeOPGmaCIH1L,artist384,RAF Camora
+385,spotify:artist:2kRfqPViCqYdSGhYSM9R0Q,artist385,Madison Beer
+386,spotify:artist:4YLtscXsxbVgi031ovDDdh,artist386,Chris Stapleton
+387,spotify:artist:1MIVXf74SZHmTIp4V4paH4,artist387,Mabel
+388,spotify:artist:3XHO7cRUPCLOr6jwp8vsx5,artist388,alt-J
+389,spotify:artist:26T3LtbuGT1Fu9m0eRq5X3,artist389,Cage The Elephant
+390,spotify:artist:3jOstUTkEu2JkjvRdBA5Gu,artist390,Weezer
+391,spotify:artist:5IH6FPUwQTxPSXurCrcIov,artist391,Alec Benjamin
+392,spotify:artist:4Rxn7Im3LGfyRkY2FlHhWi,artist392,Nick Jonas
+393,spotify:artist:3SgHzT552wy2W8pNLaLk24,artist393,Hillsong Worship
+394,spotify:artist:0rvjqX7ttXeg3mTy8Xscbt,artist394,Journey
+395,spotify:artist:3grHWM9bx2E9vwJCdlRv9O,artist395,Kenny Chesney
+396,spotify:artist:2IvkS5MXK0vPGnwyJsrEyV,artist396,Eric Church
+397,spotify:artist:5bSfBBCxY8QAk4Pifveisz,artist397,La Arrolladora Banda El Limón De Rene Camacho
+398,spotify:artist:0ZCO8oVkMj897cKgFH7fRW,artist398,Los Ángeles Azules
+399,spotify:artist:2Kx7MNY7cI1ENniW7vT30N,artist399,Norah Jones
+400,spotify:artist:7pbDxGE6nQSZVfiFdq9lOL,artist400,Rex Orange County
+401,spotify:artist:1Y8cdNmUJH7yBTd9yOvr5i,artist401,Destiny's Child
+402,spotify:artist:2VDZoCBGjxbHJbnzSX5nP6,artist402,Kxllswxtch
+403,spotify:artist:1mX1TWKpNxDSAH16LgDfiR,artist403,Jesse & Joy
+404,spotify:artist:2cWZOOzeOm4WmBJRnD5R7I,artist404,Normani
+405,spotify:artist:20gsENnposVs2I4rQ5kvrf,artist405,Sam Feldt
+406,spotify:artist:4kYGAK2zu9EAomwj3hXkXy,artist406,JP Cooper
+407,spotify:artist:70cRZdQywnSFp9pnc2WTCE,artist407,Simon & Garfunkel
+408,spotify:artist:4STHEaNw4mPZ2tzheohgXB,artist408,Paul McCartney
+409,spotify:artist:50JJSqHUf2RQ9xsHs0KMHg,artist409,Jon Bellion
+410,spotify:artist:762310PdDnwsDxAQxzQkfX,artist410,Depeche Mode
+411,spotify:artist:7cmuxPnXRJxwuYDHfbD8Eu,artist411,Zé Felipe
+412,spotify:artist:2MRBDr0crHWE5JwPceFncq,artist412,Juan Gabriel
+413,spotify:artist:6PAt558ZEZl0DmdXlnjMgD,artist413,Eric Clapton
+414,spotify:artist:6dTCMsjfH2odCFlNb36SCG,artist414,Delaney & Bonnie
+415,spotify:artist:4Uc8Dsxct0oMqx0P6i60ea,artist415,Conan Gray
+416,spotify:artist:3NPpFNZtSTHheNBaWC82rB,artist416,X Ambassadors
+417,spotify:artist:55Aa2cqylxrFIXC767Z865,artist417,Lil Wayne
+418,spotify:artist:1yR65psqiazQpeM79CcGh8,artist418,Marília Mendonça
+419,spotify:artist:5pVRwX5ZQR7hfJ18w8ZYkl,artist419,Ufo361
+420,spotify:artist:73jBynjsVtofjRpdpRAJGk,artist420,Dimitri Vegas & Like Mike
+421,spotify:artist:3Gm5F95VdRxW3mqCn8RPBJ,artist421,Aminé
+422,spotify:artist:4QFG9KrGWEbr6hNA58CAqE,artist422,Aleman
+423,spotify:artist:0lAWpj5szCSwM4rUMHYmrr,artist423,Måneskin
+424,spotify:artist:6s22t5Y3prQHyaHWUN1R1C,artist424,AJR
+425,spotify:artist:57LYzLEk2LcFghVwuWbcuS,artist425,Summer Walker
+426,spotify:artist:5f3peNznKH0RaAYeJtDWnf,artist426,Love Renaissance (LVRN)
+427,spotify:artist:4qBgvVog0wzW75IQ48mU7v,artist427,KYLE
+428,spotify:artist:1G9G7WwrXka3Z1r7aIDjI7,artist428,Outkast
+429,spotify:artist:5BtHciL0e0zOP7prIHn3pP,artist429,Breaking Benjamin
+430,spotify:artist:3oDbviiivRWhXwIE8hxkVV,artist430,The Beach Boys
+431,spotify:artist:3RNrq3jvMZxD9ZyoOZbQOD,artist431,Korn
+432,spotify:artist:74cb3MG0x0BOnYNW1uXYnM,artist432,Hillsong UNITED
+433,spotify:artist:74KM79TiuVKeVCqs8QtB0B,artist433,Sabrina Carpenter
+434,spotify:artist:0ErzCpIMyLcjPiwT4elrtZ,artist434,NLE Choppa
+435,spotify:artist:776Uo845nYHJpNaStv1Ds4,artist435,Jimi Hendrix
+436,spotify:artist:66CXWjxzNUsdJxJ2JdwvnR,artist436,Ariana Grande
+437,spotify:artist:6DgP9otnZw5z6daOntINxp,artist437,Joel Corry
+438,spotify:artist:0NGAZxHanS9e0iNHpR8f2W,artist438,Alok
+439,spotify:artist:6fxyWrfmjcbj5d12gXeiNV,artist439,Denzel Curry
+440,spotify:artist:0L5fC7Ogm2YwgqVCRcF1bT,artist440,Volbeat
+441,spotify:artist:4RddZ3iHvSpGV4dvATac9X,artist441,Papa Roach
+442,spotify:artist:7oZLKL1GjYiaAgssXsLmW8,artist442,DOPE LEMON
+443,spotify:artist:19ra5tSw0tWufvUp8GotLo,artist443,George Michael
+444,spotify:artist:6T5tfhQCknKG4UnH90qGnz,artist444,DNCE
+445,spotify:artist:2HcwFjNelS49kFbfvMxQYw,artist445,Robbie Williams
+446,spotify:artist:7H55rcKCfwqkyDFH9wpKM6,artist446,Christina Perri
+447,spotify:artist:4f9iBmdUOhQWeP7dcAn1pf,artist447,Rag'n'Bone Man
+448,spotify:artist:0zOcE3mg9nS6l3yxt1Y0bK,artist448,The Fray
+449,spotify:artist:44NX2ffIYHr6D4n7RaZF7A,artist449,Van Morrison
+450,spotify:artist:5DUlefCLzVRzNWaNURTFpK,artist450,Cali Y El Dandee
+451,spotify:artist:70BYFdaZbEKbeauJ670ysI,artist451,Shinedown
+452,spotify:artist:2uFUBdaVGtyMqckSeCl0Qj,artist452,Ludovico Einaudi
+453,spotify:artist:41X1TR6hrK8Q2ZCpp2EqCz,artist453,bbno$
+454,spotify:artist:2YOYua8FpudSEiB9s88IgQ,artist454,Yung Gravy
+455,spotify:artist:4m6ubhNsdwF4psNf3R8kwR,artist455,KHEA
+456,spotify:artist:0CEFCo8288kQU7mJi25s6E,artist456,Hollywood Undead
+457,spotify:artist:4MVyzYMgTwdP7Z49wAZHx0,artist457,Lynyrd Skynyrd
+458,spotify:artist:2d0hyoQ5ynDBnkvAbJKORj,artist458,Rage Against The Machine
+459,spotify:artist:3yY2gUcIsjMr8hjo51PoJ8,artist459,The Smiths
+460,spotify:artist:4QQgXkCYTt3BlENzhyNETg,artist460,"Earth, Wind & Fire"
+461,spotify:artist:4dwdTW1Lfiq0cM8nBAqIIz,artist461,Of Monsters and Men
+462,spotify:artist:2XnBwblw31dfGnspMIwgWz,artist462,Axwell /\ Ingrosso
+463,spotify:artist:7t0rwkOPGlDPEhaOcVtOt9,artist463,The Cranberries
+464,spotify:artist:7IlRNXHjoOCgEAWN5qYksg,artist464,Aya Nakamura
+465,spotify:artist:0C86lmpnwiyLDUiyo4d0P1,artist465,BRELAND
+466,spotify:artist:4NiJW4q9ichVqL1aUsgGAN,artist466,A Day To Remember
+467,spotify:artist:5M52tdBnJaKSvOpJGz8mfZ,artist467,Black Sabbath
+468,spotify:artist:0PFtn5NtBbbUNbU9EAmIWF,artist468,TOTO
+469,spotify:artist:77tT1kLj6mCWtFNqiOmP9H,artist469,Daryl Hall & John Oates
+470,spotify:artist:0GOx72r5AAEKRGQFn3xqXK,artist470,GIMS
+471,spotify:artist:00XhexlJEXQstHimpZN910,artist471,Brytiago
+472,spotify:artist:2DspEsT7UXGKd2VaaedgG4,artist472,Alex Rose
+473,spotify:artist:2oX42qP5ineK3hrhBECLmj,artist473,Andy Grammer
+474,spotify:artist:4PPoI9LuYeFX8V674Z1R6l,artist474,Vicente Fernández
+475,spotify:artist:4BxCuXFJrSWGi1KHcVqaU4,artist475,Kodaline
+476,spotify:artist:21WS9wngs9AqFckK7yYJPM,artist476,PnB Rock
+477,spotify:artist:5jIi9rMlNYWApGUzrpLvN8,artist477,2gunspank
+478,spotify:artist:5J3QKfJDFyjR3Q2qRcRaIU,artist478,Pity Party (Girls Club)
+479,spotify:artist:4XWaILHqySwH1y6LhlYcsb,artist479,ilyTOMMY
+480,spotify:artist:4F84IBURUo98rz4r61KF70,artist480,The White Stripes
+481,spotify:artist:27T030eWyCQRmDyuvr1kxY,artist481,Scorpions
+482,spotify:artist:60yfafz0P3gqaUaOUIddae,artist482,BRONSON
+483,spotify:artist:21mKp7DqtSNHhCAU2ugvUw,artist483,ODESZA
+484,spotify:artist:1EXjXQpDx2pROygh8zvHs4,artist484,Melendi
+485,spotify:artist:1MRiIeZbc0cRuxOafDUCtH,artist485,BLANCO
+486,spotify:artist:1hzfo8twXdOegF3xireCYs,artist486,Milky Chance
+487,spotify:artist:1U1el3k54VvEUzo3ybLPlM,artist487,Kali Uchis
+488,spotify:artist:13ubrt8QOOCPljQ2FL1Kca,artist488,A$AP Rocky
+489,spotify:artist:6uothxMWeLWIhsGeF7cyo4,artist489,Enya
+490,spotify:artist:7nwUJBm0HE4ZxD3f5cy5ok,artist490,Aretha Franklin
+491,spotify:artist:3o2dn2O0FCVsWDFSh8qxgG,artist491,Sabaton
+492,spotify:artist:2x8vG4f0HYXzMEo3xNsoiI,artist492,Bibi und Tina
+493,spotify:artist:0GM7qgcRCORpGnfcN2tCiB,artist493,Tainy
+494,spotify:artist:5nGIFgo0shDenQYSE0Sn7c,artist494,Evanescence
+495,spotify:artist:4QVBYiagIaa6ZGSPMbybpy,artist495,Pedro Capó
+496,spotify:artist:2oQX8QiMXOyuqbcZEFsZfm,artist496,El Alfa
+497,spotify:artist:2cnMpRsOVqtPMfq7YiFE6K,artist497,Van Halen
+498,spotify:artist:2UwqpfQtNuhBwviIC0f2ie,artist498,Damso
+499,spotify:artist:5TYxZTjIPqKM8K8NuP9woO,artist499,C. Tangana
+500,spotify:artist:6DIS6PRrLS3wbnZsf7vYic,artist500,WALK THE MOON
+501,spotify:artist:5EvFsr3kj42KNv97ZEnqij,artist501,Shaggy
+502,spotify:artist:3iri9nBFs9e4wN7PLIetAw,artist502,gnash
+503,spotify:artist:2jw70GZXlAI8QzWeY2bgRc,artist503,Nelly Furtado
+504,spotify:artist:0N0d3kjwdY2h7UVuTdJGfp,artist504,Cascada
+505,spotify:artist:1l2ekx5skC4gJH8djERwh1,artist505,Don Diablo
+506,spotify:artist:0EdvGhlC1FkGItLOWQzG4J,artist506,Sublime
+507,spotify:artist:2VYQTNDsvvKN9wmU5W7xpj,artist507,Marilyn Manson
+508,spotify:artist:6h1s4i4XKIYv4ErDelLDN0,artist508,Samra
+509,spotify:artist:4WZGDpNwrC0vNQyl9QzF7d,artist509,Capital Bra
+510,spotify:artist:0qT79UgT5tY4yudH9VfsdT,artist510,Sum 41
+511,spotify:artist:536BYVgOnRky0xjsPT96zl,artist511,Two Door Cinema Club
+512,spotify:artist:39yVoqm6sYFvvqF1RciUVf,artist512,Carlos Rivera
+513,spotify:artist:5vngPClqofybhPERIqQMYd,artist513,George Strait
+514,spotify:artist:3Sz7ZnJQBIHsXLUSo0OQtM,artist514,Mac DeMarco
+515,spotify:artist:2RTUTCvo6onsAnheUk3aL9,artist515,3 Doors Down
+516,spotify:artist:6ZLTlhejhndI4Rh53vYhrY,artist516,Ozzy Osbourne
+517,spotify:artist:7HkdQ0gt53LP4zmHsL0nap,artist517,Ella Mai
+518,spotify:artist:5bWUlnPx9OYKsLiUJrhCA1,artist518,Jon Z
+519,spotify:artist:3EiLUeyEcA6fbRPSHkG5kb,artist519,De La Ghetto
+520,spotify:artist:0fA0VVWsXO9YnASrzqfmYu,artist520,Kid Cudi
+521,spotify:artist:2TI7qyDE0QfyOlnbtfDo7L,artist521,Dave Matthews Band
+522,spotify:artist:4rTv3Ejc7hKMtmoBOK1B4T,artist522,Ali Gatie
+523,spotify:artist:1bqxdqvUtPWZri43cKHac8,artist523,MAX
+524,spotify:artist:6aZyMrc4doVtZyKNilOmwu,artist524,Colbie Caillat
+525,spotify:artist:3r17AfJCCUqC9Lf0OAc73G,artist525,Fergie
+526,spotify:artist:4mN0qcMxWX8oToqfDPM5yV,artist526,José José
+527,spotify:artist:7pFeBzX627ff0VnN6bxPR4,artist527,Desiigner
+528,spotify:artist:2mxe0TnaNL039ysAj51xPQ,artist528,R. Kelly
+529,spotify:artist:26T4yOaOoFJvUvxR87Y9HO,artist529,Bethel Music
+530,spotify:artist:57WHJIHrjOE3iAxpihhMnp,artist530,Louis Tomlinson
+531,spotify:artist:0NIPkIjTV8mB795yEIiPYL,artist531,Wallows
+532,spotify:artist:4iDroUFo89Y7YBsdDTBmTD,artist532,Sueco
+533,spotify:artist:0vRvGUQVUjytro0xpb26bs,artist533,Arizona Zervas
+534,spotify:artist:0a1gHP0HAqALbEyxaD5Ngn,artist534,Rascal Flatts
+535,spotify:artist:2AsusXITU8P25dlRNhcAbG,artist535,Gotye
+536,spotify:artist:2dIgFjalVxs4ThymZ67YCE,artist536,Stray Kids
+537,spotify:artist:1AILAN8RzQ9WYweBqYmRx5,artist537,Wizard of Loneliness
+538,spotify:artist:0xOeVMOz2fVg5BJY3N6akT,artist538,Jaden
+539,spotify:artist:5MouCg6ta7zAxsfMEbc1uh,artist539,OMI
+540,spotify:artist:1mXAhKnZEdF6rotyyd4GBi,artist540,MC Kevinho
+541,spotify:artist:1NNT7LXreEsY7C0bHlCWDp,artist541,Daniel Caon
+542,spotify:artist:3qvcCP2J0fWi0m0uQDUf6r,artist542,Luan Santana
+543,spotify:artist:5BvJzeQpmsdsFp4HGUYUEx,artist543,Vampire Weekend
+544,spotify:artist:40Yq4vzPs9VNUrIBG5Jr2i,artist544,The Smashing Pumpkins
+545,spotify:artist:6C1ohJrd5VydigQtaGy5Wa,artist545,Joyner Lucas
+546,spotify:artist:2WKdxPFRD7IqZvlIAvhMgY,artist546,Fugees
+547,spotify:artist:3RGLhK1IP9jnYFH4BRFJBS,artist547,The Clash
+548,spotify:artist:0OzxPXyowUEQ532c9AmHUR,artist548,Giacomo Puccini
+549,spotify:artist:165ZgPlLkK7bf5bDoFc6Sb,artist549,Limp Bizkit
+550,spotify:artist:63MQldklfxkjYDoUE4Tppz,artist550,M83
+551,spotify:artist:7FsRH5bw8iWpSbMX1G7xf1,artist551,Joan Sebastian
+552,spotify:artist:0NKDgy9j66h3DLnN8qu1bB,artist552,Eurythmics
+553,spotify:artist:0NWbwDZY1VkRqFafuQm6wk,artist553,Mike WiLL Made-It
+554,spotify:artist:0701LAQrkY5Il5vt06uNnC,artist554,Trouble
+555,spotify:artist:0MeLMJJcouYXCymQSHPn8g,artist555,Sleeping At Last
+556,spotify:artist:0RqtSIYZmd4fiBKVFqyIqD,artist556,Thirty Seconds To Mars
+557,spotify:artist:1GLtl8uqKmnyCWxHmw9tL4,artist557,The Kooks
+558,spotify:artist:6ltzsmQQbmdoHHbLZ4ZN25,artist558,Lord Huron
+559,spotify:artist:4kI8Ie27vjvonwaB2ePh8T,artist559,Portugal. The Man
+560,spotify:artist:3whuHq0yGx60atvA2RCVRW,artist560,Olly Murs
+561,spotify:artist:45TgXXqMDdF8BkjA83OM7z,artist561,Rod Wave
+562,spotify:artist:4ZgQDCtRqZlhLswVS6MHN4,artist562,grandson
+563,spotify:artist:0my6Pg4I28dVcZLSpAkqhv,artist563,El Fantasma
+564,spotify:artist:70kkdajctXSbqSMJbQO424,artist564,Kacey Musgraves
+565,spotify:artist:5Z1CCuBsyhEHngq3U5IraY,artist565,Westlife
+566,spotify:artist:6t1gpxYbY8OlLA7D2RiikQ,artist566,Loud Luxury
+567,spotify:artist:1HwM5zlC5qNWhJtM00yXzG,artist567,DMX
+568,spotify:artist:2txHhyCwHjUEpJjWrEyqyX,artist568,Tom Odell
+569,spotify:artist:53A0W3U0s8diEn9RhXQhVz,artist569,Keane
+570,spotify:artist:1Nd1g8fezKoJ6DGauWbZIm,artist570,Beast Coast
+571,spotify:artist:2P5sC9cVZDToPxyomzF1UH,artist571,Joey Bada$$
+572,spotify:artist:21H6paZGGR6dQpVmAqbdzV,artist572,1986zig
+573,spotify:artist:3PyJHH2wyfQK3WZrk9rpmP,artist573,Ashnikko
+574,spotify:artist:2cPqdH7XMvwaBJEVjheH8g,artist574,Jay Wheeler
+575,spotify:artist:0elWFr7TW8piilVRYJUe4P,artist575,Natanael Cano
+576,spotify:artist:0LnhY2fzptb0QEs5Q5gM7S,artist576,Laylow
+577,spotify:artist:59PMoeYMK4U67YYzVWZGoi,artist577,Michael Silverman
+578,spotify:artist:0u6GtibW46tFX7koQ6uNJZ,artist578,Topic
+579,spotify:artist:4EPJlUEBy49EX1wuFOvtjK,artist579,Becky Hill
+580,spotify:artist:4pejUc4iciQfgdX6OKulQn,artist580,Queens of the Stone Age
+581,spotify:artist:07QEuhtrNmmZ0zEcqE9SF6,artist581,Owl City
+582,spotify:artist:6GI52t8N5F02MxU0g5U69P,artist582,Santana
+583,spotify:artist:0ucLPotcQNI7AViFytdhBz,artist583,Ladytron
+584,spotify:artist:3rIZMv9rysU7JkLzEaC5Jp,artist584,Snow Patrol
+585,spotify:artist:4J13m9IZh03PEhoxAxRhXO,artist585,Gerardo Ortiz
+586,spotify:artist:1h6Cn3P4NGzXbaXidqURXs,artist586,Swedish House Mafia
+587,spotify:artist:7x8nK0m0cP2ksQf0mjWdPS,artist587,Dierks Bentley
+588,spotify:artist:5schNIzWdI9gJ1QRK8SBnc,artist588,Ben Howard
+589,spotify:artist:3tJoFztHeIJkJWMrx0td2f,artist589,Moneybagg Yo
+590,spotify:artist:1Cs0zKBU1kc0i8ypK3B9ai,artist590,David Guetta
+591,spotify:artist:58wXmynHaAWI5hwlPZP3qL,artist591,Booba
+592,spotify:artist:3YcBF2ttyueytpXtEzn1Za,artist592,Incubus
+593,spotify:artist:2ZRQcIgzPCVaT9XKhXZIzh,artist593,Gryffin
+594,spotify:artist:4F61H4lx1js4wtWfb2Rfnt,artist594,Party Pupils
+595,spotify:artist:1qQLhymHXFPtP5U8KNKsm6,artist595,Apache 207
+596,spotify:artist:3YCKuqpv9nCsIhJ2v8SMix,artist596,Elevation Worship
+597,spotify:artist:2NdeV5rLm47xAvogXrYhJX,artist597,Ciara
+598,spotify:artist:6bmlMHgSheBauioMgKv2tn,artist598,Powfu
+599,spotify:artist:6AUl0ykLLpvTktob97x9hO,artist599,Tee Grizzley
+600,spotify:artist:1tqhsYv8yBBdwANFNzHtcr,artist600,Lil Dicky
+601,spotify:artist:2Sqr0DXoaYABbjBo9HaMkM,artist601,Sara Bareilles
+602,spotify:artist:6Ha4aES39QiVjR0L2lwuwq,artist602,Yo Gotti
+603,spotify:artist:3hYtANQYrE6pd2PbtEyTIy,artist603,Los Tigres Del Norte
+604,spotify:artist:3v6Ji4uoWtKRkhuDUaxi9n,artist604,Dynoro
+605,spotify:artist:4U7lXyKdSf1JbM1aXvsodC,artist605,La Oreja de Van Gogh
+606,spotify:artist:00me4Ke1LsvMxt5kydlMyU,artist606,Cosculluela
+607,spotify:artist:23wEWD21D4TPYiJugoXmYb,artist607,Thalia
+608,spotify:artist:7uaIm6Pw7xplS8Dy06V6pT,artist608,Trevor Daniel
+609,spotify:artist:1ZFGYimyLnfKewOL84ABEp,artist609,TKKG Junior
+610,spotify:artist:0cc6vw3VN8YlIcvr1v7tBL,artist610,Mötley Crüe
+611,spotify:artist:5IbEL2xjRtKsunfmsahLuO,artist611,$NOT
+612,spotify:artist:07EcmJpfAday8xGkslfanE,artist612,Kevin Abstract
+613,spotify:artist:1sPg5EHuQXTMElpZ4iUgXe,artist613,ANAVITÓRIA
+614,spotify:artist:6gto7HVNhu4ARE3P3g8Y5Y,artist614,Kollegah
+615,spotify:artist:4422XPmmt7lJGKjYbYSI6B,artist615,Asche
+616,spotify:artist:7y97mc3bZRFXzT2szRM4L4,artist616,Frédéric Chopin
+617,spotify:artist:1on7ZQ2pvgeQF4vmIA09x5,artist617,Charlie Brown Jr.
+618,spotify:artist:7oeuJSyVZTCkm3BurLz8cG,artist618,Silver
+619,spotify:artist:0rKyE5ijqX5XDXCcc882jl,artist619,Santo Trafficante
+620,spotify:artist:67nwj3Y5sZQLl72VNUHEYE,artist620,Wale
+621,spotify:artist:3Fl1V19tmjt57oBdxXKAjJ,artist621,Blueface
+622,spotify:artist:6mU8ucezzms5I2kNH6HNlu,artist622,Conor Maynard
+623,spotify:artist:5lKZWd6HiSCLfnDGrq9RAm,artist623,Leona Lewis
+624,spotify:artist:6y8XlgIV8BLlIg1tT1R10i,artist624,Old Dominion
+625,spotify:artist:6w9ToX5slZ4uIdmD17hJ3c,artist625,Bryant Myers
+626,spotify:artist:32WkQRZEVKSzVAAYqukAEA,artist626,Lady A
+627,spotify:artist:2cy1zPcrFcXAJTP0APWewL,artist627,Gente De Zona
+628,spotify:artist:4ehtJnVumNf6xzSCDk8aLB,artist628,Martin Jensen
+629,spotify:artist:2rTo8KIkBTFjQS7VvaKYQ4,artist629,W&W
+630,spotify:artist:2iE18Oxc8YSumAU232n4rW,artist630,The Jackson 5
+631,spotify:artist:69a1b61a56mJlx8iAUMBsY,artist631,Kurt Weill
+632,spotify:artist:4MXUO7sVCaFgFjoTI5ox5c,artist632,Sufjan Stevens
+633,spotify:artist:4x1nvY2FN8jxqAFA0DA02H,artist633,John Lennon
+634,spotify:artist:37mqXU98U5GmH5ZDtlHM1c,artist634,Matheus Fernandes
+635,spotify:artist:15iVAtD3s3FsQR4w1v6M0P,artist635,Chief Keef
+636,spotify:artist:3kjuyTCjPG1WMFCiyc5IuB,artist636,Arcade Fire
+637,spotify:artist:5gOJTI4TusSENizxhcG7jB,artist637,David Bisbal
+638,spotify:artist:7CUFPNi1TU8RowpnFRSsZV,artist638,Niska
+639,spotify:artist:5Zq7R5qmi58ByYyBQTlNuk,artist639,Lee Brice
+640,spotify:artist:1HxJeLhIuegM3KgvPn8sTa,artist640,Jack Ü
+641,spotify:artist:47uyFQHOD02S0lj9ptRpoB,artist641,Felipe Araújo
+642,spotify:artist:3k68C6mNMJL6OaAdWeW2ZF,artist642,Diego & Victor Hugo
+643,spotify:artist:7r8RF1tN2A4CiGEplkp1oP,artist643,Ginuwine
+644,spotify:artist:6wPhSqRtPu1UhRCDX5yaDJ,artist644,The Pussycat Dolls
+645,spotify:artist:3Mcii5XWf6E0lrY3Uky4cA,artist645,Ice Cube
+646,spotify:artist:6v8FB84lnmJs434UJf2Mrm,artist646,Neil Young
+647,spotify:artist:4boI7bJtmB1L3b1cuL75Zr,artist647,Mon Laferte
+648,spotify:artist:2CvCyf1gEVhI0mX6aFXmVI,artist648,Paul Simon
+649,spotify:artist:1RBzGO6Nm3uyhUSxP7EDWO,artist649,Kevin Roldan
+650,spotify:artist:6MF9fzBmfXghAz953czmBC,artist650,Taio Cruz
+651,spotify:artist:6MPCFvOQv5cIGfw3jODMF0,artist651,Internet Money
+652,spotify:artist:6S0dmVVn4udvppDhZIWxCr,artist652,Sean Kingston
+653,spotify:artist:4mxWe1mtYIYfP040G38yvS,artist653,Alan Jackson
+654,spotify:artist:2SHhfs4BiDxGQ3oxqf0UHY,artist654,Roxette
+655,spotify:artist:7c53ZFyajVMTo08HmvoB6b,artist655,zzoilo
+656,spotify:artist:1bj5GrcLom5gZFF5t949Xl,artist656,Martin Solveig
+657,spotify:artist:5e4Dhzv426EvQe3aDb64jL,artist657,Shania Twain
+658,spotify:artist:2l35CQqtYRh3d8ZIiBep4v,artist658,MKTO
+659,spotify:artist:5j4HeCoUlzhfWtjAfM1acR,artist659,Stromae
+660,spotify:artist:2y1VzMKAa5nmfXKtJL9jnj,artist660,Murda
+661,spotify:artist:6AcOTCYBMvjKYy4zms0kaC,artist661,Banda El Recodo
+662,spotify:artist:08F3Y3SctIlsOEmKd6dnH8,artist662,Yusuf / Cat Stevens
+663,spotify:artist:47z7ZrgFoBvVpCnElCE3Zh,artist663,Yellow Claw
+664,spotify:artist:7v4imS0moSyGdXyLgVTIV7,artist664,Nat King Cole
+665,spotify:artist:1JbemQ1fPt2YmSLjAFhPBv,artist665,Chayanne
+666,spotify:artist:4u5smJBskI6Adzv08PuiUP,artist666,Kiiara
+667,spotify:artist:46xBNx0j6cwY6sD9LgMTm1,artist667,Rosa Linn
+668,spotify:artist:47mIJdHORyRerp4os813jD,artist668,League of Legends
+669,spotify:artist:2jSGzJw0ebJLu7OLVSOcBP,artist669,Plan B
+670,spotify:artist:3gMaNLQm7D9MornNILzdSl,artist670,Lionel Richie
+671,spotify:artist:6cK3NBO6uP7hh0oyuVELFl,artist671,Saweetie
+672,spotify:artist:2p4FqHnazRucYQHyDCdBrJ,artist672,Simple Plan
+673,spotify:artist:7G1GBhoKtEPnP86X2PvEYO,artist673,Nina Simone
+674,spotify:artist:1jfnMuDBl5OaAoU0VwLD8m,artist674,Granular
+675,spotify:artist:0EeQBlQJFiAfJeVN2vT9s0,artist675,Nipsey Hussle
+676,spotify:artist:4o4tLTIJ3eWMFerz73atcT,artist676,Qveen Herby
+677,spotify:artist:6glcVV5wCi1hU4nxqJItqd,artist677,VINCINT
+678,spotify:artist:4z19QMyPVRwbd4Fs2LisBa,artist678,Darkiel
+679,spotify:artist:4SsVbpTthjScTS7U2hmr1X,artist679,Arcangel
+680,spotify:artist:7jefIIksOi1EazgRTfW2Pk,artist680,Electric Light Orchestra
+681,spotify:artist:6Ff53KvcvAj5U7Z1vojB5o,artist681,*NSYNC
+682,spotify:artist:3YbOSxo85kla7RID8ugnW3,artist682,Los Temerarios
+683,spotify:artist:0yNSzH5nZmHzeE2xn6Xshb,artist683,Calle 13
+684,spotify:artist:4RVnAU35WRWra6OZ3CbbMA,artist684,Kylie Minogue
+685,spotify:artist:6UBA15slIuadJ8h2lPRPos,artist685,Tech N9ne
+686,spotify:artist:3tJnB0s6c3oXPq1SCCavnd,artist686,Marco Antonio Solís
+687,spotify:artist:2R21vXR83lH98kGeO99Y66,artist687,Anuel AA
+688,spotify:artist:1i8SpTcr7yvPOmcqrbnVXY,artist688,Ozuna
+689,spotify:artist:7iWiAD5LLKyiox2grgfmUT,artist689,Bullet For My Valentine
+690,spotify:artist:2hrTfHdHAdgZNapG7ViUVg,artist690,Classical Music Radio
+691,spotify:artist:5E9Xn7QuCD3VYCuBqLxBdY,artist691,Baby Lullaby Academy
+692,spotify:artist:32vWCbZh0xZ4o9gkz4PsEU,artist692,Dolly Parton
+693,spotify:artist:147nKr9upHZSSxqCzh9j7c,artist693,Jimmie Allen
+694,spotify:artist:3uwAm6vQy7kWPS2bciKWx9,artist694,girl in red
+695,spotify:artist:4aKdmOXdUKX07HVd3sGgzw,artist695,Rezz
+696,spotify:artist:1o2NpYGqHiCq7FoiYdyd1x,artist696,Bea Miller
+697,spotify:artist:2sil8z5kiy4r76CRTXxBCA,artist697,The Goo Goo Dolls
+698,spotify:artist:2elBjNSdBE2Y3f0j1mjrql,artist698,Jay Chou
+699,spotify:artist:6lB8vOoI4DRrrVxXwuV19c,artist699,Mike Perry
+700,spotify:artist:7z2avKuuiMAT4XZJFv8Rvh,artist700,Tom Walker
+701,spotify:artist:3bhu7P5PfngueRHiB9hjcx,artist701,Elle King
+702,spotify:artist:3uL4UpqShC4p2x1dJutoRW,artist702,Ghostemane
+703,spotify:artist:0fiWOxhsBsQQvFDtxUQWo0,artist703,Brett Young
+704,spotify:artist:2WzaAvm2bBCf4pEhyuDgCY,artist704,Ruth B.
+705,spotify:artist:1QAJqy2dA3ihHBFIHRphZj,artist705,Cigarettes After Sex
+706,spotify:artist:5dbaLmK5SHLLg8Z4CcTJpX,artist706,Greeicy
+707,spotify:artist:53KTldaJ8tHSkYU3nigfwP,artist707,Fonseca
+708,spotify:artist:1nzgtKYFckznkcVMR3Gg4z,artist708,KSI
+709,spotify:artist:0B3N0ZINFWvizfa8bKiz4v,artist709,James TW
+710,spotify:artist:67ea9eGLXYMsO2eYQRui3w,artist710,The Who
+711,spotify:artist:2ziB7fzrXBoh1HUPS6sVFn,artist711,Audioslave
+712,spotify:artist:4bthk9UfsYUYdcFyqxmSUU,artist712,Tears For Fears
+713,spotify:artist:3EOEK57CV77D4ovYVcmiyt,artist713,Dennis Lloyd
+714,spotify:artist:2bA6fzP0lMAQ4kz6CF61w8,artist714,Toby Keith
+715,spotify:artist:4CD6drviDJ8wccEAZuc9y4,artist715,Scorpion Gang
+716,spotify:artist:5p7mWeX4RlvqBCxylfiXdE,artist716,KC Rebell
+717,spotify:artist:1GAymyGBvB4gQy5Z5LZ1Wj,artist717,Lalo Ebratt
+718,spotify:artist:5QrRo2OG0JlQVYLQXFODDt,artist718,Brasa
+719,spotify:artist:4tvKz56Tr39bkhcQUTO0Xr,artist719,Angus & Julia Stone
+720,spotify:artist:1zuJe6b1roixEKMOtyrEak,artist720,Tina Turner
+721,spotify:artist:2BTZIqw0ntH9MvilQ3ewNY,artist721,Cyndi Lauper
+722,spotify:artist:6ZjFtWeHP9XN7FeKSUe80S,artist722,Bing Crosby
+723,spotify:artist:3AlRiyjMywTVNzTcHbf9QT,artist723,Lil Kleine
+724,spotify:artist:7oPgCQqMMXEXrNau5vxYZP,artist724,Tracy Chapman
+725,spotify:artist:41qil2VaGbD194gaEcmmyx,artist725,Will Smith
+726,spotify:artist:1INuLZXjjVbcJRyWvD1iSq,artist726,Jack & Jack
+727,spotify:artist:05YVYeV4HxYp5rrWalvuE1,artist727,"Grover Washington, Jr."
+728,spotify:artist:4ETSs924pXMzjIeD6E9b4u,artist728,Surfaces
+729,spotify:artist:0haZhu4fFKt0Ag94kZDiz2,artist729,Sofía Reyes
+730,spotify:artist:5WUlDfRSoLAfcVSX1WnrxN,artist730,Sia
+731,spotify:artist:4yBK75WVCQXej1p04GWqxH,artist731,Jeezy
+732,spotify:artist:4NJhFmfw43RLBLjQvxDuRS,artist732,Wolfgang Amadeus Mozart
+733,spotify:artist:6hfwwpXqZPRC9CsKI7qtv1,artist733,Alina Baraz
+734,spotify:artist:3CDoRporvSjdzTrm99a3gi,artist734,LUDMILLA
+735,spotify:artist:1dKdetem2xEmjgvyymzytS,artist735,Grupo Firme
+736,spotify:artist:3dXaa6jwM7B52GZpaJEIr5,artist736,Puddle Of Mudd
+737,spotify:artist:2urF8dgLVfDjunO0pcHUEe,artist737,Alvaro Soler
+738,spotify:artist:4PzYKhC14sTJNEr0dzoo0d,artist738,Luísa Sonza
+739,spotify:artist:5V0MlUE1Bft0mbLlND7FJz,artist739,Ella Fitzgerald
+740,spotify:artist:4MoAOfV4ROWofLG3a3hhBN,artist740,Jon Pardi
+741,spotify:artist:68abRTdO4meYReMWHvBYb0,artist741,Chris Lane
+742,spotify:artist:5gznATMVO85ZcLTkE9ULU7,artist742,Lenny Kravitz
+743,spotify:artist:3HqSLMAZ3g3d5poNaI7GOU,artist743,IU
+744,spotify:artist:053q0ukIDRgzwTr4vNSwab,artist744,Grimes
+745,spotify:artist:2gRP1Ezbtj3qrERnd0XasU,artist745,Camila
+746,spotify:artist:7xeM7V59cA1X8GKyKKQV87,artist746,Sin Bandera
+747,spotify:artist:0TImkz4nPqjegtVSMZnMRq,artist747,TLC
+748,spotify:artist:3EXdLajEO02ziZ90P90bSW,artist748,Lil Xan
+749,spotify:artist:3G9gR0x4v3J2Vek0Fw0yf2,artist749,Emily Vaughn
+750,spotify:artist:1XkoF8ryArs86LZvFOkbyr,artist750,Mary J. Blige
+751,spotify:artist:5q8HGNo0BjLWaTAhRtbwxa,artist751,Brantley Gilbert
+752,spotify:artist:2AM4ilv6UzW0uMRuqKtDgN,artist752,ZZ Top
+753,spotify:artist:1hCkSJcXREhrodeIHQdav8,artist753,Ramin Djawadi
+754,spotify:artist:19eLuQmk9aCobbVDHc6eek,artist754,Louis Armstrong
+755,spotify:artist:2FwJwEswyIUAljqgjNSHgP,artist755,Snakehips
+756,spotify:artist:7FNnA9vBm6EKceENgCGRMb,artist756,Anitta
+757,spotify:artist:4PhdYoQGH8s1xee81dqQOO,artist757,Natiruts
+758,spotify:artist:5veVxxPm1vzgi6pO2iVA8L,artist758,Bruno Martini
+759,spotify:artist:5nki7yRhxgM509M5ADlN1p,artist759,Oliver Heldens
+760,spotify:artist:0ETJQforv5OXgDgidQv9qd,artist760,HI-LO
+761,spotify:artist:1oZmFNkGAT93yD1xX4vTRE,artist761,Nina Kraviz
+762,spotify:artist:3z97WMRi731dCvKklIf2X6,artist762,NEFFEX
+763,spotify:artist:0lEssBAxQl2In4RpaB1C2Y,artist763,Talib Kweli
+764,spotify:artist:01QTIT5P1pFP3QnnFSdsJf,artist764,Lupe Fiasco
+765,spotify:artist:0uq5PttqEjj3IH1bzwcrXF,artist765,Spice Girls
+766,spotify:artist:49e4v89VmlDcFCMyDv9wQ9,artist766,Dean Martin
+767,spotify:artist:0n94vC3S9c3mb2HyNAOcjg,artist767,The Head And The Heart
+768,spotify:artist:1l6d0RIxTL3JytlLGvWzYe,artist768,Benjamin Blümchen
+769,spotify:artist:6oBm8HB0yfrIc9IHbxs6in,artist769,Lykke Li
+770,spotify:artist:0Tob4H0FLtEONHU1MjpUEp,artist770,Tinie Tempah
+771,spotify:artist:3vbKDsSS70ZX9D2OcvbZmS,artist771,Beck
+772,spotify:artist:40LHVA5BTQp9RxHOQ9JPYj,artist772,Lauren Daigle
+773,spotify:artist:28j8lBWDdDSHSSt5oPlsX2,artist773,ZHU
+774,spotify:artist:3vAaWhdBR38Q02ohXqaNHT,artist774,The All-American Rejects
+775,spotify:artist:64tNsm6TnZe2zpcMVMOoHL,artist775,Alice In Chains
+776,spotify:artist:6uYrXgVHctAJtIdSODcyLJ,artist776,Melim
+777,spotify:artist:4BYxqVkZyFjtik7crYLg5Q,artist777,Chris Young
+778,spotify:artist:5wwneIFdawNgQ7GvKK29Z3,artist778,Lucas & Steve
+779,spotify:artist:4D75GcNG95ebPtNvoNVXhz,artist779,Afrojack
+780,spotify:artist:16kOCiqZ1auY4sokSeZuKf,artist780,Los Bukis
+781,spotify:artist:7f4ignuCJhLXfZ9giKT7rH,artist781,NCT 127
+782,spotify:artist:4qIVPF0s71ZYW3qzhu5GkF,artist782,Kina
+783,spotify:artist:3sKeaby6GMSJWgYueZaSjE,artist783,Mokita
+784,spotify:artist:6B5c4sch27tWHAGdarpPaW,artist784,Seether
+785,spotify:artist:7DMveApC7UnC2NPfPvlHSU,artist785,Cheat Codes
+786,spotify:artist:2VZNmg4vCnew4Pavo8zDdW,artist786,Max Richter
+787,spotify:artist:3tlXnStJ1fFhdScmQeLpuG,artist787,Brent Faiyaz
+788,spotify:artist:687cZJR45JO7jhk1LHIbgq,artist788,Tems
+789,spotify:artist:1LOB7jTeEV14pHai6EXSzF,artist789,Cash Cash
+790,spotify:artist:0CbeG1224FS58EUx4tPevZ,artist790,Timmy Trumpet
+791,spotify:artist:0r8toju2ecKaVtItkzAnNi,artist791,Aleks Syntek
+792,spotify:artist:2gaFnEQydJdWNkT17NLZm3,artist792,Su Presencia
+793,spotify:artist:4UGA0TDpRVVt2SCz8FZOMm,artist793,Un Corazón
+794,spotify:artist:1KP6TWI40m7p3QBTU6u2xo,artist794,BØRNS
+795,spotify:artist:3JsMj0DEzyWc0VDlHuy9Bx,artist795,Supertramp
+796,spotify:artist:2jzc5TC5TVFLXQlBNiIUzE,artist796,a-ha
+797,spotify:artist:09hVIj6vWgoCDtT03h8ZCa,artist797,A Tribe Called Quest
+798,spotify:artist:6zvul52xwTWzilBZl6BUbT,artist798,Pixies
+799,spotify:artist:5P5FTygHyx2G57oszR3Wot,artist799,Daughtry
+800,spotify:artist:4njdEjTnLfcGImKZu1iSrz,artist800,AWOLNATION
+801,spotify:artist:6USv9qhCn6zfxlBQIYJ9qs,artist801,Dominic Fike
+802,spotify:artist:4TK1gDgb7QKoPFlzRrBRgR,artist802,Los Enanitos Verdes
+803,spotify:artist:60uh2KYYSCqAgJNxcU4DA0,artist803,Hombres G
+804,spotify:artist:60df5JBRRPcnSpsIMxxwQm,artist804,Otis Redding
+805,spotify:artist:7hOGhpa8RMSuDOWntGIAJt,artist805,A R I Z O N A
+806,spotify:artist:7wg1qvie3KqDNQbAkTdbX0,artist806,Louis The Child
+807,spotify:artist:4tMm1dU6Gn04VAZ9ClHcIZ,artist807,Jacquees
+808,spotify:artist:6gK1Uct5FEdaUWRWpU4Cl2,artist808,Petit Biscuit
+809,spotify:artist:6FQqZYVfTNQ1pCqfkwVFEa,artist809,Foals
+810,spotify:artist:7sfgqEdoeBTjd8lQsPT3Cy,artist810,Emeli Sandé
+811,spotify:artist:0YrtvWJMgSdVrk3SfNjTbx,artist811,Death Cab for Cutie
+812,spotify:artist:1n2pb9Tsfe4SwAjmUac6YT,artist812,Jake Owen
+813,spotify:artist:6ogn9necmbUdCppmNnGOdi,artist813,Alanis Morissette
+814,spotify:artist:34EP7KEpOjXcM2TCat1ISk,artist814,Wu-Tang Clan
+815,spotify:artist:2yEwvVSSSUkcLeSTNyHKh8,artist815,TOOL
+816,spotify:artist:4sbXXFzEWJY2zsZjelerjX,artist816,Dadju
+817,spotify:artist:2JyWXPbkqI5ZJa3gwqVa0c,artist817,Craig David
+818,spotify:artist:6m1LYS5NQonxjOcQFPQOb5,artist818,Frenna
+819,spotify:artist:1X6ORK7IekgmyjV6IFPszP,artist819,Gustavo Mioto
+820,spotify:artist:0vEsuISMWAKNctLlUAhSZC,artist820,Counting Crows
+821,spotify:artist:19JY4BpaJkAlSR4iDxB1MX,artist821,Cesar Mc
+822,spotify:artist:09U6hmCerKcIJrixubiBjm,artist822,Pineapple StormTv
+823,spotify:artist:3kVUvbeRdcrqQ3oHk5hPdx,artist823,Grouplove
+824,spotify:artist:1Yox196W7bzVNZI7RBaPnf,artist824,Megadeth
+825,spotify:artist:1Db5GsIoVWYktPoD2nnPZZ,artist825,Gloria Trevi
+826,spotify:artist:6hnWRPzGGKiapVX1UCdEAC,artist826,Sam Cooke
+827,spotify:artist:03r4iKL2g2442PT9n2UKsx,artist827,Beastie Boys
+828,spotify:artist:2x9SpqnPi8rlE9pjHBwmSC,artist828,Talking Heads
+829,spotify:artist:7jdFEYD2LTYjfwxOdlVjmc,artist829,KALEO
+830,spotify:artist:4upwdFMlZBmQ68jP9jPzjK,artist830,Gemitaiz
+831,spotify:artist:1dID9zgn0OV0Y8ud7Mh2tS,artist831,Dustin Lynch
+832,spotify:artist:0ghlgldX5Dd6720Q3qFyQB,artist832,TOMORROW X TOGETHER
+833,spotify:artist:6TLwD7HPWuiOzvXEa3oCNe,artist833,Oliver Tree
+834,spotify:artist:2q3GG88dVwuQPF4FmySr9I,artist834,The Score
+835,spotify:artist:1mfDfLsMxYcOOZkzBxvSVW,artist835,Cole Swindell
+836,spotify:artist:2O3v9rCTzLhPFaGaAVgZLt,artist836,Río Roma
+837,spotify:artist:3RwQ26hR2tJtA8F9p2n7jG,artist837,The Temptations
+838,spotify:artist:4bPiOPI4V99cepEftvBYak,artist838,Banda Los Recoditos
+839,spotify:artist:5nP8x4uEFjAAmDzwOEc9b8,artist839,Matuê
+840,spotify:artist:3Ns5FA1ANQOzsHLWspsrC6,artist840,Doode
+841,spotify:artist:4TMHGUX5WI7OOm53PqSDAT,artist841,Grateful Dead
+842,spotify:artist:7keGfmQR4X5w0two1xKZ7d,artist842,Kungs
+843,spotify:artist:5t7FfMHr6IwUH5k2sLZ4n1,artist843,Chaya
+844,spotify:artist:6IdtcAwaNVAggwd6sCKgTI,artist844,Zoé
+845,spotify:artist:49qiE8dj4JuNdpYGRPdKbF,artist845,Stone Sour
+846,spotify:artist:1t20wYnTiAT0Bs7H1hv9Wt,artist846,EDEN
+847,spotify:artist:0qSX3s5pJnAlSsgsCne8Cz,artist847,Brett Eldredge
+848,spotify:artist:1wGIhYkKWSq4yACtTkCkSX,artist848,Canserbero
+849,spotify:artist:5sWHDYs0csV6RS48xBl0tH,artist849,Two Feet
+850,spotify:artist:378dH6EszOLFShpRzAQkVM,artist850,Lindsey Stirling
+851,spotify:artist:49EE6lVLgU8sp7dFgPshgM,artist851,La Adictiva Banda San José de Mesillas
+852,spotify:artist:1VBflYyxBhnDc9uVib98rw,artist852,Icona Pop
+853,spotify:artist:3q1NKu1dVzFcBfxFos4kE3,artist853,Jakey
+854,spotify:artist:7FY5V3XMwlNBPitEjXowHQ,artist854,Darius Rucker
+855,spotify:artist:5SyGEPymt1G2uto47tVWvZ,artist855,MadeinTYO
+856,spotify:artist:0WOxhx4hikIsyF3CRPLC8W,artist856,Famous Dex
+857,spotify:artist:1pPmIToKXyGdsCF6LmqLmI,artist857,Rich The Kid
+858,spotify:artist:4tX2TplrkIP4v05BNC903e,artist858,Tom Petty and the Heartbreakers
+859,spotify:artist:5Vo1hnCRmCM6M4thZCInCj,artist859,Official HIGE DANdism
+860,spotify:artist:66TrUkUZ3RM29dqeDQRgyA,artist860,Ella Eyre
+861,spotify:artist:7k73EtZwoPs516ZxE72KsO,artist861,ONE OK ROCK
+862,spotify:artist:3sgFRtyBnxXD5ESfmbK4dl,artist862,LMFAO
+863,spotify:artist:61J0BktHv7PuP3tjTPYXSX,artist863,Eros Ramazzotti
+864,spotify:artist:0lZoBs4Pzo7R89JM9lxwoT,artist864,Duran Duran
+865,spotify:artist:4IJczjB0fJ04gs4uvP0Fli,artist865,Gym Class Heroes
+866,spotify:artist:4DAcJXcjX0zlQAZAPAx4Zb,artist866,Ben&Ben
+867,spotify:artist:0QJIPDAEDILuo8AIq3pMuU,artist867,M.I.A.
+868,spotify:artist:4Kxlr1PRlDKEB0ekOCyHgX,artist868,BIGBANG
+869,spotify:artist:5XenQ7XfcvQdfIbpLEFaKQ,artist869,GoldLink
+870,spotify:artist:2wX6xSig4Rig5kZU6ePlWe,artist870,KSHMR
+871,spotify:artist:5xKp3UyavIBUsGy3DQdXeF,artist871,A Great Big World
+872,spotify:artist:3ScY9CQxNLQei8Umvpx5g6,artist872,Fat Joe
+873,spotify:artist:7mDU6nMUJnOSY2Hkjz5oqM,artist873,Roy Woods
+874,spotify:artist:53KwLdlmrlCelAZMaLVZqU,artist874,James Blake
+875,spotify:artist:3RoPCko9qLmfQiDg8mHaZn,artist875,Smuff Tha Quiz
+876,spotify:artist:6WSTevYt4rGwm8QPKQr7dU,artist876,K.A.A.N.
+877,spotify:artist:28uJnu5EsrGml2tBd7y8ts,artist877,Vintage Culture
+878,spotify:artist:5eKqhPrKad0J9xGAtq3rW7,artist878,BURNS
+879,spotify:artist:297Z0teiCkp5s9eneWROpI,artist879,Kasablanca
+880,spotify:artist:4M5nCE77Qaxayuhp3fVn4V,artist880,Iron & Wine
+881,spotify:artist:1OmdWpAh1pucAuZPzJaxIJ,artist881,Calexico
+882,spotify:artist:0vn7UBvSQECKJm2817Yf1P,artist882,James Taylor
+883,spotify:artist:6J7biCazzYhU3gM9j1wfid,artist883,Jamiroquai
+884,spotify:artist:568ZhdwyaiCyOGJRtNYhWf,artist884,Deep Purple
+885,spotify:artist:3tQx1LPXbsYjE9VwN1Peaa,artist885,Marc E. Bassy
+886,spotify:artist:422RLznpwUa5FsQgnTlgUH,artist886,Great Good Fine Ok
+887,spotify:artist:69MEO1AADKg1IZrq2XLzo5,artist887,UB40
+888,spotify:artist:5oFkj1qSlyBUmV5d6Edgtq,artist888,Cozz
