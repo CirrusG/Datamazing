@@ -11,7 +11,8 @@
 -- this is set for test database, but repeated the setting will not affect starbug database. 
 set timezone='America/New_York';
 
--- account
+-- user -> account
+-- user is reserved key
 -- email should be unique for searching friends (avoid multiple results)
 CREATE TABLE Account (
     username varchar PRIMARY KEY,
@@ -34,7 +35,7 @@ CREATE TABLE User_AccessDatesTimes (
 CREATE TABLE Follows (
     following VARCHAR REFERENCES Account,
     follower varchar REFERENCES Account,
-    PRIMARY KEY (FOLLOWING, follower)
+    PRIMARY KEY (following, follower)
 );
 
 -- Artist
@@ -83,7 +84,8 @@ CREATE TABLE Alb_Gen (
 -- Included-In -> Included_In
 CREATE TABLE Included_In (
     albumID text REFERENCES Album,
-    artistname varchar REFERENCES Artist
+    artistname varchar REFERENCES Artist,
+    PRIMARY KEY (albumID, artistname)
 );
 
 -- Song
