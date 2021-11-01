@@ -17,46 +17,49 @@
 
   For each user
 
-  - [ ] create new accounts (create sql)
+  - [x] create new accounts (create sql)
 
-    - [ ] valid input
-      - [ ] if username exist in db: get the sql error message / check the db firstly
-      - [ ] if email has '@'
+    - [x] valid input
+      - [x] if username exist in db: get the sql error message / check the db firstly
+      - [x] if email has '@'
         - [Check if email address valid or not in Python](https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/)
-      - [ ] password, first/last_name if empty
+      - [x] password, first/last_name if empty
 
-  - [ ] Access via login
+  - [x] Access via login
 
-    - [ ] valid username (if exist in db)
-    - [ ] valid password
+    - [x] valid username (if exist in db)
+    - [x] valid password
 
   - [x] record date and time of both above activity (automatically added when insert into db)
 
-  - [ ] create collections of music (create)
-  - [ ] modify collection (alter, drop)
-    - [ ] change name
-    - [ ] delete the entire collection
-  - [ ] query/read list of collections (select)
-  - [ ] add/delete albums, songs from collection (insert, drop)
+  - [x] create collections of music (create)
+  - [x] modify collection (alter, drop)
+    - [x] change name
+    - [x] delete the entire collection
+  - [x] query/read list of collections (select)
+  - [x] add/delete albums, songs from collection (insert, drop)
 
   - [ ] search song / show resulting list (select)
   - [ ] listen to song (select)
 
-    - [ ] maybe make a timer
+    - [x] add record to plays
+    - [ ] maybe make a timer -- cli
     - type
       - [ ] individually
       - [ ] entire collection (list)
     - [ ] mark played and not played
     - show current play status
 
-  - [ ] follow/unfollow friend
-    - [ ] check username at table account
-    - [ ] check following/follows at Follows table
-    - [ ] drop / insert
-  - [ ] search for new friends by email
+  - [x] follow/unfollow friend
+    - [x] ~~check username at table account~~
+    - [x] check following/follows at Follows table
+    - [x] delete / insert
+  - [x] search for new friends by email
 
 - [ ] insert enough dataset for each table
 
+  - [x] local
+  - [ ] starbug
   - 10s - 100s rows/table
   - 200 - 500 rows/M:N table
   - source
