@@ -11,7 +11,7 @@ import psycopg2
 # just for ease of changing the database(local -> starbug)
 from psycopg2 import sql
 
-import starbug
+import starbug as starbug
 
 server = starbug.conn_server()
 server.start()
@@ -37,7 +37,6 @@ def if_exist(table, column, value):
         starbug.disconnect(conn, curs)
     # NOTE: here can return row, then in another file to check if is None, if not, just get the value
     return row is not None
-
 
 def get_result(curs):
     # get array of query result, need to parse in the cli program
@@ -103,6 +102,20 @@ def pass_correct(username, password):
     finally:
         starbug.disconnect(conn, curs)
     return result
+
+def login_user(username, password):
+    if pass_correct(username, password):
+        conn = curs = None
+        try:
+            conn = starbug.connect(server)
+            curs = conn.cursor()
+            curs.execute(
+                "insert into user_accessdatestimes(username) values (%s)", (username,))
+            conn.commit()
+        except(Exception, psycopg2.DatabaseError) as error:
+            print("query.pass_correct(ERROR)", error)
+        finally:
+            starbug.disconnect(conn, curs)
 
 def add_collec(username, name):
     # add a new collection
@@ -373,7 +386,6 @@ def find_friend(username):
         return friend
 
 def follow_friend(friend, username):
-    # ✨ pass test!
     # @parm friend: friend to follow (following)
     # @param username: current user in the cli that want to follow friend(follower)
     # do not need to check user username since entered application
@@ -395,7 +407,6 @@ def follow_friend(friend, username):
     return result
 
 def unfollow_friend(friend, username):
-    # ✨ pass test
     # copied the follow_friend code and changed INSERT to DELETE, may need some tweaking
     conn = curs = result = None
     try:
@@ -414,7 +425,6 @@ def unfollow_friend(friend, username):
     return result
 
 def show_friend_list(username):
-    # ✨ pass test
     # TODO: need to parse output
     conn = curs = list = None
     try:
@@ -437,7 +447,6 @@ def show_friend_list(username):
         return list
 
 def play_song(username, songID):
-    # ✨ pass test
     # play song by username, songID (after looking up song, select the id to play)
     # return song info
     # add play record
@@ -466,7 +475,6 @@ def play_song(username, songID):
         return song
 
 def play_album(username, albumID):
-    # ✨ pass test
     # call play_song to get a list of song info
     conn = curs = None
     try:
@@ -486,7 +494,6 @@ def play_album(username, albumID):
         starbug.disconnect(conn, curs)
 
 def play_collec(username, collecID):
-    # ✨ pass test
     conn = curs = None
     try:
         conn = starbug.connect(server)
@@ -529,12 +536,13 @@ def main():
     #print(find_friend_e('pb@mail.com'))
     #print(find_friend('pb'))
     #print(follow_friend('pb', 'ly'))
-    show_friend_list('ly')
+    #show_friend_list('ly')
     #print(unfollow_friend('pb', 'ly'))
     #play_song('ly', 'song3434')
     #play_album('ly', 'album300')
     #play_collec('ly', 'collection1')
     #delete_collec('ly', 'collection1')
+    login_user('ly', '1234')
     starbug.disconn_server(server)
 
 
