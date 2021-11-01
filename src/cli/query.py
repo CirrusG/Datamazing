@@ -218,104 +218,114 @@ def add_song_collec(local_number, username, collecid, songid):
         starbug.disconnect(conn, curs)
 # ============= search song function --------------
 # criteria
-# 1.
-# def song_list(criteria, value, username):
-#     # select criteria from table where criteria like value
-#     result = None
-#     try:
-#         conn = starbug.connect()
-#         curs = conn.cursor()
-#         # FIXME function song_list_helper
-#         #query = song_list_helper(criteria)
-#         last_search_sql = (query, value)
-#         curs.execute(query, (value,))
-#         result = get_result(curs)
-#     except (Exception, psycopg2.Error) as error:
-#         print("query.song_list(ERROR):", error)
-#     finally:
-#         starbug.disconnect(conn, curs)
-#     return result
+#1.
+def song_list(criteria, value, username):
+    # select criteria from table where criteria like value
+    result = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = song_list_helper(criteria)
+        value = '%' + value + '%'
+        global last_search_sql
+        last_search_sql = (query, value)
+        query += "ORDER BY s.title"
+        curs.execute(query, (value,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.song_list(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
 
-# FIXME
-#last_search_sql = None
-
-
-# def song_list_helper(criteria):
-#     # FIXME fix it by "GROUP BY clause"
-#     # ERROR Column's.title, s.artistName, a.name, a.length' is invalid in the select list
-#     # because it is not contained in either an aggregate function or the GROUP BY clause
-#     # QUESTION: what is its logic to work on criteria
-
-#     start = """SELECT s.title, s.artistName, a.name, a.length, COUNT(p.songID)
-#                 FROM Song as s, Features as f, Album as a,
-#                     Plays as p, Genre as g, Alb_gen as ag
-#                 WHERE s.songID = f.songID, a.albumID = f.albumID, g.genreID = ag.genreID,
-#                     s.songID = p.songID,  ag.albumID = a.albumID"""
-#     return {
-#         'song': start + """s.title = %s""",
-#         'artist': start + """s.artistName = %s""",
-#         'album': start + """a.name = %s""",
-#         'genre': start + """ag.name = %s"""
-#     }.get(criteria, start + """s.title = %s""")
+#FIXME
+last_search_sql = None
 
 
-# def song_list_sort(criteria, order):
-#     result = None
-#     try:
-#         conn = starbug.connect()
-#         curs = conn.cursor()
-#         query = song_list_sort_helper(criteria)
-#         curs.execute(query, (last_search_sql[1], order,))
-#         result = get_result(curs)
-#     except (Exception, psycopg2.Error) as error:
-#         print("query.song_list_sort(ERROR):", error)
-#     finally:
-#         starbug.disconnect(conn, curs)
-#     return result
+def song_list_helper(criteria):
+    # FIXME fix it by "GROUP BY clause"
+    # ERROR Column's.title, s.artistName, a.name, a.length' is invalid in the select list
+    # because it is not contained in either an aggregate function or the GROUP BY clause
+    # QUESTION: what is its logic to work on criteria
+
+    start = """SELECT s.title, s.artistName, a.name, s.length
+                FROM Song as s
+                INNER JOIN Features as f
+                    ON s.songID = f.songID
+                INNER JOIN Album as a
+                    ON a.albumID = f.albumID
+                INNER JOIN Alb_gen as ag
+                    ON ag.albumID = a.albumID
+                INNER JOIN Genre as g
+                    ON g.genreID = ag.genreID
+                WHERE """
+    end = ""#  "GROUP BY a.name "
+    return {
+        'song': start + """s.title LIKE %s """ + end,
+        'artist': start + """s.artistName LIKE %s """+ end,
+        'album': start + """a.name LIKE %s """+ end,
+        'genre': start + """ag.name LIKE %s """+ end
+    }.get(criteria, start + """s.title LIKE %s """+ end)
 
 
-# def song_list_sort_helper(criteria):
-#     start = last_search_sql[0] + """ORDER BY """
-#     return {
-#         'song': start + "s.title + %s",
-#         'artist': start + "s.artistName + %s",
-#         'genre': start + "g.name + %s",
-#         'released': start + "s.release_date + %s"
-#     }.get(criteria, start + "s.title + %s")
+def song_list_sort(criteria, order):
+    result = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = song_list_sort_helper(criteria)
+        curs.execute(query, (last_search_sql[1],))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.song_list_sort(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
 
 
-# FIXME
-# def album_to_add(value):
-#     # returns a list of (artistName, releaseDate) for all albums matching value
-#     result = conn = curs = None
-#     try:
-#         conn = starbug.connect()
-#         curs = conn.cursor()
-#         query = """SELECT i.artistName, a.release_date
-#                 From Included_in AS i, Album as a
-#                 WHERE i.albumID = a.albumID and a.name = %s"""
-#         curs.execute(query, (value,))
-#     except (Exception, psycopg2.Error) as error:
-#         print("query.album_to_add(ERROR):", error)
-#     finally:
-#         starbug.disconnect(conn, curs)
+def song_list_sort_helper(criteria):
+    global last_search_sql
+    start = last_search_sql[0] + "ORDER BY "
+    return {
+        'song': start + "s.title",
+        'artist': start + "s.artistName",
+        'genre': start + "g.name",
+        'released': start + "s.release_date"
+    }.get(criteria, start + "s.title")
 
-# FIXME
-# def songs_to_add(value):
-#     # returns a list of (artistName, albumName, releaseDate) for all songs matching value
-#     result = None
-#     try:
-#         conn = starbug.connect()
-#         curs = conn.cursor()
-#         query = """SELECT s.artistName, a.name, s.release_date
-#                 FROM Song as s, Album as a, Features as f
-#                 WHERE s.songID = f.SongID and a.AlbumID = f.AlbumID
-#                     and s.title = %s"""
-#         curs.execute(query, (value,))
-#     except (Exception, psycopg2.Error) as error:
-#         print("query.song_to_add(ERROR):", error)
-#     finally:
-#         starbug.disconnect(conn, curs)
+
+#FIXME
+def album_to_add(value):
+    # returns a list of (artistName, releaseDate) for all albums matching value
+    result = conn = curs = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """SELECT i.artistName, a.release_date
+                From Included_in AS i, Album as a
+                WHERE i.albumID = a.albumID and a.name = %s"""
+        curs.execute(query, (value,))
+    except (Exception, psycopg2.Error) as error:
+        print("query.album_to_add(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+
+#FIXME
+def songs_to_add(value):
+    # returns a list of (artistName, albumName, releaseDate) for all songs matching value
+    result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """SELECT s.artistName, a.name, s.release_date
+                FROM Song as s, Album as a, Features as f
+                WHERE s.songID = f.SongID and a.AlbumID = f.AlbumID
+                    and s.title = %s"""
+        curs.execute(query, (value,))
+    except (Exception, psycopg2.Error) as error:
+        print("query.song_to_add(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
 
 # friend: find friend by email -> output info if find -> add friend by select username
 def find_friend_e(email):

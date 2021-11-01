@@ -6,7 +6,6 @@ import re
 import query
 
 user = None
-last_search = None
 
 def login():
     choice = int(input(
@@ -49,9 +48,9 @@ def login():
 
 
 def valid_email(email):
-    regex = re.compile(r"[^@]+@[^@]+\.[^@]+")
+    regex = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}")
     if re.fullmatch(regex, email):
-        return query.email_exists(email)
+        return not query.email_exists(email)
     return False
 
 
@@ -59,6 +58,7 @@ class DatamazingShell(cmd.Cmd):
     intro = 'Welcome to Datamazing! Type help or ? to list commands. \n'
     prompt = '(Datamazing) '
     file = None
+    last_search = None
 
     def do_create_collec(self, arg):
         'Create a new collection: create_collec collectionName'
@@ -87,32 +87,33 @@ class DatamazingShell(cmd.Cmd):
 
     # TODO
     def do_search_song(self, arg):
-        # """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
-        # \tsong\n\tartist\n\talbum\n\tgenre"""
-        # args = parse(arg)
-        # last_search = query.song_list(args[0], args[1], user)
-        # DatamazingShell.print_songs()
+        """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
+        \tsong\n\tartist\n\talbum\n\tgenre"""
+        args = parse(arg)
+        DatamazingShell.last_search = query.song_list(args[0], args[1], user)
+        DatamazingShell.print_songs()
         return
 
     # TODO
     def do_sort_search(self, arg):
         """Sort previous search results by various criteria: sort_search sortBy asc/desc\nsortBy:
         \tsong\n\tartist\n\tgenre\n\treleased"""
-        # if (last_search is None):
-        #     print("Please preform song search before sorting")
-        # else:
-        #     args = parse(arg)
-        #     last_search = query.song_list_sort(args[0],args[1])
-        #     DatamazingShell.print_songs()
+        if (DatamazingShell.last_search is None):
+            print("Please preform song search before sorting")
+        else:
+            args = parse(arg)
+            DatamazingShell.last_search = query.song_list_sort(args[0],args[1])
+            DatamazingShell.print_songs()
         return
 
     # TODO
-    def print_songs(self, last_search):
-        # print("{:<3}{:<15}{:<15}{:<15}{:<15}".format("#","Song","Artist","Album","Length","Plays"))
-        # i = 1
-        # for s,a,al,l,c in last_search:
-        #     print("{:<3}{:<15}{:<15}{:<15}{:<15}".format(i,s,a,al,l,c))
-        #     i+=1
+    def print_songs():
+        if DatamazingShell.last_search:
+            print("{:<4}{:<60}{:<30}{:<40}{:<20}{:<4}".format("#","Song","Artist","Album","Length","Plays"))
+            i = 1
+            for s,a,al,l in DatamazingShell.last_search:
+                print("{:<4}{:<60}{:<30}{:<40}{:<20}".format(i,s,a,al,l))
+                i+=1
         return
 
     def do_add_collec_album(self, arg):
