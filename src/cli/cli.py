@@ -21,7 +21,7 @@ def login():
             while not query.pass_correct(uname, pw):
                 print("Incorrect password.")
                 pw = input("\nPlease enter your password.\nPassword: ")
-            # user = uname # never use
+            user = uname # never use
             print("Logging in.")
     elif choice == 2:
         poss_uname = input("\nPlease choose a username: ")
@@ -57,14 +57,16 @@ def valid_email(email):
 
 class DatamazingShell(cmd.Cmd):
     intro = 'Welcome to Datamazing! Type help or ? to list commands. \n'
-    prompt = '(Datamazing)'
+    prompt = '(Datamazing) '
     file = None
 
     def do_create_collec(self, arg):
         'Create a new collection: create_collec collectionName'
-        # TODO CHECK IF COLLECTION NAME ALREADY IN DATABASE
-        # QUESTION: not sure if it is necessary, since there is a collectionID and username to control the uniqueness of the collection.
-        # If it is useful to make it unique in the database, I need to modify the table to make the name column to be unique
+        'please enter collection name'
+        # check length of arg to get collection name
+        # TODO
+        name = None
+        query.add_collec(user, name)
         return
 
     # TOTEST
@@ -171,24 +173,40 @@ class DatamazingShell(cmd.Cmd):
 
     def do_search_user(self, arg):
         'Search for a user by name or email: search_user userName/userEmail'
+        # if email not valid
+        if not valid_email(arg):
+            # if user doesn't exist
+            if not query.user_exists(arg):
+                print("User not found!")
+            # if user does exist
+            else:
+                query.find_friend_u(arg)
+        # if email is valid
+        else:
+            query.find_friend_e(arg)
         return
 
     def do_list_friends(self):
         'List users you follow: list_friends'
-        return
+        query.show_friend_list(user)
 
     def do_follow(self, arg):
         'Follow a user: follow userToFollow'
-        return
+        # if friend exists is checked in follow_friend so no need to here
+        query.follow_friend(arg, user)
 
     def do_unfollow(self, arg):
         'Unfollow a user: unfollow userToUnfollow'
-        return
+        # if friend exists is checked in unfollow_friend so no need to here
+        if not query.user_exists(arg):
+            print("User not found!")
+        else:
+            query.unfollow_friend(arg, user)
 
     # this will probably be changed but it is a start for logging out
     def do_logout(self, arg):
         'User would like to logout.'
-        response = input('Are you sure? (y/n)')
+        response = input('Are you sure? (y/n) ')
         if response == "y":
             print('Okay, bye!')
             self.close()
