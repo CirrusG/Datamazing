@@ -4,6 +4,7 @@ import psycopg2
 
 def connect():
     # info to connect database
+    conn = None
     username = "postgres"
     password = "changeme"
     dbName = "test"
