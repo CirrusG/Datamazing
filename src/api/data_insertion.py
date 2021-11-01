@@ -2,9 +2,10 @@
 # insert required artist, genre, song, album data into database
 import csv
 import psycopg2
-from psycopg2 import sql
 # will change to cli.starbug later
+import cli.local
 import cli.local as starbug
+import time
 # do not open csv files during inserting, otherwise throws 'OSError: [Errno 5] Input/output error
 # 🎈*IMPORTANT*: overall length of run at least 25 minutes (import to starbug early)
 
@@ -14,7 +15,6 @@ def get_result(curs):
         row = curs.fetchone()
         while row is not None:
             result.append(row)
-            print(row)
             row = curs.fetchone()
     except (Exception, psycopg2.Error) as error:
         print("query.fetch(ERROR):", error)
@@ -30,8 +30,8 @@ def artist_insert():
             try:
                 conn = starbug.connect()
                 curs = conn.cursor()
-                sql = "insert into artist values (%s)"
-                curs.execute(sql, (row[-1],))
+                query = "insert into artist values (%s)"
+                curs.execute(query, (row[-1],))
                 conn.commit()
             except (Exception, psycopg2.Error) as error:
                 print("data_insertion.py(ERROR):", error)
@@ -50,8 +50,8 @@ def genre_insert():
                 conn = starbug.connect()
                 curs = conn.cursor()
                 # print(row[-1])
-                sql = "insert into genre (name) values (%s)"
-                curs.execute(sql, (row[1],))
+                query = "insert into genre (name) values (%s)"
+                curs.execute(query, (row[1],))
                 conn.commit()
             except (Exception, psycopg2.Error) as error:
                 print("data_insertion.py(ERROR):", error)
@@ -64,6 +64,9 @@ def song_album_insert():
         with open('spotify-data/tracks.csv') as tracksfile:
             reader = csv.reader(tracksfile, delimiter=',')
             # jump header
+            next(reader)
+            next(reader)
+            next(reader)
             next(reader)
             for row in reader:
                 try:
@@ -79,6 +82,7 @@ def song_album_insert():
                     if genreID is None:
                         print("song_album_insert(ERROR): genre does not exist")
                         continue
+                    genreID = genreID[0]
                     track_duration = row[-1]
                     track_release = row[10]
                     album_name = row[6] # feature
@@ -87,17 +91,21 @@ def song_album_insert():
                     curs.execute("select albumID from album where name = %s", (album_name,))
                     albumID = curs.fetchone()
                     if albumID is None:
-                        sql = "insert into album (name, release_date) values (%s, %s)"
-                        curs.execute(sql, (album_name, track_release))
+                        query = "insert into album (name, release_date) values (%s, %s)"
+                        curs.execute(query, (album_name, track_release))
                         conn.commit()
                         curs.execute("select albumID from album where name = %s", (album_name,))
                         albumID = curs.fetchone()
+                    albumID = albumID[0]
                     # => include in
                     curs.execute("select artistname from included_in where albumID = %s", (albumID,))
                     exist = False
                     for each in get_result(curs):
-                       if each == artist_name:
+                        # parse result to fit the compare
+                        #print('artistname get', each[0])
+                        if each[0] == artist_name:
                             exist = True
+                            break
                     if not exist:
                         curs.execute("insert into included_in values (%s, %s)", (albumID, artist_name,))
                         conn.commit()
@@ -105,29 +113,43 @@ def song_album_insert():
                     exist = False
                     curs.execute("select genreID from alb_gen where albumID = %s", (albumID,))
                     for each in get_result(curs):
-                        if each == genreID:
+                        #print('genre get', each)
+                        if each[0] == genreID:
                             exist = True
+                            break
                     if not exist:
                         curs.execute("insert into alb_gen values (%s, %s)", (genreID, albumID,))
                         conn.commit()
                     # => song
                     #print(name, artist_name, album_name, track_number, track_duration, track_genre, track_release)
-                    sql = "insert into song (title, length, release_date, genreID, artistName) values (%s, %s, %s, %s, %s)"
-                    curs.execute(sql, (track_name, track_duration, track_release, genreID, artist_name,))
+                    query = "insert into song (title, length, release_date, genreID, artistName) values (%s, %s, %s, %s, %s)"
+                    curs.execute(query, (track_name, track_duration, track_release, genreID, artist_name,))
                     conn.commit()
                     curs.execute("select songID from song where title = %s", (track_name,))
-                    songID = curs.fetchone()
+                    songID = curs.fetchone()[0]
                     # => features
                     curs.execute("select * from features where albumID = %s and songID = %s", (albumID, songID))
-                    if curs.fetchone is None:
-                        sql = "insert into features values (%s, %s, %s)"
-                        curs.execute(sql, (track_number, albumID, songID))
+                    feature_res = curs.fetchone()
+                    if feature_res is None:
+                        query = "insert into features values (%s, %s, %s)"
+                        curs.execute(query, (track_number, albumID, songID))
                         conn.commit()
-                    starbug.disconnect(conn, curs)
                 except (Exception, psycopg2.Error) as error:
                     print("data_insertion.py(ERROR):", error)
+                finally:
+                    starbug.disconnect(conn, curs)
+                # for test
+                # break
 
-# better to run one by one
-#artist_insert()
-#genre_insert()
-#song_album_insert()
+def main():
+    # check how long time used to import
+    start = time.time()
+    #artist_insert()
+    #genre_insert()
+    song_album_insert()
+    # 15 mins to 25 mins
+    print("-- %s seconds ---" % (time.time() - start))
+
+if __name__ == "__main__":
+    main()
+
