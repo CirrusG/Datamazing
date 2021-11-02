@@ -283,10 +283,12 @@ def song_list_helper(criteria):
 
 def song_list_sort(criteria, order):
     result = None
+    global last_search_sql
     try:
         conn = starbug.connect(server)
         curs = conn.cursor()
         query = song_list_sort_helper(criteria)
+        order = order.upper()
         curs.execute(query, (last_search_sql[1],))
         result = get_result(curs)
     except (Exception, psycopg2.Error) as error:
