@@ -263,16 +263,16 @@ def song_list_helper(criteria):
 
     start = """SELECT s.title, s.artistName, a.name, s.length
                 FROM Song as s
-                INNER JOIN Features as f
+                JOIN Features as f
                     ON s.songID = f.songID
-                INNER JOIN Album as a
+                JOIN Album as a
                     ON a.albumID = f.albumID
-                INNER JOIN Alb_gen as ag
+                JOIN Alb_gen as ag
                     ON ag.albumID = a.albumID
-                INNER JOIN Genre as g
+                JOIN Genre as g
                     ON g.genreID = ag.genreID
                 WHERE """
-    end = ""#  "GROUP BY a.name "
+    end = ""
     return {
         'song': start + """s.title LIKE %s """ + end,
         'artist': start + """s.artistName LIKE %s """+ end,
@@ -281,14 +281,13 @@ def song_list_helper(criteria):
     }.get(criteria, start + """s.title LIKE %s """+ end)
 
 
-def song_list_sort(criteria, order):
+def song_list_sort(criteria):
     result = None
     global last_search_sql
     try:
         conn = starbug.connect(server)
         curs = conn.cursor()
         query = song_list_sort_helper(criteria)
-        order = order.upper()
         curs.execute(query, (last_search_sql[1],))
         result = get_result(curs)
     except (Exception, psycopg2.Error) as error:

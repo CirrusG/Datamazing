@@ -4,6 +4,7 @@
 import cmd
 import re
 import query
+from datetime import datetime
 
 user = None
 
@@ -102,17 +103,18 @@ class DatamazingShell(cmd.Cmd):
             print("Please preform song search before sorting")
         else:
             args = parse(arg)
-            DatamazingShell.last_search = query.song_list_sort(args[0],args[1])
+            DatamazingShell.last_search = query.song_list_sort(args[0])
             DatamazingShell.print_songs()
         return
 
     # TODO
     def print_songs():
         if DatamazingShell.last_search:
-            print("{:<4}{:<60}{:<30}{:<40}{:<20}{:<4}".format("#","Song","Artist","Album","Length","Plays"))
+            print("{:<4}{:<60}{:<30}{:<50}{:<6}".format("#","Song","Artist","Album","Length","ID"))
             i = 1
             for s,a,al,l in DatamazingShell.last_search:
-                print("{:<4}{:<60}{:<30}{:<40}{:<20}".format(i,s,a,al,l))
+                length = l.strftime("%H:%M")
+                print("{:<4}{:<60}{:<30}{:<50}{:<6}".format(i,s,a,al,length))
                 i+=1
         return
 
