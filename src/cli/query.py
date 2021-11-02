@@ -277,7 +277,7 @@ def song_list_helper(criteria):
         'song': start + """s.title LIKE %s """ + end,
         'artist': start + """s.artistName LIKE %s """+ end,
         'album': start + """a.name LIKE %s """+ end,
-        'genre': start + """ag.name LIKE %s """+ end
+        'genre': start + """g.name LIKE %s """+ end
     }.get(criteria, start + """s.title LIKE %s """+ end)
 
 
