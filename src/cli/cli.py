@@ -103,7 +103,9 @@ class DatamazingShell(cmd.Cmd):
             print("Please preform song search before sorting")
         else:
             args = parse(arg)
-            DatamazingShell.last_search = query.song_list_sort(args[0])
+            if len(args) == 1:
+                args.append("ASC")
+            DatamazingShell.last_search = query.song_list_sort(args[0],args[1])
             DatamazingShell.print_songs()
         return
 

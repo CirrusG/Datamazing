@@ -242,7 +242,7 @@ def song_list(criteria, value, username):
         value = '%' + value + '%'
         global last_search_sql
         last_search_sql = (query, value)
-        query += "ORDER BY s.title"
+        query += "ORDER BY s.title ASC"
         curs.execute(query, (value,))
         result = get_result(curs)
     except (Exception, psycopg2.Error) as error:
@@ -263,13 +263,13 @@ def song_list_helper(criteria):
 
     start = """SELECT s.title, s.artistName, a.name, s.length
                 FROM Song as s
-                JOIN Features as f
+                INNER JOIN Features as f
                     ON s.songID = f.songID
-                JOIN Album as a
+                INNER JOIN Album as a
                     ON a.albumID = f.albumID
-                JOIN Alb_gen as ag
+                INNER JOIN Alb_gen as ag
                     ON ag.albumID = a.albumID
-                JOIN Genre as g
+                INNER JOIN Genre as g
                     ON g.genreID = ag.genreID
                 WHERE """
     end = ""
@@ -281,13 +281,13 @@ def song_list_helper(criteria):
     }.get(criteria, start + """s.title LIKE %s """+ end)
 
 
-def song_list_sort(criteria):
+def song_list_sort(criteria,order):
     result = None
     global last_search_sql
     try:
         conn = starbug.connect(server)
         curs = conn.cursor()
-        query = song_list_sort_helper(criteria)
+        query = song_list_sort_helper(criteria,order)
         curs.execute(query, (last_search_sql[1],))
         result = get_result(curs)
     except (Exception, psycopg2.Error) as error:
@@ -297,14 +297,18 @@ def song_list_sort(criteria):
     return result
 
 
-def song_list_sort_helper(criteria):
+def song_list_sort_helper(criteria,order):
     global last_search_sql
     start = last_search_sql[0] + "ORDER BY "
+    order = {
+            'ASC': 'ASC',
+            'DESC': 'DESC'
+            }.get(order) 
     return {
-        'song': start + "s.title",
-        'artist': start + "s.artistName",
-        'genre': start + "g.name",
-        'released': start + "s.release_date"
+        'song': start + "s.title " + order,
+        'artist': start + "s.artistName " + order,
+        'genre': start + "g.name " + order,
+        'released': start + "s.release_date " + order
     }.get(criteria, start + "s.title")
 
 
