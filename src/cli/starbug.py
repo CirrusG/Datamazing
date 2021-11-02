@@ -7,8 +7,8 @@
 import psycopg2
 
 
-username = "cg2531"
-password = "@Nanno666(^)Chicha"
+username = ""
+password = ""
 dbName = "p320_10"
 from sshtunnel import SSHTunnelForwarder
 
