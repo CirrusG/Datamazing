@@ -1,89 +1,88 @@
 # todo list based on phase 4 requirement
 
-- [ ] Final version of applicaton program (src folder)
+- [ ] Final version of application program (src folder)
 
-    - [ ] Basic CRUD functions
+  - [ ] Basic CRUD functions
 
-    - [ ] user profile functionality
+  - [ ] user profile functionality
 
-        - [ ] the number of collections the user has
+    - [ ] the number of collections the user has
 
-        - [ ] the number of follwers
+    - [ ] the number of followers
 
-        - [ ] the number of following
+    - [ ] the number of following
 
-        - [ ] top artists the user plays by
+    - [ ] top artists the user plays by
 
-            - [ ] most plays
+      - [ ] most plays
 
-            - [ ] most additions to collections
+      - [ ] most additions to collections
 
-            - [ ] combination
+      - [ ] combination
 
-    - [ ]  song recommendation system with following options
+  - [ ] song recommendation system with following options
 
-        - [ ] the top 50 most popular songs in the last 30 days 
+    - [ ] the top 50 most popular songs in the last 30 days
 
-            - [ ]  continue on rolling
+      - [ ] continue on rolling
 
-        - [ ] the top 50 most popular songs among my friends
+    - [ ] the top 50 most popular songs among my friends
 
-        - [ ] the top 5 most popular genres of the month (calendar month)
+    - [ ] the top 5 most popular genres of the month (calendar month)
 
-        - [ ] Recommend songs `For you`
+    - [ ] Recommend songs `For you`
 
-            - [ ] play history
+      - [ ] play history
 
-                - [ ] genre
+        - [ ] genre
 
-                - [ ] artist
+        - [ ] artist
 
-                The below options are from album and collection
+        The below options are from album and collection
 
 - [ ] load enough random records related to plays history
 
 - [ ] Data analysis
 
-    - [ ] choose tool
+  - [ ] choose tool
 
-    - [ ] perform exploratory data analysis (EDA)
+  - [ ] perform exploratory data analysis (EDA)
 
-        - [ ] export your data into Excel to determine interesting information and generate charts
+    - [ ] export your data into Excel to determine interesting information and generate charts
 
-        - [ ] time series analysis
+    - [ ] time series analysis
 
-        - [ ] descriptive statistic
-            
+    - [ ] descriptive statistic
+
 - [ ] update to phase 3 report
 
-    - [ ]  revise phase 1/2/3 report
+  - [ ] revise phase 1/2/3 report
 
-    - [ ]  phase 4 report
+  - [ ] phase 4 report
 
-        - [ ] explaining the process/techniques used to analyze the data
+    - [ ] explaining the process/techniques used to analyze the data
 
-            - [ ] algorithms
-            
-            - [ ] anaglytics tool
+      - [ ] algorithms
 
-            - [ ] materialized views
+      - [ ] analytics tool
 
-        - [ ] explaining the indexes created to boost your application program’s performance
+      - [ ] materialized views
 
-        - [ ] containing an appendix listing all of the SQL statements used in this phase
+    - [ ] explaining the indexes created to boost your application program’s performance
+
+    - [ ] containing an appendix listing all of the SQL statements used in this phase
 
 - [ ] poster
-    
-    - [ ] team name
 
-    - [ ] team members' name
+  - [ ] team name
 
-    - [ ] the observations from the data analytics
+  - [ ] team members' name
 
-    - [ ] technologies used (Excel, Python, etc)
+  - [ ] the observations from the data analytics
 
-    - [ ] (3 - 4) visual representation of the data (charts, graphs, and other visual representations are required)
-          
-    - [ ] designing (see in the writting)
+  - [ ] technologies used (Excel, Python, etc)
 
--  [ ] submission
+  - [ ] (3 - 4) visual representation of the data (charts, graphs, and other visual representations are required)
+  - [ ] designing (see in the writing)
+
+- [ ] submission
