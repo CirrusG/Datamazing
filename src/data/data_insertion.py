@@ -1,26 +1,24 @@
 # file: data_insertion.py
 # insert required artist, genre, song, album data into database
 import csv
+from random import randint
+
 import psycopg2
 # will change to cli.starbug later
+from psycopg2 import sql
+
 import cli.starbug as starbug
+import cli.query as query
+
 import time
+
+from src.cli.query import login_user
 # do not open csv files during inserting, otherwise throws 'OSError: [Errno 5] Input/output error
 # 🎈*IMPORTANT*: overall length of run at least 25 minutes (import to starbug early)
 #global variable server to make ssh connection
 server = starbug.conn_server()
 server.start()
 
-def get_result(curs):
-    result = []
-    try:
-        row = curs.fetchone()
-        while row is not None:
-            result.append(row)
-            row = curs.fetchone()
-    except (Exception, psycopg2.Error) as error:
-        print("query.fetch(ERROR):", error)
-    return result
 
 def artist_insert():
     # done insert artist
@@ -37,10 +35,9 @@ def artist_insert():
                 curs.execute(query, (row[-1],))
                 conn.commit()
             except (psycopg2.DatabaseError) as error:
-                print("data_insertion.py(ERROR):", error)
+                print("artist_insert(ERROR):", error)
             finally:
                 starbug.disconnect(conn, curs)
-
 
 def genre_insert():
     # done insert genre
@@ -57,10 +54,9 @@ def genre_insert():
                 curs.execute(query, (row[1],))
                 conn.commit()
             except (Exception, psycopg2.Error) as error:
-                print("data_insertion.py(ERROR):", error)
+                print("genre_insert(ERROR):", error)
             finally:
                 starbug.disconnect(conn, curs)
-
 
 def song_album_insert():
     # table: song, album, included_in, features, alb_gen
@@ -101,7 +97,7 @@ def song_album_insert():
                     # => include in
                     curs.execute("select artistname from included_in where albumID = %s", (albumID,))
                     exist = False
-                    for each in get_result(curs):
+                    for each in query.get_result(curs):
                         # parse result to fit the compare
                         #print('artistname get', each[0])
                         if each[0] == artist_name:
@@ -113,7 +109,7 @@ def song_album_insert():
                     # => alb_gen
                     exist = False
                     curs.execute("select genreID from alb_gen where albumID = %s", (albumID,))
-                    for each in get_result(curs):
+                    for each in query.get_result(curs):
                         #print('genre get', each)
                         if each[0] == genreID:
                             exist = True
@@ -136,12 +132,129 @@ def song_album_insert():
                         curs.execute(query, (track_number, albumID, songID))
                         conn.commit()
                 except (Exception, psycopg2.Error) as error:
-                    print("data_insertion.py(ERROR):", error)
+                    print("song_album_insert(ERROR):", error)
                 finally:
                     starbug.disconnect(conn, curs)
                 # for test
                 # break
+
 def user_insert():
+    with open ('user-data/users.csv', newline='') as userfile:
+        reader = csv.reader(userfile, delimiter=',')
+        next(reader)
+        for row in reader:
+            #print(row)
+            username = row[0]
+            email = row[1]
+            password = row[2]
+            first = row[3]
+            last = row[4]
+            query.register_user(username, password, first, last, email)
+
+def get_username_list():
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        curs.execute("select username from account")
+        result = query.get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("user_login(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+def user_login_insert():
+    for each in get_username_list():
+        login_user(each[0])
+    
+
+def collection_insert():
+    # add collection of random user until all collection assigned
+    # collection -> added_to
+    with open('user-data/collection.csv', newline='') as collecfile:
+        reader = csv.reader(collecfile, delimiter=',')
+        next(reader)
+        for row in reader:
+            try:
+                conn = starbug.connect(server)
+                curs = conn.cursor()
+                curs.execute("select username from account")
+                result = query.get_result(curs)
+                username = result[randint(0, len(result))][0]
+                #print(username)
+                query.add_collec(username, row[0])
+
+            except (Exception, psycopg2.Error) as error:
+                print("collection_insert(ERROR):", error)
+            finally:
+                starbug.disconnect(conn, curs)
+
+def get_table_size(table):
+    conn = curs =  None
+    result = []
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        one_query = sql.SQL("select count(*) from {table};").format(table = sql.Identifier(table))
+        curs.execute(one_query)
+        result = query.get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("get_table_size(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result[0][0]
+
+def get_collec_size(collecid):
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        curs.execute("select count(*) from added_to where collectionid = %s", (collecid,))
+        num = query.get_result(curs)[0][0]
+    except (Exception, psycopg2.Error) as error:
+        print("insert_song_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return num
+
+def insert_song_collec():
+    conn = curs = None
+    #user_num = get_table_size("account")
+    song_num = get_table_size("song")
+    collec_num = get_table_size("collection")
+    for num in range(1, 2000):
+        try:
+            conn = starbug.connect(server)
+            curs = conn.cursor()
+            collecid = "collection" + str(randint(1, collec_num))
+            curs.execute("select username from collection where collectionid = %s", (collecid,))
+            username = query.get_result(curs)[0][0]
+            songid = "song" + str(randint(1, song_num))
+            curs.execute("insert into added_to values(%s, %s, %s, %s)", (get_collec_size(collecid)+1, username, collecid, songid,))
+            #print(collecid)
+            conn.commit()
+        except (Exception, psycopg2.Error) as error:
+            print("insert_song_collec(ERROR):", error)
+        finally:
+            starbug.disconnect(conn, curs)
+
+def random_plays():
+    # for easier to insert, play album
+    conn = curs = None
+    user_num = get_table_size("account")
+    album_num = get_table_size("album")
+    user_list = get_username_list()
+    #print(get_username_list())
+    #collec_num = get_table_size("collection")
+    for num in range(1, 100):
+        try:
+            albumid = 'album' + str(randint(1, album_num))
+            username = user_list[randint(1, user_num) - 1][0]
+            print(query.play_album(username, albumid))
+        except (Exception, psycopg2.Error) as error:
+            print("insert_song_collec(ERROR):", error)
+        finally:
+            starbug.disconnect(conn, curs)
+        #break
 
 def main():
     # check how long time used to import
@@ -153,7 +266,15 @@ def main():
     #genre_insert()
     # -- 38019.46160531044 ---
     #song_album_insert()
-    # 15 mins to 25 mins
+    # -- 96.42819857597351 seconds ---
+    # user_insert()
+    # -- 53.363102436065674 seconds ---
+    #user_login_insert()
+    #collection_insert()
+    # test collection_insertion
+    # -- 810.1399581432343 seconds - --
+    #insert_song_collec()
+    random_plays()
     print("-- %s seconds ---" % (time.time() - start))
     starbug.disconn_server(server)
 
