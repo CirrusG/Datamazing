@@ -69,22 +69,47 @@ def verify_password(username, password):
 
 def get_user_info(key, emailOrUsername):
     # find friend by email, print username, first&last name if find
-    # return username if has, otherwise None
-    # when the return is not None, cli could query if want to add this friend
+    # return user info (first_name, last_name username, email) if has, otherwise None
     conn = curs = user_info = None
     try:
         conn = starbug.connect()
         curs = conn.cursor()
         if emailOrUsername:
-            query = """select username, first_name, last_name from account where email = (%s)"""
+            query = """select first_name, last_name, username, email from account where email = (%s)"""
         else:
-            query = """select username, first_name, last_name from account where username = (%s)"""
-        print(key)
+            query = """select first_name, last_name, username, email from account where username = (%s)"""
         curs.execute(query, (key,))
-        user_info = get_result(curs)
-
+        info = get_result(curs)
+        if len(info) != 0:
+            user_info = info
     except (Exception, psycopg2.Error) as error:
         print("read.get_user_info(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return user_info
+
+
+
+
+def show_friend_list(username):
+    # TODO: need to parse output
+    conn = curs = list = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = """select account.first_name, account.last_name, account.username 
+        from account inner join follows on account.username = follows.following
+        where follows.follower = %s"""
+        curs.execute(query, (username, ))
+        list = get_result(curs)
+        # NOTE: if it is empty array, but not same as none, need to check length of this
+        # just test output, the result will handle in the cli.py
+        # array or none
+        for row in get_result(curs):
+            print(row)
+    except (Exception, psycopg2.Error) as error:
+        print("show_friend(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+        return list
+
