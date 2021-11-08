@@ -1,229 +1,184 @@
-# https://pymotw.com/2/cmd/
-# https://docs.python.org/3/library/cmd.html#module-cmd
+# Reference
+# cmd.select: Presents a numbered menu to the user;
+# https://cmd2.readthedocs.io/en/latest/features/misc.html?highlight=menu#select
+# PRI of refactoring this application
+# 1. realize basic functions (CRUD)
+# 2. realize requirement functions (recommend system)
+# 3. improve overall code design
+# 4. improve user experience
 
-import cmd
-import re
-import query
+import cmd2
+from cmd2 import *
+import re, sys, datetime
+from datetime import datetime
+import starbug, create, read, update, delete
 
-user = None
-last_search = None
-
-def login():
-    choice = int(input(
-        "What would you like to do?\n\t1. log in\n\t2. sign up\nPlease enter 1 or 2: "))
-    if choice == 1:
-        uname = input("\nPlease enter your username.\nUsername: ")
-        if not query.user_exists(uname):
-            print("User does not exist.\n")
-            login()
-        else:
-            pw = input("\nPlease enter your password.\nPassword: ")
-            while not query.pass_correct(uname, pw):
-                print("Incorrect password.")
-                pw = input("\nPlease enter your password.\nPassword: ")
-            user = uname # never use
-            print("Logging in.")
-    elif choice == 2:
-        poss_uname = input("\nPlease choose a username: ")
-        while query.user_exists(poss_uname):
-            print("That username is already taken.")
-            poss_uname = input("\nPlease choose your username: ")
-        new_pw = input("\nPlease choose a password: ")
-        confirm_pw = input("Please retype the password: ")
-        while new_pw != confirm_pw:
-            print("Passwords do not match")
-            new_pw = input("\nPlease choose a password: ")
-            confirm_pw = input("Please retype the password: ")
-        new_first_name = input("\nPlease enter your first name: ")
-        new_last_name = input("Please enter your last name: ")
-        new_email_address = input("Please enter your email address: ")
-        while not valid_email(new_email_address):
-            print("Invalid email")
-            new_email_address = input("\nPlease enter valid email address: ")
-        query.register_user(poss_uname, new_pw, new_first_name,
-                            new_last_name, new_email_address)
-        login()
-    else:
-        print("Invalid choice.\n")
-        login()
-
+global username
 
 def valid_email(email):
     regex = re.compile(r"[^@]+@[^@]+\.[^@]+")
     if re.fullmatch(regex, email):
-        return query.email_exists(email)
+       return True
     return False
 
-
-class DatamazingShell(cmd.Cmd):
-    intro = 'Welcome to Datamazing! Type help or ? to list commands. \n'
-    prompt = '(Datamazing) '
-    file = None
-
-    def do_create_collec(self, arg):
-        'Create a new collection: create_collec collectionName'
-        'please enter collection name'
-        # check length of arg to get collection name
-        # TODO
-        name = None
-        query.add_collec(user, name)
-        return
-
-    # TOTEST
-    def do_list_collec(self, arg):
-        'List the users collections: list_collec asc/des'
-        collecs = query.list_collec(user)
-        if(not collecs):
-            print("No collections found")
+def login_in():
+    while True:
+        username = input("Username: ")
+        if not read.verify_username(username):
+            again = input(f"User {username} does not exist. Try again (y/n)? ")
+            if again.lower()[0] == 'n':
+                return False
         else:
-            if arg == "asc":
-                collecs.sort()
+            break
+
+    attempt = 3
+    while attempt > 0:
+        password = input("Password: ")
+        if read.verify_password(username, password):
+            create.login_user(username)
+            print(f"User {username} logins at {datetime.now()}")
+            return True
+        attempt -= 1
+        print(f"Incorrect password! Remaining attempt(s) {count}.")
+    print("Passwords entered more than three times.")
+    return False
+
+def sign_up():
+    while True:
+        new_username = input("\nNew username: ")
+        if read.verify_username(new_username):
+            again = input(f"Username {new_username} is already taken! Try again (y/n)? ")
+            if again.lower()[0] == 'n':
+                return False
+        else:
+            break
+
+    while True:
+        new_password = input("\nNew password: ")
+        confirm_password = input("Retype new password to confirm: ")
+        if new_password != confirm_password:
+            again = input(f"Passwords do not match! Try again (y/n)? ")
+            if again.lower()[0] == 'n':
+                return False
+        else:
+            break
+    new_first_name = input("\nPlease enter your first name: ")
+    new_last_name = input("Please enter your last name: ")
+    while True:
+        new_email_address = input("Please enter your email address: ")
+        if valid_email(new_email_address):
+            if read.verify_email(new_email_address):
+                again = input(f"Email {new_email_address} has been used! Try again (y/n)? ")
+                if again.lower()[0] == 'n':
+                    return False
             else:
-                collecs.sort(reverse=True)
-            i = 1
-            for collec in collecs:
-                print(i, ": ", collec)
-                i += 1
-
-    # TODO
-    def do_search_song(self, arg):
-        # """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
-        # \tsong\n\tartist\n\talbum\n\tgenre"""
-        # args = parse(arg)
-        # last_search = query.song_list(args[0], args[1], user)
-        # DatamazingShell.print_songs()
-        return
-
-    # TODO
-    def do_sort_search(self, arg):
-        """Sort previous search results by various criteria: sort_search sortBy asc/desc\nsortBy:
-        \tsong\n\tartist\n\tgenre\n\treleased"""
-        # if (last_search is None):
-        #     print("Please preform song search before sorting")
-        # else:
-        #     args = parse(arg)
-        #     last_search = query.song_list_sort(args[0],args[1])
-        #     DatamazingShell.print_songs()
-        return
-
-    # TODO
-    def print_songs(self, last_search):
-        # print("{:<3}{:<15}{:<15}{:<15}{:<15}".format("#","Song","Artist","Album","Length","Plays"))
-        # i = 1
-        # for s,a,al,l,c in last_search:
-        #     print("{:<3}{:<15}{:<15}{:<15}{:<15}".format(i,s,a,al,l,c))
-        #     i+=1
-        return
-
-    def do_add_collec_album(self, arg):
-        # TODO may show a list of exist collection with ID, then let user to choose
-        'Adds all songs in an album to a collection: add_collec_album collectionName albumID'
-        #query.album_to_add(collectionName, albumID)
-        return
-
-    def do_add_collec_song(self, args):
-        'Adds a song to a collection: add_collec_song collectionName songID'
-        arg_names = parse(args)
-        if not query.collec_exists(user, arg_names[0]):
-            print("Collection was not found!")
-        elif not query.if_exist('Song', 'name', arg_names[1]):
-            print("Song was not found!")
+                break
         else:
-            list_songs = query.songs_to_add(arg_names[1])
-            print("{:<3}{:<15}{:<15}".format("#","Artist","Album","Release Date"))
-            i = 1
-            for a,al,d in list_songs:
-                print("{:<3}{:<15}{:<15}".format(i,a,al,d))
-                i+=1
-            print("Please select which song you would like to add: ")
-            # TODO ADD SONG TO COLLECTION
-            
-        return
+            again = input(f"Invalid email format! Try again (y/n)? ")
+            if again.lower()[0] == 'n':
+                return False
+    create.register_user(new_username, new_password, new_first_name,
+                         new_last_name, new_email_address)
+    print(f"Successfully create user {new_username}! Back to login.")
+    return True
 
-    def do_rename_collec(self, args):
-        'Rename an existing collection: rename_collec collectionName newName'
-        c_names = parse(args)
-        c_exist = query.collec_exists(user, c_names[0])
-        c_new_exist = query.collec_exists(user, c_names[1])
-        if not c_exist:
-            print("Collection was not found!")
-        elif c_new_exist:
-            print("There is already another collection with that name.")
+def entrance():
+    choice = int(input(
+        "What would you like to do?\n\t1. log in\n\t2. sign up\n\t3. quit\nPlease enter (1-3): "))
+    if choice == 1:
+        if not login_in():
+            entrance()
+    elif choice == 2:
+        if sign_up():
+            if not login_in():
+                entrance()
         else:
-            query.rename_collec(user, *parse(args))
+            entrance()
+    elif choice == 3:
+        sys.exit("bye!")
+    else:
+        print("Invalid choice.\n")
+        entrance()
 
-    def do_delete_collec(self, arg):
-        'Delete an existing collection: delete_collection collectionName'
-        if not query.collec_exists(user, arg):
-            print("Collection was not found!")
-        else:
-            query.delete_collec(user, arg)
+class DatamazingShell(cmd2.Cmd):
+    def __init__(self):
+        super().__init__()
+        self.hidden_unneed_commands()
+        self.intro = style('Welcome to Datamazing! Type help or ? to list commands!')
+        self.prompt = "(Datamazing) "
 
-    def do_play_song(self, arg):
-        'Play a song: play_song songName'
-        return
-    
-    def do_show_collec(self, arg):
-        'List out all of the songs within a collection: show_collec collectionName'
-        return
-        
-    def do_play_collec(self, arg):
-        'Play a collection: play_collec collectionName'
-        return
+    def hidden_unneed_commands(self):
+        # hide unnecessary builtin Commands
+        self.hidden_commands.append('alias')
+        self.hidden_commands.append('edit')
+        self.hidden_commands.append('run_script')
+        self.hidden_commands.append('shell')
+        self.hidden_commands.append('macro')
+        self.hidden_commands.append('run_pyscript')
+        self.hidden_commands.append('set')
+        self.hidden_commands.append('shortcuts')
 
     def do_search_user(self, arg):
         'Search for a user by name or email: search_user userName/userEmail'
-        # if email not valid
-        if not valid_email(arg):
+        user_f = arg
+        if valid_email(user_f):
             # if user doesn't exist
-            if not query.user_exists(arg):
-                print("User not found!")
-            # if user does exist
-            else:
-                query.find_friend_u(arg)
-        # if email is valid
+            user_f_info = read.get_user_info(user_f, True)
+       # if email is valid
         else:
-            query.find_friend_e(arg)
-        return
+            user_f_info = read.get_user_info(user_f, False)
+        if user_f_info is not None:
+            print("User " + user_f + " was found!")
+            # TODO format
+            print(user_f_info)
+        else:
+            print("User " + arg + " was not found!")
 
-    def do_list_friends(self):
+    def do_list_friends(self, arg):
         'List users you follow: list_friends'
-        query.show_friend_list(user)
+        # gets list of friends and outputs first name, last name, username
+        # passed test (if everyone is okay with this format)
+        friends = read.show_friend_list(user)
+        print("{:<3}{:<15}{:<15}{:<15}".format("#", "First name", "Last name", "Username"))
+        i = 1
+        for fn, ln, un in friends:
+            print("{:<3}{:<15}{:<15}{:<15}".format(i, fn, ln, un))
+            i += 1
 
     def do_follow(self, arg):
-        'Follow a user: follow userToFollow'
-        # if friend exists is checked in follow_friend so no need to here
-        query.follow_friend(arg, user)
+        'Follow a user: follow userToFollow(username)'
+        # if user exists is checked here so that a message is printed out
+        friend = arg
+        if not read.verify_username(friend):
+            print(f"User {friend} not found!")
+        else:
+            create.follow_friend(username, friend)
 
+    # TOFIX
     def do_unfollow(self, arg):
+        # passed test
         'Unfollow a user: unfollow userToUnfollow'
-        # if friend exists is checked in unfollow_friend so no need to here
+        # if user exists is checked here so that a message is printed out
         if not query.user_exists(arg):
             print("User not found!")
         else:
             query.unfollow_friend(arg, user)
+        print("done!")
 
-    # this will probably be changed but it is a start for logging out
-    def do_logout(self, arg):
-        'User would like to logout.'
-        response = input('Are you sure? (y/n) ')
-        if response == "y":
-            print('Okay, bye!')
-            self.close()
-            quit()
-        else:
-            print("Not logging out.")
+    # def do_articulate(self, statement):
+    #     # demo for get args
+    #     # 1st option
+    #     # statement.argv contains the command
+    #     # and the arguments, which have had quotes
+    #     # stripped
+    #     for arg in statement.argv:
+    #         self.poutput(arg)
 
-    def close(self):
-        if self.file:
-            self.file.close()
-            self.file = None
-
-
-def parse(arg):
-    return list(arg.split())
 
 
 if __name__ == '__main__':
-    login()
-    DatamazingShell().cmdloop()
+    entrance()
+    c = DatamazingShell()
+    if c.cmdloop() == 0:
+        sys.exit('bye!')
+
