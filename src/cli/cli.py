@@ -13,7 +13,6 @@ import re, sys, datetime
 from datetime import datetime
 import starbug, create, read, update, delete
 
-global username
 
 def valid_email(email):
     regex = re.compile(r"[^@]+@[^@]+\.[^@]+")
@@ -23,9 +22,9 @@ def valid_email(email):
 
 def login_in():
     while True:
-        username = input("Username: ")
-        if not read.verify_username(username):
-            again = input(f"User {username} does not exist. Try again (y/n)? ")
+        login_username = input("Username: ")
+        if not read.verify_username(login_username):
+            again = input(f"User {login_username} does not exist. Try again (y/n)? ")
             if again.lower()[0] == 'n':
                 return False
         else:
@@ -34,14 +33,14 @@ def login_in():
     attempt = 3
     while attempt > 0:
         password = input("Password: ")
-        if read.verify_password(username, password):
-            create.login_user(username)
-            print(f"User {username} logins at {datetime.now()}")
-            return True
+        if read.verify_password(login_username, password):
+            create.login_user(login_username)
+            print(f"User {login_username} logins at {datetime.now()}")
+            return login_username
         attempt -= 1
         print(f"Incorrect password! Remaining attempt(s) {count}.")
     print("Passwords entered more than three times.")
-    return False
+    return None
 
 def sign_up():
     while True:
@@ -86,12 +85,19 @@ def entrance():
     choice = int(input(
         "What would you like to do?\n\t1. log in\n\t2. sign up\n\t3. quit\nPlease enter (1-3): "))
     if choice == 1:
-        if not login_in():
+        return_username = login_in()
+        if return_username is None:
             entrance()
+        else:
+            return return_username
     elif choice == 2:
         if sign_up():
-            if not login_in():
+            # Duplication with the previous if, may need to be simplified
+            return_username = login_in()
+            if return_username is None:
                 entrance()
+            else:
+                return return_username
         else:
             entrance()
     elif choice == 3:
@@ -101,11 +107,12 @@ def entrance():
         entrance()
 
 class DatamazingShell(cmd2.Cmd):
-    def __init__(self):
+    def __init__(self, username):
         super().__init__()
         self.hidden_unneed_commands()
         self.intro = style('Welcome to Datamazing! Type help or ? to list commands!')
         self.prompt = "(Datamazing) "
+        self.username = username
 
     def hidden_unneed_commands(self):
         # hide unnecessary builtin Commands
@@ -122,9 +129,7 @@ class DatamazingShell(cmd2.Cmd):
         'Search for a user by name or email: search_user userName/userEmail'
         user_f = arg
         if valid_email(user_f):
-            # if user doesn't exist
             user_f_info = read.get_user_info(user_f, True)
-       # if email is valid
         else:
             user_f_info = read.get_user_info(user_f, False)
         if user_f_info is not None:
@@ -138,12 +143,14 @@ class DatamazingShell(cmd2.Cmd):
         'List users you follow: list_friends'
         # gets list of friends and outputs first name, last name, username
         # passed test (if everyone is okay with this format)
-        friends = read.show_friend_list(user)
-        print("{:<3}{:<15}{:<15}{:<15}".format("#", "First name", "Last name", "Username"))
-        i = 1
-        for fn, ln, un in friends:
-            print("{:<3}{:<15}{:<15}{:<15}".format(i, fn, ln, un))
-            i += 1
+        friends = read.show_friend_list(self.username)
+        print(friends)
+
+        #print("{:<3}{:<15}{:<15}{:<15}".format("#", "First name", "Last name", "Username"))
+        #i = 1
+        #for fn, ln, un in friends:
+        #    print("{:<3}{:<15}{:<15}{:<15}".format(i, fn, ln, un))
+        #    i += 1
 
     def do_follow(self, arg):
         'Follow a user: follow userToFollow(username)'
@@ -152,18 +159,24 @@ class DatamazingShell(cmd2.Cmd):
         if not read.verify_username(friend):
             print(f"User {friend} not found!")
         else:
-            create.follow_friend(username, friend)
+            info = create.follow_friend(self.username, friend)
+            if info is not None:
+                print("Following", info)
+            else:
+                print("fail to follow", friend)
 
-    # TOFIX
     def do_unfollow(self, arg):
-        # passed test
         'Unfollow a user: unfollow userToUnfollow'
         # if user exists is checked here so that a message is printed out
-        if not query.user_exists(arg):
-            print("User not found!")
+        not_friend = arg
+        if not read.verify_username(not_friend):
+            print(f"User {not_friend} not found!")
         else:
-            query.unfollow_friend(arg, user)
-        print("done!")
+            info = delete.unfollow_friend(self.username, not_friend)
+            if info is not None:
+                print("Unfollowing", info)
+            else:
+                print("Fail to unfollow", not_friend)
 
     # def do_articulate(self, statement):
     #     # demo for get args
@@ -177,8 +190,11 @@ class DatamazingShell(cmd2.Cmd):
 
 
 if __name__ == '__main__':
-    entrance()
-    c = DatamazingShell()
-    if c.cmdloop() == 0:
-        sys.exit('bye!')
+    user = entrance()
+    if user is not None:
+        print("from main ", user)
+        app = DatamazingShell(user)
+        app.debug = True
+        if app.cmdloop() == 0:
+            sys.exit('bye!')
 
