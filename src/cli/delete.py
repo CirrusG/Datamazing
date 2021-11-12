@@ -4,7 +4,11 @@ import starbug
 import read
 
 def unfollow_friend(username, friend):
-    # copied the follow_friend code and changed INSERT to DELETE, may need some tweaking
+    """
+    unfollow friend (delete friendship from table follows)
+    :return
+    """
+
     conn = curs = result = None
     try:
         conn = starbug.connect()
@@ -13,7 +17,7 @@ def unfollow_friend(username, friend):
             query = """DELETE FROM follows where following = %s and follower = %s"""
             curs.execute(query, (friend, username, ))
             conn.commit()
-            result = True
+            result = read.get_user_info(friend, False)
             # TODO may need double check
     except (Exception, psycopg2.Error) as error:
         print("unfollow_friend(ERROR):", error)
