@@ -2,9 +2,15 @@ import psycopg2
 from psycopg2 import sql
 import starbug
 
+
 def verify_item(table, column, value):
-    # check if value exists as column in the table
-    # @return true if exists, otherwise false
+    """
+    check if value/row exists on column of the table
+    :param table the table to look up
+    :param column the column of the table to look up
+    :param value the row on the column of the table to look up
+    :return true if exists, otherwise false
+    """
 
     row = conn = curs = None
     try:
@@ -22,14 +28,16 @@ def verify_item(table, column, value):
         print("read.verify_item(ERROR)", error)
     finally:
         starbug.disconnect(conn, curs)
-    # NOTE: here can return row, then in another file to check if is None,
-    # if not, just get the value
     return row is not None
 
+
 def get_result(curs):
-    # get list of query result
-    # need to be parsed for better appearance in the cli program
-    # @return list of query result if has, otherwise None
+    """
+    get list of query result
+    need to be parsed for better appearance in the cli program
+    :param curs cursor of database for fetching and commit query
+    :return list of query result if has, otherwise None
+    """
     result = None
     try:
         result = []
@@ -42,17 +50,30 @@ def get_result(curs):
         print("read.get_result(ERROR):", error)
     return result
 
+
 def verify_username(username):
-    # check username if exists
+    """
+    check username if exists
+    :return True if username exists in account table otherwise false
+    """
     return verify_item('account', 'username', username)
 
+
 def verify_email(email):
-    # check email if exists
+    """
+    check email if exists
+    :return True if email exists in account table otherwise false
+    """
     return verify_item('account', 'email', email)
 
+
 def verify_password(username, password):
-    # check if password correct
-    # @return True if pass password otherwise false
+    """
+    check if password correct by username
+    :param username
+    :param password
+    :return True if pass password verification otherwise false
+    """
     result = False
     conn = curs = None
     try:
@@ -67,9 +88,14 @@ def verify_password(username, password):
         starbug.disconnect(conn, curs)
     return result
 
+
 def get_user_info(key, emailOrUsername):
-    # find friend by email, print username, first&last name if find
-    # return user info (first_name, last_name username, email) if has, otherwise None
+    """
+     find friend by email or username
+     :param key value of email or username
+     :param emailOrUsername boolean control to define the type of key; email is True, username is False
+     :return user info (first_name, last_name username, email) if has, otherwise None
+    """
     conn = curs = user_info = None
     try:
         conn = starbug.connect()
@@ -81,7 +107,7 @@ def get_user_info(key, emailOrUsername):
         curs.execute(query, (key,))
         info = get_result(curs)
         if len(info) != 0:
-            user_info = info
+            user_info = info[0]
     except (Exception, psycopg2.Error) as error:
         print("read.get_user_info(ERROR):", error)
     finally:
@@ -89,27 +115,31 @@ def get_user_info(key, emailOrUsername):
         return user_info
 
 
-
-
 def show_friend_list(username):
-    # TODO: need to parse output
+    """
+    get array list of friend
+    need to parse output
+
+    :param username username of user to look up friend
+    :return friend list {firstname, lastname, email, username}
+    """
     conn = curs = list = None
     try:
-        conn = starbug.connect(server)
+        conn = starbug.connect()
         curs = conn.cursor()
-        query = """select account.first_name, account.last_name, account.username 
+        query = """select account.first_name, account.last_name, account.email, account.username 
         from account inner join follows on account.username = follows.following
         where follows.follower = %s"""
-        curs.execute(query, (username, ))
+        curs.execute(query, (username,))
         list = get_result(curs)
-        # NOTE: if it is empty array, but not same as none, need to check length of this
-        # just test output, the result will handle in the cli.py
-        # array or none
-        for row in get_result(curs):
-            print(row)
     except (Exception, psycopg2.Error) as error:
         print("show_friend(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return list
 
+def main():
+   print(get_user_info('bc', False))
+
+if __name__ == '__main__':
+    main()
