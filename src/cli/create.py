@@ -5,9 +5,13 @@ import read
 # create - insert
 
 def login_user(username):
-    # login user (add record into accessdatestimes)
-    # @precondition: check username, password in the cli application
-    # @return true if successfully login
+    """
+    login user (add record into accessdatestimes)
+
+    :precondition: check username, password in the cli application
+    :return true if successfully login
+    """
+
     result = False
     conn = curs = None
     try:
@@ -24,11 +28,13 @@ def login_user(username):
     return result
 
 def register_user(username, password, first, last, email):
-    # register new user
-    # since each user has unique email,
-    # so only need to check uname if has existed in the database
-    # insert account into database
-    # @return if successful register
+    """
+    1. register new user
+    since each user has unique email,
+    so only need to check uname if has existed in the database
+    2. insert the account into database
+    :return if successful register
+    """
     conn = curs = None
     result = False
     try:
@@ -45,10 +51,13 @@ def register_user(username, password, first, last, email):
     return result
 
 def follow_friend(username, friend):
-    # @parm friend: friend to follow (following)
-    # @param username: current user in the cli that want to follow friend(follower)
-    # do not need to check user username since entered application
-    # but need to record 'username' as global value in the cli since it need to use many times
+    """
+    follow friend (user who follows friend is follower, friend is following)
+
+    :param username: current user in the cli that want to follow friend(follower)
+    :param friend: friend to follow (following)
+    :return true if successfully follow otherwise false
+    """
     conn = curs = result = None
     try:
         conn = starbug.connect()
@@ -57,7 +66,7 @@ def follow_friend(username, friend):
             query = """insert into follows (following, follower) values (%s, %s)"""
             curs.execute(query, (friend, username, ))
             conn.commit()
-            result = get_user_info(friend, False)
+            result = read.get_user_info(friend, False)
     except (Exception, psycopg2.Error) as error:
         print("follow_friend(ERROR):", error)
     finally:
