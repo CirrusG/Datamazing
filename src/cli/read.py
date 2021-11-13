@@ -138,6 +138,42 @@ def show_friend_list(username):
         starbug.disconnect(conn, curs)
         return list
 
+
+def list_collec(username):
+    """
+    list collections that belong to the user
+    :return collectionid, collection name of user's collections
+    """
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = "SELECT collectionid, name FROM Collection where username = %s"
+        curs.execute(query, (username,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.list_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+def total_song_collec(collectionid):
+    # need to handle array message returned
+    # return collectionid, collection name of user's collections
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = "select count(added_to.songid), sum(song.length) from added_to join song on added_to.songid = song.songid " \
+                "where added_to.collectionid like %s"
+        curs.execute(query, (collectionid,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.list_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
 def main():
    print(get_user_info('bc', False))
 
