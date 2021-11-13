@@ -38,7 +38,7 @@ def login_in():
             print(f"User {login_username} logins at {datetime.now()}")
             return login_username
         attempt -= 1
-        print(f"Incorrect password! Remaining attempt(s) {count}.")
+        print(f"Incorrect password! Remaining attempt(s) {attempt}.")
     print("Passwords entered more than three times.")
     return None
 
@@ -178,6 +178,53 @@ class DatamazingShell(cmd2.Cmd):
             else:
                 print("Fail to unfollow", not_friend)
 
+    list_collec_parser = cmd2.Cmd2ArgumentParser()
+    list_collec_parser.add_argument('-a', '--asc', action='store_true', help='list collection in ascending order')
+    list_collec_parser.add_argument('-d', '--desc', action='store_true', help='list collection in descending order')
+    @with_argparser(list_collec_parser)
+    def do_list_collec(self, opts):
+        # TODO
+        # Users will be to see the list of all their collections by name in ascending order. The list
+        # must show the following information per collection:
+        # – Collection’s name
+        # – Number of songs in the collection
+        # – Total duration in minutes
+        # passed test
+        'List the users collections: list_collec asc/des'
+        # collection {id, username, collection_name}
+        collecs = read.list_collec(self.username)
+        print(collecs)
+        for collec in collecs:
+            print(read.total_song_collec(collec[0]))
+        if collecs is None:
+            print("No collections found")
+        else:
+            if opts.asc:
+                collecs.sort()
+            elif opts.desc:
+                collecs.sort(reverse=True)
+        print(collecs)
+            # i = 1
+            # for collec in collecs:
+            #     # removes parenthesis and commas
+            #     c = str(collec)[1:-2]
+            #     print(i, ": ", c)
+            #     i += 1
+    # def do_create_collec(self, arg):
+    #     # passed test
+    #     'Create a new collection: create_collec collectionName'
+    #     # make check if collection name is empty
+    #     collecid = arg
+    #     # if the collection doesn't already exist
+    #     if not query.collec_exists(user, collecid):
+    #         query.add_collec(user, collecid)
+    #     else:
+    #         print("Collection with that name already exists!")
+
+        # 🎈test
+
+
+
     # def do_articulate(self, statement):
     #     # demo for get args
     #     # 1st option
@@ -187,12 +234,27 @@ class DatamazingShell(cmd2.Cmd):
     #     for arg in statement.argv:
     #         self.poutput(arg)
 
-
-
+#     # 🎈test
+#     def do_delete_collec(self, arg):
+#         # pass test
+#         'Delete an existing collection: delete_collection collectionName'
+#         if not query.collec_exists(user, arg):
+#             print("Collection was not found!")
+#         else:
+#             query.delete_collec(user, arg)
+#     # 🎈test
+#     def do_play_song(self, arg):
+#
+#         'Play a song: play_song songID'
+#         songid = arg
+#         if query.if_exist('song', 'songid', songid):
+#             print("playing", query.play_song(user, songid))
+#         else:
+#             print("song entered does not exist"
+#
 if __name__ == '__main__':
     user = entrance()
     if user is not None:
-        print("from main ", user)
         app = DatamazingShell(user)
         app.debug = True
         if app.cmdloop() == 0:
