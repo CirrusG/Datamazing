@@ -6,7 +6,7 @@ import read
 def unfollow_friend(username, friend):
     """
     unfollow friend (delete friendship from table follows)
-    :return
+    :return friend info that unfollowed
     """
 
     conn = curs = result = None
