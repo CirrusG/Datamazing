@@ -133,49 +133,54 @@ def show_friend_list(username):
         curs.execute(query, (username,))
         list = get_result(curs)
     except (Exception, psycopg2.Error) as error:
-        print("show_friend(ERROR):", error)
+        print("read.show_friend_list(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return list
 
-
-def list_collec(username):
-    """
-    list collections that belong to the user
-    :return collectionid, collection name of user's collections
-    """
-    conn = curs = result = None
+def verify_collec(username, collectionid):
+    conn = curs = None
+    result = False
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = "SELECT collectionid, name FROM Collection where username = %s"
-        curs.execute(query, (username,))
-        result = get_result(curs)
+        query = """select name from collection where collectionid = %s and username = %s"""
+        curs.execute(query, (collectionid, username,))
+        result = len(get_result(curs)) != 0
     except (Exception, psycopg2.Error) as error:
-        print("query.list_collec(ERROR):", error)
+        print("read.show_friend_list(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
-    return result
+        return result
 
-def total_song_collec(collectionid):
+def list_collec(username, ascOrDesc):
     # need to handle array message returned
     # return collectionid, collection name of user's collections
     conn = curs = result = None
+
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = "select count(added_to.songid), sum(song.length) from added_to join song on added_to.songid = song.songid " \
-                "where added_to.collectionid like %s"
-        curs.execute(query, (collectionid,))
+        if ascOrDesc:
+            query = "select collection.name, collection.collectionid, count(added_to.songid), sum(song.length) " \
+                "from added_to join collection on added_to.collectionid = collection.collectionid " \
+                "join song on added_to.songid = song.songid where collection.username = %s " \
+                "group by collection.name, collection.collectionid order by collection.name"
+        else:
+            query = "select collection.name, collection.collectionid, count(added_to.songid), sum(song.length) " \
+                    "from added_to join collection on added_to.collectionid = collection.collectionid " \
+                    "join song on added_to.songid = song.songid where collection.username = %s " \
+                    "group by collection.name, collection.collectionid order by collection.name desc"
+        curs.execute(query, (username, ))
         result = get_result(curs)
     except (Exception, psycopg2.Error) as error:
-        print("query.list_collec(ERROR):", error)
+        print("read.list_collec (ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
     return result
 
 def main():
-   print(get_user_info('bc', False))
+    print(verify_collec('pb', 'collection108'))
 
 if __name__ == '__main__':
     main()
