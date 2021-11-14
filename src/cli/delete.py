@@ -24,3 +24,23 @@ def unfollow_friend(username, friend):
     finally:
         starbug.disconnect(conn, curs)
     return result
+
+def delete_collec(username, collectionid):
+
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        # TODO handle error of cascade, may delete each related table one by one
+        query = """delete from collection where collectionid = %s and username = %s cascade returning name, collectionid"""
+        curs.execute(query, (collectionid, username,))
+        conn.commit()
+        result = curs.fetchone[0]
+    except (Exception, psycopg2.Error) as error:
+        print("delete_collec (ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+if __name__ == '__main__':
+    print(delete_collec('pb', 'collection122'))
