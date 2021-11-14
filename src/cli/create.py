@@ -72,3 +72,23 @@ def follow_friend(username, friend):
     finally:
         starbug.disconnect(conn, curs)
     return result
+
+def add_collec(username, name):
+    conn = curs = None
+    result = [name]
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """insert into collection (username, name) values (%s, %s) returning name, collectionid"""
+        curs.execute(query, (username, name))
+        conn.commit()
+        result.append(curs.fetchone()[0])
+    except (Exception, psycopg2.Error) as error:
+        print("follow_friend(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+if __name__ == '__main__':
+    print(add_collec('ly', 'underground'))
