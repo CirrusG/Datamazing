@@ -89,6 +89,21 @@ def add_collec(username, name):
         starbug.disconnect(conn, curs)
     return result
 
+def play_song(username, songid):
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """insert into plays (username, songID) values (%s, %s)"""
+        curs.execute(query, (username, songid))
+        conn.commit()
+        result = read.get_song_info(songid)
+    except (Exception, psycopg2.Error) as error:
+        print("follow_friend(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
 
 if __name__ == '__main__':
     print(add_collec('ly', 'underground'))
