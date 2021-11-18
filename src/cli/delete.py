@@ -31,11 +31,14 @@ def delete_collec(username, collectionid):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        # TODO handle error of cascade, may delete each related table one by one
-        query = """delete from collection where collectionid = %s and username = %s cascade returning name, collectionid"""
+        query = """delete from added_to where collectionid = %s"""
+        curs.execute(query, (collectionid, ))
+        conn.commit()
+        query = """delete from collection where collectionid = %s and username = %s 
+        returning name, collectionid"""
         curs.execute(query, (collectionid, username,))
         conn.commit()
-        result = curs.fetchone[0]
+        result = read.get_result(curs)
     except (Exception, psycopg2.Error) as error:
         print("delete_collec (ERROR):", error)
     finally:
@@ -43,4 +46,4 @@ def delete_collec(username, collectionid):
     return result
 
 if __name__ == '__main__':
-    print(delete_collec('pb', 'collection122'))
+    print(delete_collec('pb', 'collection111'))
