@@ -212,17 +212,6 @@ class DatamazingShell(cmd2.Cmd):
         info = create.add_collec(self.username, name)
         print(f"New collection created:\n {info}")
 
-
-    # def do_articulate(self, statement):
-    #     # demo for get args
-    #     # 1st option
-    #     # statement.argv contains the command
-    #     # and the arguments, which have had quotes
-    #     # stripped
-    #     for arg in statement.argv:
-    #         self.poutput(arg)
-
-#     # 🎈test
     def do_delete_collec(self, arg):
         # pass test
         'Delete an existing collection: delete_collection collectionName'
@@ -232,15 +221,60 @@ class DatamazingShell(cmd2.Cmd):
         else:
             info = delete.delete_collec(self.username, collectionid)
             print(f"Deleted collection {info}")
-#     # 🎈test
-#     def do_play_song(self, arg):
-#
-#         'Play a song: play_song songID'
-#         songid = arg
-#         if query.if_exist('song', 'songid', songid):
-#             print("playing", query.play_song(user, songid))
-#         else:
-#             print("song entered does not exist"
+
+    def do_rename_collec(self, args):
+        # passed test
+        'Rename an existing collection: rename_collec collectionName newName'
+        c_names = parse(args)
+        c_exist = query.collec_exists(user, c_names[0])
+        c_new_exist = query.collec_exists(user, c_names[1])
+        if not c_exist:
+            print("Collection was not found!")
+        elif c_new_exist:
+            print("There is already another collection with that name.")
+        else:
+            query.rename_collec(user, *parse(args))
+
+    # def do_add_collec_album(self, args):
+    #     # TODO may show a list of exist collection with ID, then let user to choose
+    #     'Adds all songs in an album to a collection: add_collec_album collectionName albumID'
+    #     arg_names = parse(args)
+    #     collectionName = arg_names[0]
+    #     albumID = arg_names[1]
+    #     query.album_to_add(collectionName, albumID)
+    #     print("done")
+    #     return
+
+    # 🎈
+    # def do_add_collec_song(self, args):
+    #     'Adds a song to a collection: add_collec_song collectionID songID'
+    #     arg_names = parse(args)
+    #     if not query.collec_exists(user, arg_names[0]):
+    #         print("Collection was not found!")
+    #     elif not query.if_exist('Song', 'songid', arg_names[1]):
+    #         print("Song was not found!")
+    #     else:
+    #         list_songs = query.add_song_collec(arg_names[0], arg_names[1])
+    #         print("{:<3}{:<15}{:<15}".format("#","Artist","Album","Release Date"))
+    #         i = 1
+    #         for a,al,d in list_songs:
+    #             print("{:<3}{:<15}{:<15}".format(i,a,al,d))
+    #             i+=1
+    #         print("Please select which song you would like to add: ")
+    #         # TODO ADD SONG TO COLLECTION
+    #
+    #     return
+
+    def do_play_song(self, arg):
+
+        'Play a song: play_song songID'
+        songid = arg
+        if read.verify_item('song', 'songid', songid):
+            info = create.play_song(user, songid)
+            print("playing", info)
+        else:
+            print("song entered does not exist")
+
 #
 if __name__ == '__main__':
     user = entrance()
