@@ -139,6 +139,9 @@ def show_friend_list(username):
         return list
 
 def verify_collec(username, collectionid):
+    """
+    Verify if the collection belongs to the user
+    """
     conn = curs = None
     result = False
     try:
@@ -179,8 +182,28 @@ def list_collec(username, ascOrDesc):
         starbug.disconnect(conn, curs)
     return result
 
+def get_song_info(songid):
+    """
+    Get song info: {songid, name, length, create_date_time, genre6, artist}
+    """
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select song.title, song.artistName, song.length, genre.name, song.release_date 
+        from song join genre on song.genreid = genre.genreid where songid = %s"""
+        curs.execute(query, (songid, ))
+        result = get_result(curs)[0]
+    except (Exception, psycopg2.Error) as error:
+        print("get_song_info (ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
 def main():
-    print(verify_collec('pb', 'collection108'))
+    print(list_collec('pb', True))
+    #print(get_song_info('song100'))
 
 if __name__ == '__main__':
     main()
