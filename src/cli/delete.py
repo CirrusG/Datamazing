@@ -3,6 +3,7 @@ from psycopg2 import sql
 import starbug
 import read
 
+
 def unfollow_friend(username, friend):
     """
     unfollow friend (delete friendship from table follows)
@@ -15,7 +16,7 @@ def unfollow_friend(username, friend):
         curs = conn.cursor()
         if read.verify_username(friend):
             query = """DELETE FROM follows where following = %s and follower = %s"""
-            curs.execute(query, (friend, username, ))
+            curs.execute(query, (friend, username,))
             conn.commit()
             result = read.get_user_info(friend, False)
             # TODO may need double check
@@ -25,17 +26,17 @@ def unfollow_friend(username, friend):
         starbug.disconnect(conn, curs)
     return result
 
-def delete_collec(username, collectionid):
 
+def delete_collec(username, collectionid):
     conn = curs = result = None
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """delete from added_to where collectionid = %s"""
-        curs.execute(query, (collectionid, ))
+        query = """delete from added_to where collectionid = %s and username = %s"""
+        curs.execute(query, (collectionid, username))
         conn.commit()
-        query = """delete from collection where collectionid = %s and username = %s 
-        returning name, collectionid"""
+        query = """delete from collection where collectionid = %s and username = %s
+        returning *"""
         curs.execute(query, (collectionid, username,))
         conn.commit()
         result = read.get_result(curs)
@@ -45,5 +46,6 @@ def delete_collec(username, collectionid):
         starbug.disconnect(conn, curs)
     return result
 
+
 if __name__ == '__main__':
-    print(delete_collec('pb', 'collection111'))
+    print(delete_collec('ly', 'collection235'))
