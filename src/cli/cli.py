@@ -178,27 +178,24 @@ class DatamazingShell(cmd2.Cmd):
             else:
                 print("Fail to unfollow", not_friend)
 
-    list_collec_parser = cmd2.Cmd2ArgumentParser()
+    list_collec_parser = Cmd2ArgumentParser()
     list_collec_parser.add_argument('-a', '--asc', action='store_true', help='list collection in ascending order')
     list_collec_parser.add_argument('-d', '--desc', action='store_true', help='list collection in descending order')
     @with_argparser(list_collec_parser)
-    def do_list_collec(self, opts):
-        # TODO
-        # Users will be to see the list of all their collections by name in ascending order. The list
-        # must show the following information per collection:
-        # – Collection’s name
-        # – Number of songs in the collection
-        # – Total duration in minutes
-        'List the users collections: list_collec asc(default)/desc'
-        # collection {id, username, collection_name}
-
-        collecs = None
+    def do_show_collecs(self, opts):
+        """
+        show_collecs --asc/--desc
+        """
         if opts.desc:
-            collecs = read.list_collec(self.username, False)
+            collecs = read.list_user_collec(self.username, False)
+        elif opts.asc:
+            collecs = read.list_user_collec(self.username, True)
         else:
-            collecs = read.list_collec(self.username, True)
+            print("Please use --asc or --desc")
+            return
 
-        print(collecs)
+        for collec in collecs:
+            print(collec)
             # i = 1
             # for collec in collecs:
             #     # removes parenthesis and commas
@@ -207,66 +204,83 @@ class DatamazingShell(cmd2.Cmd):
             #     i += 1
 
     def do_create_collec(self, arg):
-        'Create a new collection: create_collec collectionName'
+        'create_collec collectionName'
         name = arg
-        info = create.add_collec(self.username, name)
+        print(name)
+        info = create.create_collec(self.username, name)
         print(f"New collection created:\n {info}")
 
     def do_delete_collec(self, arg):
-        # pass test
         'Delete an existing collection: delete_collection collectionName'
         collectionid = arg
-        if not read.verify_collec(self.username, collectionid):
+        collection_info = read.get_collec_info(self.username, collectionid)
+        if len(collection_info) == 0:
             print("Collection was not found!")
         else:
-            info = delete.delete_collec(self.username, collectionid)
-            print(f"Deleted collection {info}")
+            delete.delete_collec(self.username, collectionid)
+            print(f"Deleted collection {collection_info}")
 
+    rename_collec_parser = Cmd2ArgumentParser()
+    rename_collec_parser.add_argument('collectionid', nargs='?', help='collection ID')
+    rename_collec_parser.add_argument('new_name', nargs='?', help='new collection name')
+    @with_argparser(rename_collec_parser)
     def do_rename_collec(self, args):
-        # passed test
-        'Rename an existing collection: rename_collec collectionName newName'
-        c_names = parse(args)
-        c_exist = query.collec_exists(user, c_names[0])
-        c_new_exist = query.collec_exists(user, c_names[1])
-        if not c_exist:
-            print("Collection was not found!")
-        elif c_new_exist:
-            print("There is already another collection with that name.")
+        """
+        rename_collec <collectionid> <new_name>
+        list collection -> get collectionid -> rename the collection with new name
+        """
+        'Rename an existing collection: rename_collec collectiondid new_name'
+        collectionid = args.collectionid
+        collection_info = read.get_collec_info(self.username, collectionid)
+        new_name = args.new_name
+        print(new_name)
+        if len(collection_info) == 0:
+            print(f"User {self.username} does not own this collection!")
         else:
-            query.rename_collec(user, *parse(args))
+            modified = update.rename_collec(self.username, collectionid, new_name)
+            print(f"sucessfully modify {collection_info[2]} to {modified[2]}")
 
-    # def do_add_collec_album(self, args):
-    #     # TODO may show a list of exist collection with ID, then let user to choose
-    #     'Adds all songs in an album to a collection: add_collec_album collectionName albumID'
-    #     arg_names = parse(args)
-    #     collectionName = arg_names[0]
-    #     albumID = arg_names[1]
-    #     query.album_to_add(collectionName, albumID)
-    #     print("done")
-    #     return
 
-    # 🎈
-    # def do_add_collec_song(self, args):
-    #     'Adds a song to a collection: add_collec_song collectionID songID'
-    #     arg_names = parse(args)
-    #     if not query.collec_exists(user, arg_names[0]):
-    #         print("Collection was not found!")
-    #     elif not query.if_exist('Song', 'songid', arg_names[1]):
-    #         print("Song was not found!")
-    #     else:
-    #         list_songs = query.add_song_collec(arg_names[0], arg_names[1])
-    #         print("{:<3}{:<15}{:<15}".format("#","Artist","Album","Release Date"))
-    #         i = 1
-    #         for a,al,d in list_songs:
-    #             print("{:<3}{:<15}{:<15}".format(i,a,al,d))
-    #             i+=1
-    #         print("Please select which song you would like to add: ")
-    #         # TODO ADD SONG TO COLLECTION
-    #
-    #     return
+    add_collec_album_parser = Cmd2ArgumentParser()
+    add_collec_album_parser.add_argument('collectionid', nargs='?', help='collection ID')
+    add_collec_album_parser.add_argument('albumid', nargs='?', help='album ID')
+    @with_argparser(add_collec_album_parser)
+    def do_add_collec_album(self, args):
+        """
+        add_collec_album collectionid albumid
+        list collections -> get collectionid
+        search album -> get albumid
+        add song with albumid and collectionid
+        """
+        'Adds all songs in an album to a collection: add_collec_album collectionID albumID'
+        collection_info = read.get_collec_info(self.username, args.collectionid)
+        album_info = read.get_album_info(args.albumid)
+        if len(album_info) == 0:
+            print(f"The album {args.albumid} does not exist")
+        elif len(collection_info) == 0:
+            print(f"The collection {args.collectionid} does not belong to user {self.username}")
+        else:
+            print("adding all song from", album_info, "to collection", collection_info)
+
+            create.album_to_collec(self.username, args.collectionid, args.albumid)
+
+    add_collec_song_parser = Cmd2ArgumentParser()
+    add_collec_song_parser.add_argument('collectionid', nargs='?', help='collection ID')
+    add_collec_song_parser.add_argument('songid', nargs='?', help='song ID')
+    @with_argparser(add_collec_song_parser)
+    def do_add_collec_song(self, args):
+        'Adds a song to a collection: add_collec_song collectionID songID'
+        collection_info = read.get_collec_info(self.username, args.collectionid)
+        song_info = read.get_song_info(args.songid)
+        if len(collection_info) == 0:
+            print("Collection was not found!")
+        elif len(song_info) == 0:
+            print("Song was not found!")
+        else:
+            local_number = create.add_song_collec(self.username, args.collectionid, args.songid)
+            print(f"{song_info} has added into {collection_info} at number {local_number}")
 
     def do_play_song(self, arg):
-
         'Play a song: play_song songID'
         songid = arg
         if read.verify_item('song', 'songid', songid):
@@ -275,9 +289,32 @@ class DatamazingShell(cmd2.Cmd):
         else:
             print("song entered does not exist")
 
-#
+    def do_profile(self, arg):
+        """list user profile"""
+        # TODO fix table output later
+        collecs_info = read.get_profile(self.username)
+        print("======profile=======")
+        print(f"{self.username} has:\t {collecs_info[0]}")
+        print(f"{collecs_info[1]} follows {self.username}")
+        print(f"{self.username} has {collecs_info[2]} followings")
+        print(f"Top 10 artist {self.username} most plays")
+        print("ArtistName\t\t\tPlay times")
+        for artist in collecs_info[3]:
+            print(f"{artist[0]}\t\t\t{artist[1]}")
+
+    recommend_parser = Cmd2ArgumentParser()
+    recommend_parser.add_argument('-a', action='store_true', help='roll up top 50 most popular songs in the last 30 days')
+    recommend_parser.add_argument('-b', action='store_true', help='list top 50 most popular songs among friend')
+    recommend_parser.add_argument('-c', action='store_true', help='list top 5 most popular genres of the month')
+    recommend_parser.add_argument('-r', action='store_true', help='list recommend songs (for you)')
+    @with_argparser(recommend_parser)
+    def do_recommend(self, opts):
+        # TODO roll up: while the song list array utill key enter
+        return
+
 if __name__ == '__main__':
-    user = entrance()
+    #user = entrance()
+    user = 'ly'
     if user is not None:
         app = DatamazingShell(user)
         app.debug = True
