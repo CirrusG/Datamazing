@@ -44,7 +44,7 @@ def get_result(curs):
         if curs.statusmessage is not None:
             row = curs.fetchone()
             while row is not None:
-                result.append(row)
+                result.append(list(row))
                 row = curs.fetchone()
     except (Exception, psycopg2.Error) as error:
         print("read.get_result(ERROR):", error)
@@ -138,49 +138,69 @@ def show_friend_list(username):
         starbug.disconnect(conn, curs)
         return list
 
-def verify_collec(username, collectionid):
+def get_collec_info(username, collectionid):
     """
     Verify if the collection belongs to the user
+    if successful, return the collection's information
     """
     conn = curs = None
-    result = False
+    result = []
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select name from collection where collectionid = %s and username = %s"""
+        query = """select * from collection where collectionid = %s and username = %s"""
         curs.execute(query, (collectionid, username,))
-        result = len(get_result(curs)) != 0
+        result = get_result(curs)
+        if len(result) != 0:
+            result = result[0]
+            query = """select count(collectionid) from added_to where collectionid = %s"""
+            curs.execute(query, (collectionid, ))
+            result.extend(get_result(curs)[0])
     except (Exception, psycopg2.Error) as error:
-        print("read.show_friend_list(ERROR):", error)
+        print("read.get_collec_info(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return result
 
-def list_collec(username, ascOrDesc):
-    # need to handle array message returned
-    # return collectionid, collection name of user's collections
+def list_user_collec(username, ascOrDesc):
     conn = curs = result = None
 
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        if ascOrDesc:
-            query = "select collection.name, collection.collectionid, count(added_to.songid), sum(song.length) " \
-                "from added_to join collection on added_to.collectionid = collection.collectionid " \
-                "join song on added_to.songid = song.songid where collection.username = %s " \
-                "group by collection.name, collection.collectionid order by collection.name"
-        else:
-            query = "select collection.name, collection.collectionid, count(added_to.songid), sum(song.length) " \
-                    "from added_to join collection on added_to.collectionid = collection.collectionid " \
-                    "join song on added_to.songid = song.songid where collection.username = %s " \
-                    "group by collection.name, collection.collectionid order by collection.name desc"
+        query = """select name, collectionid from collection where username = %s"""
         curs.execute(query, (username, ))
         result = get_result(curs)
+        for each in result:
+            collectionid = each[1]
+            query = """select count(added_to.songid), sum(song.length)
+                    from added_to join song on added_to.songid = song.songid
+                    where added_to.collectionid = %s"""
+            curs.execute(query, (collectionid, ))
+            each.extend(get_result(curs)[0])
+        if ascOrDesc:
+            result.sort()
+        else:
+            result.sort(reverse=True)
     except (Exception, psycopg2.Error) as error:
         print("read.list_collec (ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
     return result
+
+def list_collec_song(username, collectionid):
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select location_number, songid from added_to where username = %s and collectionid = %s"""
+        curs.execute(query, (username, collectionid))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("read.show_friend_list(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+        return sorted(result)
 
 def get_song_info(songid):
     """
@@ -190,7 +210,7 @@ def get_song_info(songid):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select song.title, song.artistName, song.length, genre.name, song.release_date 
+        query = """select song.songid, song.title, song.artistName, song.length, genre.name, song.release_date 
         from song join genre on song.genreid = genre.genreid where songid = %s"""
         curs.execute(query, (songid, ))
         result = get_result(curs)[0]
@@ -200,10 +220,97 @@ def get_song_info(songid):
         starbug.disconnect(conn, curs)
     return result
 
+def get_album_info(albumid):
+    """
+    verify if the ablum exists, unless, return its information
+    [album_info, [genre_list], [artist_list]]
+    i.e:
+    ['album1000', 'Rewind, Replay, Rebound', datetime.date(2019, 8, 28),
+    ['danish metal', 'danish rock', 'alternative metal'], ['Volbeat']]
+    """
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select * from album where albumid = %s"""
+        curs.execute(query, (albumid,))
+        result = get_result(curs)[0]
+        query = """select name from genre join alb_gen 
+        on alb_gen.genreID = genre.genreid where alb_gen.albumid = %s"""
+        curs.execute(query, (albumid, ))
+        genre_list = []
+        for each in get_result(curs):
+            genre_list.append(each[0])
+        result.append(genre_list)
+        query = """select artistname from included_in where albumid = %s"""
+        curs.execute(query, (albumid,))
+        artist_list = []
+        for each in get_result(curs):
+            artist_list.append(each[0])
+        result.append(artist_list)
+    except (Exception, psycopg2.Error) as error:
+        print("read.get_album_info(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+        return result
+
+def list_album(albumid):
+    """
+    return song list
+    """
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select track_number, songid from features where albumid = %s"""
+        curs.execute(query, (albumid,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("read.show_friend_list(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+        return sorted(result)
+
+def get_profile(username):
+    """
+    1. number of collections
+    2. number of followers
+    3. number of following
+    4. top 10 artist the user most plays
+    """
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select count(collectionid) from collection where username = %s"""
+        curs.execute(query, (username, ))
+        result = get_result(curs)[0]
+        query = """select count(follower) from follows where following = %s"""
+        curs.execute(query, (username, ))
+        result.extend(get_result(curs)[0])
+        query = """select count(following) from follows where follower = %s"""
+        curs.execute(query, (username,))
+        result.extend(get_result(curs)[0])
+        query = """select song.artistName, count(song.artistName) from plays
+                join song on plays.songid = song.songid where username = %s 
+                group by song.artistName order by count desc limit 10"""
+        curs.execute(query, (username, ))
+        result.append(get_result(curs))
+    except (Exception, psycopg2.Error) as error:
+        print("read.show_friend_list(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+        return result
+
+def get_
 
 def main():
-    print(list_collec('pb', True))
-    #print(get_song_info('song100'))
+    # print(get_collec_info('ly', 'collection136'))
+    # print(get_album_info('album1000'))
+    # print(list_user_collec('ly', True))
+    #print(list_album('album1000'))
+    print(get_profile('ly'))
+    return
 
 if __name__ == '__main__':
     main()
