@@ -1,0 +1,19 @@
+search_user pb
+follow pb
+unfollow pb
+show_collecs -a
+add_collecs wow
+# need to get collection id fom list_collecs
+rename_collec collection# 'wow monday'
+delete_collec collection#
+show_collecs -d
+play_song song343
+profile
+recommend -a
+recommend -b
+recommend -c
+recommend -r
+search_song -s happy
+search_song -a boy
+search_song -al rain
+search_song -g taiwan
