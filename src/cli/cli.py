@@ -425,10 +425,21 @@ class DatamazingShell(cmd2.Cmd):
     search_parser.add_argument('-a', '--artist', action='store_true', help='list song by artist name')
     search_parser.add_argument('-al', '--album', action='store_true', help='list song by album name')
     search_parser.add_argument('-g', '--genre', action='store_true', help='list song by genre')
-    search_parser.add_argument('criteria', nargs='?', help='word to say')
+    search_parser.add_argument('criteria', nargs='+', help='word to say')
     @with_argparser(search_parser)
     def do_search_song(self, opts):
+        """
+        search_song -s/--song [criteria]: search for a song by song name
+        search_song -a/--artist [criteria]: search for a song by artist name
+        search_song -al/--album [criteria]: search for a song by album name
+        search_song -g/--genre [criteria]: search for a song by genre
+        """
         arg = opts.criteria
+        args = ''
+        for i in range(len(arg) - 1):
+            args += arg[i]
+            args += " "
+        args += arg[-1]
         if not (opts.song or opts.artist or opts.album or opts.genre):
             print("Invalid Criteria!!!")
             return
@@ -437,17 +448,18 @@ class DatamazingShell(cmd2.Cmd):
             return
         songs = []
         if opts.song:
-            songs = read.list_songs_song(arg)
+            songs = read.list_songs_song(args)
         elif opts.artist:
-            songs = read.list_songs_artist(arg)
+            songs = read.list_songs_artist(args)
         elif opts.album:
-            songs = read.list_songs_album(arg)
+            songs = read.list_songs_album(args)
         elif opts.genre:
-            songs = read.list_songs_genre(arg)
+            songs = read.list_songs_genre(args)
 
         if len(songs) != 0:
             columns: List[Column] = list()
             columns.append(Column("Song ID", width=20))
+            columns.append(Column("Album ID", width=20))
             columns.append(Column("Song Title", width=20))
             columns.append(Column("Artist", width=20))
             columns.append(Column("Genre", width=20))
