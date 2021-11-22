@@ -43,7 +43,6 @@ def conn_server():
                                     ssh_password=get_password(),
                                     remote_bind_address=('localhost', 5432))
         server.start()
-        #print(datetime.now(), "SSH tunnel established")
     except sshtunnel.BaseSSHTunnelForwarderError as error:
         print("starbug.conn_server(Exception):", error)
     return server
@@ -52,7 +51,6 @@ def conn_server():
 def disconn_server(server):
     # close starbug server
     server.close()
-    #print(datetime.now(), "SSH tunnel closed")
 
 
 def connect():
