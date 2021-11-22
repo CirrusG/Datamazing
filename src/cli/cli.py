@@ -7,15 +7,15 @@
 # 3. improve overall code design
 # 4. improve user experience
 
-import functools
 from typing import List
 
 import cmd2
 from cmd2 import *
 import re, sys, datetime
 from datetime import datetime
-import starbug, create, read, update, delete
+import create, read, update, delete
 from cmd2.table_creator import *
+
 
 
 def valid_email(email):
@@ -121,6 +121,7 @@ class DatamazingShell(cmd2.Cmd):
     def ansi_print(self, text):
         ansi.style_aware_write(sys.stdout, text + '\n\n')
 
+
     def hidden_unneed_commands(self):
         # hide unnecessary builtin Commands
         self.hidden_commands.append('alias')
@@ -153,6 +154,7 @@ class DatamazingShell(cmd2.Cmd):
             self.ansi_print(table)
         else:
             print("User " + arg + " was not found!")
+
 
     def do_list_friends(self, arg):
         'List users you follow: list_friends'
@@ -189,6 +191,7 @@ class DatamazingShell(cmd2.Cmd):
                 self.ansi_print(table)
             else:
                 print("fail to follow", friend)
+
 
     def do_unfollow(self, arg):
         'Unfollow a user: unfollow userToUnfollow'
