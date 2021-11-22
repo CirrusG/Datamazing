@@ -1,11 +1,4 @@
-# Reference
-# cmd.select: Presents a numbered menu to the user;
-# https://cmd2.readthedocs.io/en/latest/features/misc.html?highlight=menu#select
-# PRI of refactoring this application
-# 1. realize basic functions (CRUD)
-# 2. realize requirement functions (recommend system)
-# 3. improve overall code design
-# 4. improve user experience
+# main application
 
 from typing import List
 
