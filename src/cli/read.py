@@ -1,3 +1,5 @@
+import datetime
+
 import psycopg2
 from psycopg2 import sql
 import starbug
@@ -138,6 +140,7 @@ def show_friend_list(username):
         starbug.disconnect(conn, curs)
         return list
 
+
 def get_collec_info(username, collectionid):
     """
     Verify if the collection belongs to the user
@@ -154,13 +157,14 @@ def get_collec_info(username, collectionid):
         if len(result) != 0:
             result = result[0]
             query = """select count(collectionid) from added_to where collectionid = %s"""
-            curs.execute(query, (collectionid, ))
+            curs.execute(query, (collectionid,))
             result.extend(get_result(curs)[0])
     except (Exception, psycopg2.Error) as error:
         print("read.get_collec_info(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return result
+
 
 def list_user_collec(username, ascOrDesc):
     conn = curs = result = None
@@ -169,15 +173,16 @@ def list_user_collec(username, ascOrDesc):
         conn = starbug.connect()
         curs = conn.cursor()
         query = """select name, collectionid from collection where username = %s"""
-        curs.execute(query, (username, ))
+        curs.execute(query, (username,))
         result = get_result(curs)
         for each in result:
             collectionid = each[1]
-            query = """select count(added_to.songid), sum(song.length)
+            query = """select count(added_to.songid), to_char(sum(song.length), 'HH24 "minutes" MI "seconds"')
                     from added_to join song on added_to.songid = song.songid
                     where added_to.collectionid = %s"""
-            curs.execute(query, (collectionid, ))
+            curs.execute(query, (collectionid,))
             each.extend(get_result(curs)[0])
+
         if ascOrDesc:
             result.sort()
         else:
@@ -187,6 +192,7 @@ def list_user_collec(username, ascOrDesc):
     finally:
         starbug.disconnect(conn, curs)
     return result
+
 
 def list_collec_song(username, collectionid):
     conn = curs = result = None
@@ -202,6 +208,7 @@ def list_collec_song(username, collectionid):
         starbug.disconnect(conn, curs)
         return sorted(result)
 
+
 def get_song_info(songid):
     """
     Get song info: {songid, name, length, create_date_time, genre6, artist}
@@ -210,15 +217,16 @@ def get_song_info(songid):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select song.songid, song.title, song.artistName, song.length, genre.name, song.release_date 
+        query = """select song.songid, song.title, song.artistName, to_char(song.length, 'HH24 "minutes" MI "seconds"'), genre.name, song.release_date 
         from song join genre on song.genreid = genre.genreid where songid = %s"""
-        curs.execute(query, (songid, ))
+        curs.execute(query, (songid,))
         result = get_result(curs)[0]
     except (Exception, psycopg2.Error) as error:
         print("get_song_info (ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
     return result
+
 
 def get_album_info(albumid):
     """
@@ -237,7 +245,7 @@ def get_album_info(albumid):
         result = get_result(curs)[0]
         query = """select name from genre join alb_gen 
         on alb_gen.genreID = genre.genreid where alb_gen.albumid = %s"""
-        curs.execute(query, (albumid, ))
+        curs.execute(query, (albumid,))
         genre_list = []
         for each in get_result(curs):
             genre_list.append(each[0])
@@ -253,6 +261,7 @@ def get_album_info(albumid):
     finally:
         starbug.disconnect(conn, curs)
         return result
+
 
 def list_album(albumid):
     """
@@ -271,6 +280,7 @@ def list_album(albumid):
         starbug.disconnect(conn, curs)
         return sorted(result)
 
+
 def get_profile(username):
     """
     1. number of collections
@@ -283,10 +293,10 @@ def get_profile(username):
         conn = starbug.connect()
         curs = conn.cursor()
         query = """select count(collectionid) from collection where username = %s"""
-        curs.execute(query, (username, ))
+        curs.execute(query, (username,))
         result = get_result(curs)[0]
         query = """select count(follower) from follows where following = %s"""
-        curs.execute(query, (username, ))
+        curs.execute(query, (username,))
         result.extend(get_result(curs)[0])
         query = """select count(following) from follows where follower = %s"""
         curs.execute(query, (username,))
@@ -294,23 +304,187 @@ def get_profile(username):
         query = """select song.artistName, count(song.artistName) from plays
                 join song on plays.songid = song.songid where username = %s 
                 group by song.artistName order by count desc limit 10"""
-        curs.execute(query, (username, ))
+        curs.execute(query, (username,))
         result.append(get_result(curs))
     except (Exception, psycopg2.Error) as error:
-        print("read.show_friend_list(ERROR):", error)
+        print("read.get_profile(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return result
 
-def get_
+
+def get_recommend(username, flag):
+    conn = curs = result = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        if flag == 'a':
+            query = """select plays.songid, song.title, song.artistname, count(plays.*), to_char(song.length, 'HH24 "minutes" MI "seconds"'), genre.name, song.release_date 
+            from plays join song on plays.songid = song.songid join genre on song.genreid = genre.genreid
+            where plays.playdatetime > current_date - 10
+            group by plays.songid, song.title, song.artistname, song.length, genre.name, song.release_date
+            order by count(plays.*) desc limit 50"""
+            curs.execute(query)
+            result = get_result(curs)
+        elif flag == 'b':
+            friends = show_friend_list(username)
+            result = []
+            for friend in friends:
+                query = """select plays.songid, song.title, song.artistname, count(plays.*), to_char(song.length, 'HH24 "minutes" MI "seconds"'), genre.name, song.release_date 
+                from plays join song on plays.songid = song.songid join genre on song.genreid = genre.genreid
+                where song.songid = plays.songid and plays.username = %s 
+                group by plays.songid, song.title, song.artistname, song.length, genre.name, song.release_date 
+                order by count(plays.*) desc limit 50 """
+                curs.execute(query, (friend[-1],))
+                result.extend(get_result(curs))
+                result = result[:50]
+        elif flag == 'c':
+            query = """select genre.name, count(*) as playCount from plays 
+            join song on song.songid = plays.songid 
+            join genre on song.genreid = genre.genreid
+            where date_trunc('month', plays.playdatetime) = date_trunc('month', current_date)
+            group by genre.name order by playCount desc limit 5"""
+            curs.execute(query)
+            result = get_result(curs)
+        elif flag == 'r':
+            result = []
+            genres = []
+            query = """select genre.genreid, count(*) as playCount from plays 
+                join song on song.songid = plays.songid join genre on song.genreid = genre.genreid
+                where username = %s
+                group by genre.genreid order by playCount desc limit 3"""
+            curs.execute(query, (username,))
+            genres.extend(get_result(curs))
+            for genre in genres:
+                query = """select plays.songid, song.title, song.artistname, count(plays.*), to_char(song.length, 'HH24 "minutes" MI "seconds"'), genre.name, song.release_date 
+                from plays 
+                join song on song.songid = plays.songid 
+                join genre on song.genreid = genre.genreid 
+                where genre.genreid = %s and plays.username != %s
+                group by plays.songid, song.title, song.artistname, song.length, genre.name, song.release_date
+                order by count(plays.*) desc limit 3"""
+                curs.execute(query, (username, genre[0],))
+                result.extend(get_result(curs))
+                query = """select song.artistname, count(*) as playCount from plays join song on song.songid = plays.songid
+                where username = %s
+                group by song.artistname order by playCount desc limit 3;"""
+                curs.execute(query, (username,))
+                artists = get_result(curs)
+                for artist in artists:
+                    query = """select plays.songid, song.title, song.artistname, count(plays.*), to_char(song.length , 'HH24 "minutes" MI "seconds"'), genre.name, song.release_date 
+                    from plays 
+                    join song on song.songid = plays.songid 
+                    join genre on song.genreid = genre.genreid 
+                    where song.artistname = %s and plays.username != %s
+                    group by plays.songid, song.title, song.artistname, song.length, genre.name, song.release_date
+                    order by count(plays.*) desc limit 3"""
+                    curs.execute(query, (artist[0], username, ))
+                    result.extend(get_result(curs))
+    except (Exception, psycopg2.Error) as error:
+        print("read.get_recommend(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+        return result
+
+def list_songs_song(songName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+            from Song as s
+            join features as f on s.songid = f.songid
+            join Album as a on f.albumid = a.albumid
+            join genre as g on s.genreid = g.genreid
+            where lower(s.title) like %s or lower(s.title) like %s or lower(s.title) like %s AND s.songID = f.songID AND f.albumID = a.albumID
+            order by s.title asc, s.artistname asc"""
+        curs.execute(query, ("% " + songName + " %", "% " + songName, songName + " %"))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("read.list_songs_song(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+def list_songs_artist(artistName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+            from Song as s
+            join features as f on s.songid = f.songid
+            join Album as a on f.albumid = a.albumid
+            join genre as g on s.genreid = g.genreid
+            where lower(s.artistName) like %s or lower(s.artistName) like %s or lower(s.artistName) like %s 
+            AND s.songID = f.songID AND f.albumID = a.albumID
+            order by s.title asc, s.artistname asc"""
+        curs.execute(query, ("% " + artistName + " %", "% " + artistName, artistName + " %"))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("read.list_songs_artist(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+def list_songs_album(albumName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+            from Song as s
+            join features as f on s.songid = f.songid
+            join Album as a on f.albumid = a.albumid
+            join genre as g on s.genreid = g.genreid
+            where lower(a.name) like %s or lower(a.name) like %s or lower(a.name) like %s AND s.songID = f.songID 
+            AND f.albumID = a.albumID
+            order by s.title asc, s.artistname asc"""
+        curs.execute(query, ('% ' + albumName + ' %', '% ' + albumName, albumName + ' %'))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("read.list_songs_album(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+def list_songs_genre(genreName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect()
+        curs = conn.cursor()
+        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+            from Song as s
+            join features as f on s.songid = f.songid
+            join Album as a on f.albumid = a.albumid
+            join genre as g on s.genreid = g.genreid
+            where lower(g.name) like %s or lower(g.name) like %s or lower(g.name) like %s 
+            order by s.title asc, s.artistname asc"""
+        curs.execute(query, ('% ' + genreName + ' %', '% ' + genreName, genreName + ' %'))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("read.list_songs_genre(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
 
 def main():
     # print(get_collec_info('ly', 'collection136'))
     # print(get_album_info('album1000'))
+    # print(list_album('album1000'))
+    # print(get_profile('ly'))
     # print(list_user_collec('ly', True))
-    #print(list_album('album1000'))
-    print(get_profile('ly'))
+    # print(get_recommend('ly', 'r'))
+    # print(list_songs_song('happy'))
+    # print(list_songs_album('rain'))
+    # print(list_songs_artist('boy'))
+    # print(list_songs_genre('taiwan'))
+
     return
+
 
 if __name__ == '__main__':
     main()
