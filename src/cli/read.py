@@ -391,7 +391,8 @@ def list_songs_song(songName):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+        query = """select s.songid, a.albumid, s.title, s.artistName, g.name, a.name, 
+            to_char(s.length, 'HH24 "minutes" MI "seconds"') 
             from Song as s
             join features as f on s.songid = f.songid
             join Album as a on f.albumid = a.albumid
@@ -412,7 +413,8 @@ def list_songs_artist(artistName):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+        query = """select s.songid, a.albumID, s.title, s.artistName, g.name, a.name, 
+            to_char(s.length, 'HH24 "minutes" MI "seconds"') 
             from Song as s
             join features as f on s.songid = f.songid
             join Album as a on f.albumid = a.albumid
@@ -434,7 +436,8 @@ def list_songs_album(albumName):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+        query = """select s.songid, a.albumid, s.title, s.artistName, g.name, a.name, 
+            to_char(s.length, 'HH24 "minutes" MI "seconds"') 
             from Song as s
             join features as f on s.songid = f.songid
             join Album as a on f.albumid = a.albumid
@@ -456,7 +459,8 @@ def list_songs_genre(genreName):
     try:
         conn = starbug.connect()
         curs = conn.cursor()
-        query = """select s.songid, s.title, s.artistName, g.name, a.name, to_char(s.length, 'HH24 "minutes" MI "seconds"') 
+        query = """select s.songid, a.albumid, s.title, s.artistName, g.name, a.name, 
+            to_char(s.length, 'HH24 "minutes" MI "seconds"') 
             from Song as s
             join features as f on s.songid = f.songid
             join Album as a on f.albumid = a.albumid
