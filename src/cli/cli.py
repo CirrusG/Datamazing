@@ -7,11 +7,15 @@
 # 3. improve overall code design
 # 4. improve user experience
 
+import functools
+from typing import List
+
 import cmd2
 from cmd2 import *
 import re, sys, datetime
 from datetime import datetime
 import starbug, create, read, update, delete
+from cmd2.table_creator import *
 
 
 def valid_email(email):
@@ -114,6 +118,9 @@ class DatamazingShell(cmd2.Cmd):
         self.prompt = "(Datamazing) "
         self.username = username
 
+    def ansi_print(self, text):
+        ansi.style_aware_write(sys.stdout, text + '\n\n')
+
     def hidden_unneed_commands(self):
         # hide unnecessary builtin Commands
         self.hidden_commands.append('alias')
@@ -133,24 +140,32 @@ class DatamazingShell(cmd2.Cmd):
         else:
             user_f_info = read.get_user_info(user_f, False)
         if user_f_info is not None:
+            info = []
+            info.append(user_f_info)
             print("User " + user_f + " was found!")
-            # TODO format
-            print(user_f_info)
+            columns: List[Column] = list()
+            columns.append(Column("First Name", width=20))
+            columns.append(Column("Last Name", width=20))
+            columns.append(Column("Username", width=30))
+            columns.append(Column("Email", width=20))
+            st = SimpleTable(columns)
+            table = st.generate_table(info)
+            self.ansi_print(table)
         else:
             print("User " + arg + " was not found!")
 
     def do_list_friends(self, arg):
         'List users you follow: list_friends'
-        # gets list of friends and outputs first name, last name, username
-        # passed test (if everyone is okay with this format)
-        friends = read.show_friend_list(self.username)
-        print(friends)
 
-        #print("{:<3}{:<15}{:<15}{:<15}".format("#", "First name", "Last name", "Username"))
-        #i = 1
-        #for fn, ln, un in friends:
-        #    print("{:<3}{:<15}{:<15}{:<15}".format(i, fn, ln, un))
-        #    i += 1
+        friends = read.show_friend_list(self.username)
+        columns: List[Column] = list()
+        columns.append(Column("First Name", width=20))
+        columns.append(Column("Last Name", width=20))
+        columns.append(Column("Email", width=30))
+        columns.append(Column("Username", width=20))
+        st = SimpleTable(columns)
+        table = st.generate_table(friends)
+        self.ansi_print(table)
 
     def do_follow(self, arg):
         'Follow a user: follow userToFollow(username)'
@@ -161,7 +176,17 @@ class DatamazingShell(cmd2.Cmd):
         else:
             info = create.follow_friend(self.username, friend)
             if info is not None:
-                print("Following", info)
+                u_info = []
+                u_info.append(info)
+                print("Following\n")
+                columns: List[Column] = list()
+                columns.append(Column("First Name", width=20))
+                columns.append(Column("Last Name", width=20))
+                columns.append(Column("Username", width=30))
+                columns.append(Column("Email", width=20))
+                st = SimpleTable(columns)
+                table = st.generate_table(u_info)
+                self.ansi_print(table)
             else:
                 print("fail to follow", friend)
 
@@ -174,7 +199,17 @@ class DatamazingShell(cmd2.Cmd):
         else:
             info = delete.unfollow_friend(self.username, not_friend)
             if info is not None:
-                print("Unfollowing", info)
+                u_info = []
+                u_info.append(info)
+                print("Unfollowing\n")
+                columns: List[Column] = list()
+                columns.append(Column("First Name", width=20))
+                columns.append(Column("Last Name", width=20))
+                columns.append(Column("Username", width=30))
+                columns.append(Column("Email", width=20))
+                st = SimpleTable(columns)
+                table = st.generate_table(u_info)
+                self.ansi_print(table)
             else:
                 print("Fail to unfollow", not_friend)
 
@@ -194,31 +229,47 @@ class DatamazingShell(cmd2.Cmd):
             print("Please use --asc or --desc")
             return
 
-        for collec in collecs:
-            print(collec)
-            # i = 1
-            # for collec in collecs:
-            #     # removes parenthesis and commas
-            #     c = str(collec)[1:-2]
-            #     print(i, ": ", c)
-            #     i += 1
+        columns: List[Column] = list()
+        columns.append(Column("Collection Name", width=20))
+        columns.append(Column("Collection ID", width=20))
+        columns.append(Column("Number of song", width=20))
+        columns.append(Column("Total length", width=20))
+        st = SimpleTable(columns)
+        table = st.generate_table(collecs)
+        self.ansi_print(table)
+
 
     def do_create_collec(self, arg):
         'create_collec collectionName'
         name = arg
-        print(name)
-        info = create.create_collec(self.username, name)
-        print(f"New collection created:\n {info}")
+        info = []
+        info.append(create.create_collec(self.username, name))
+        print("New collection created!\n")
+        columns: List[Column] = list()
+        columns.append(Column("Collection Name", width=20))
+        columns.append(Column("Collection ID", width=20))
+        st = SimpleTable(columns)
+        table = st.generate_table(info)
+        self.ansi_print(table)
 
     def do_delete_collec(self, arg):
         'Delete an existing collection: delete_collection collectionName'
         collectionid = arg
-        collection_info = read.get_collec_info(self.username, collectionid)
-        if len(collection_info) == 0:
+        info = []
+        collec_info = read.get_collec_info(self.username, collectionid)
+        if len(collec_info) == 0:
             print("Collection was not found!")
         else:
+            info.append([collec_info[0], collec_info[2]])
             delete.delete_collec(self.username, collectionid)
-            print(f"Deleted collection {collection_info}")
+            print("Deleted collection")
+            columns: List[Column] = list()
+            columns.append(Column("Collection ID", width=20))
+            columns.append(Column("Collection Name", width=20))
+            st = SimpleTable(columns)
+            table = st.generate_table(info)
+            self.ansi_print(table)
+
 
     rename_collec_parser = Cmd2ArgumentParser()
     rename_collec_parser.add_argument('collectionid', nargs='?', help='collection ID')
@@ -233,12 +284,11 @@ class DatamazingShell(cmd2.Cmd):
         collectionid = args.collectionid
         collection_info = read.get_collec_info(self.username, collectionid)
         new_name = args.new_name
-        print(new_name)
         if len(collection_info) == 0:
             print(f"User {self.username} does not own this collection!")
         else:
             modified = update.rename_collec(self.username, collectionid, new_name)
-            print(f"sucessfully modify {collection_info[2]} to {modified[2]}")
+            print(f"sucessfully rename collection \"{collection_info[2]}\" to \"{modified[2]}\"")
 
 
     add_collec_album_parser = Cmd2ArgumentParser()
@@ -260,7 +310,7 @@ class DatamazingShell(cmd2.Cmd):
         elif len(collection_info) == 0:
             print(f"The collection {args.collectionid} does not belong to user {self.username}")
         else:
-            print("adding all song from", album_info, "to collection", collection_info)
+            print(f"adding all song from album \"{album_info[1]}\" to collection {collection_info[2]}")
 
             create.album_to_collec(self.username, args.collectionid, args.albumid)
 
@@ -271,46 +321,140 @@ class DatamazingShell(cmd2.Cmd):
     def do_add_collec_song(self, args):
         'Adds a song to a collection: add_collec_song collectionID songID'
         collection_info = read.get_collec_info(self.username, args.collectionid)
-        song_info = read.get_song_info(args.songid)
         if len(collection_info) == 0:
             print("Collection was not found!")
-        elif len(song_info) == 0:
-            print("Song was not found!")
         else:
-            local_number = create.add_song_collec(self.username, args.collectionid, args.songid)
-            print(f"{song_info} has added into {collection_info} at number {local_number}")
+            song_info = read.get_song_info(args.songid)
+            if len(song_info) == 0:
+                print("Song was not found!")
+            else:
+                local_number = create.add_song_collec(self.username, args.collectionid, args.songid)[0][0]
+                print(f"Song `{song_info[1]}` has added into collection `{collection_info[2]}` at local number `{local_number}`")
 
     def do_play_song(self, arg):
         'Play a song: play_song songID'
         songid = arg
         if read.verify_item('song', 'songid', songid):
-            info = create.play_song(user, songid)
-            print("playing", info)
+            info = []
+            info.append(create.play_song(user, songid))
+            print(info)
+            print("playing")
+            columns: List[Column] = list()
+            columns.append(Column("Song ID", width=20))
+            columns.append(Column("Song name", width=20))
+            columns.append(Column("Artist", width=20))
+            columns.append(Column("Length", width=20))
+            columns.append(Column("Genre", width=20))
+            columns.append(Column("Released Date", width=20))
+            st = SimpleTable(columns)
+            table = st.generate_table(info)
+            self.ansi_print(table)
         else:
             print("song entered does not exist")
 
     def do_profile(self, arg):
         """list user profile"""
-        # TODO fix table output later
         collecs_info = read.get_profile(self.username)
-        print("======profile=======")
-        print(f"{self.username} has:\t {collecs_info[0]}")
-        print(f"{collecs_info[1]} follows {self.username}")
-        print(f"{self.username} has {collecs_info[2]} followings")
-        print(f"Top 10 artist {self.username} most plays")
-        print("ArtistName\t\t\tPlay times")
-        for artist in collecs_info[3]:
-            print(f"{artist[0]}\t\t\t{artist[1]}")
+        print(f"======{self.username}'s profile=======")
+        print(f"# of collections {collecs_info[0]}")
+        print(f"# of followers {collecs_info[1]}")
+        print(f"# of following {collecs_info[2]}")
+        print(f"\n ===Top 10 artist {self.username} most plays===")
+        columns: List[Column] = list()
+        columns.append(Column("ArtistName", width=20))
+        columns.append(Column("# of Play", width=20))
+        st = SimpleTable(columns)
+        table = st.generate_table(collecs_info[3])
+        self.ansi_print(table)
 
     recommend_parser = Cmd2ArgumentParser()
-    recommend_parser.add_argument('-a', action='store_true', help='roll up top 50 most popular songs in the last 30 days')
+    recommend_parser.add_argument('-a', action='store_true', help='list top 50 most popular songs in the last 30 days')
     recommend_parser.add_argument('-b', action='store_true', help='list top 50 most popular songs among friend')
     recommend_parser.add_argument('-c', action='store_true', help='list top 5 most popular genres of the month')
     recommend_parser.add_argument('-r', action='store_true', help='list recommend songs (for you)')
     @with_argparser(recommend_parser)
     def do_recommend(self, opts):
-        # TODO roll up: while the song list array utill key enter
-        return
+        """
+        recommend system
+        recommend -a: show top 50 most popular songs in the last 30 days
+        recommend -b: show top 50 most popular songs among my friends
+        recommend -c: show top 5 most popular genres of the month (calendar month)
+        recommend -r: show recommend song based on top 3 genres and artists (each 3 songs)
+        """
+        if not (opts.c or opts.b or opts.a or opts.r):
+            print("Wrong argument!")
+            return
+
+        if not opts.c:
+            songs = None
+            if opts.a:
+                songs = read.get_recommend(self.username, 'a')
+                print("===The top 50 most popular songs in the last 30 days===\n")
+            elif opts.b:
+                songs = read.get_recommend(self.username, 'b')
+                print("===The top 50 most popular songs among my friends===\n")
+            elif opts.r:
+                songs = read.get_recommend(self.username, 'r')
+                print("===Recommend songs based on genre, artist===")
+            columns: List[Column] = list()
+            columns.append(Column("Song ID", width=20))
+            columns.append(Column("Song Title", width=20))
+            columns.append(Column("Artist", width=20))
+            columns.append(Column("Play Count", width=20))
+            columns.append(Column("Length", width=20))
+            columns.append(Column("Genre", width=20))
+            columns.append(Column("Create Date", width=20))
+            st = SimpleTable(columns)
+            table = st.generate_table(songs)
+            self.ansi_print(table)
+        else:
+            genres = read.get_recommend(self.username, 'c')
+            print("===The top 5 most popular genres of the month (calendar month)===")
+            columns: List[Column] = list()
+            columns.append(Column("Genre Name", width=20))
+            columns.append(Column("Play Count", width=20))
+            st = SimpleTable(columns)
+            table = st.generate_table(genres)
+            self.ansi_print(table)
+
+    search_parser = Cmd2ArgumentParser()
+    search_parser.add_argument('-s', '--song', action='store_true', help='list song by song name')
+    search_parser.add_argument('-a', '--artist', action='store_true', help='list song by artist name')
+    search_parser.add_argument('-al', '--album', action='store_true', help='list song by album name')
+    search_parser.add_argument('-g', '--genre', action='store_true', help='list song by genre')
+    search_parser.add_argument('criteria', nargs='?', help='word to say')
+    @with_argparser(search_parser)
+    def do_search_song(self, opts):
+        arg = opts.criteria
+        if not (opts.song or opts.artist or opts.album or opts.genre):
+            print("Invalid Criteria!!!")
+            return
+        elif opts.criteria is None:
+            print("No criteria entered")
+            return
+        songs = []
+        if opts.song:
+            songs = read.list_songs_song(arg)
+        elif opts.artist:
+            songs = read.list_songs_artist(arg)
+        elif opts.album:
+            songs = read.list_songs_album(arg)
+        elif opts.genre:
+            songs = read.list_songs_genre(arg)
+
+        if len(songs) != 0:
+            columns: List[Column] = list()
+            columns.append(Column("Song ID", width=20))
+            columns.append(Column("Song Title", width=20))
+            columns.append(Column("Artist", width=20))
+            columns.append(Column("Genre", width=20))
+            columns.append(Column("Album", width=20))
+            columns.append(Column("Length", width=20))
+            st = SimpleTable(columns)
+            table = st.generate_table(songs)
+            self.ansi_print(table)
+        else:
+            print("No result!")
 
 if __name__ == '__main__':
     #user = entrance()
