@@ -457,8 +457,7 @@ class DatamazingShell(cmd2.Cmd):
             print("No result!")
 
 if __name__ == '__main__':
-    #user = entrance()
-    user = 'ly'
+    user = entrance()
     if user is not None:
         app = DatamazingShell(user)
         app.debug = True
