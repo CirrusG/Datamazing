@@ -28,24 +28,21 @@ def unfollow_friend(username, friend):
 
 
 def delete_collec(username, collectionid):
-    conn = curs = result = None
+    conn = curs =  None
     try:
         conn = starbug.connect()
         curs = conn.cursor()
         query = """delete from added_to where collectionid = %s and username = %s"""
         curs.execute(query, (collectionid, username))
         conn.commit()
-        query = """delete from collection where collectionid = %s and username = %s
-        returning *"""
+        query = """delete from collection where collectionid = %s and username = %s"""
         curs.execute(query, (collectionid, username,))
         conn.commit()
-        result = read.get_result(curs)
     except (Exception, psycopg2.Error) as error:
         print("delete_collec (ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
-    return result
 
 
 if __name__ == '__main__':
-    print(delete_collec('ly', 'collection235'))
+    print(delete_collec('ly', 'collection239'))
