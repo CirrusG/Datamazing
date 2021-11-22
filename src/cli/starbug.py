@@ -22,14 +22,14 @@ def get_db_name():
 def get_password():
     # ssh/database password
     # DON'T FORGET TO REMOVE THIS
-    password = ""
+    password = "Weit@Weg6^vom^3Baum"
     return password
 
 
 def get_username():
     # ssh/database username
     # DON'T FORGET TO REMOVE THIS
-    username = ""
+    username = "cg2531"
     return username
 
 
