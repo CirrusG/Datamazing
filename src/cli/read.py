@@ -476,17 +476,6 @@ def list_songs_genre(genreName):
     return result
 
 def main():
-    # print(get_collec_info('ly', 'collection136'))
-    # print(get_album_info('album1000'))
-    # print(list_album('album1000'))
-    # print(get_profile('ly'))
-    # print(list_user_collec('ly', True))
-    # print(get_recommend('ly', 'r'))
-    # print(list_songs_song('happy'))
-    # print(list_songs_album('rain'))
-    # print(list_songs_artist('boy'))
-    # print(list_songs_genre('taiwan'))
-
     return
 
 
