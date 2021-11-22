@@ -85,15 +85,54 @@ class DatamazingShell(cmd.Cmd):
             for collec in collecs:
                 print(i, ": ", collec)
                 i += 1
-
-    # TODO
+                
+    # TODO FIX ALBUM SEARCH
     def do_search_song(self, arg):
-        """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
-        \tsong\n\tartist\n\talbum\n\tgenre"""
-        args = parse(arg)
-        DatamazingShell.last_search = query.song_list(args[0], args[1], user)
-        DatamazingShell.print_songs()
-        return
+        args = parse_colon(arg)
+        if args[0] == "song":
+            # print(args)
+            songs = query.list_songs_song(args[1])
+            songs.sort()
+            # print("{:<10}{:<110}{:<40}{:<15}".format("#", "Song", "Artist", "Length"))
+            # i = 1
+            # for s, a, l in songs:
+            #     print("{:<10}{:<110}{:<40}{:<15}".format(i, s, a, l))
+            #     i += 1
+            print("{:<10}{:<40}{:<40}{:<40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+            # for s, a, al, l, p in songs:
+                l = str(l)
+                # print("{:<10}{:<40}{:<40}{:<40}{:<15}{:<15}".format(i, s, a, al, l, p))
+                print("{:<10}{:<40}{:<40}{:<40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        elif args[0] == "artist":
+            songs = query.list_songs_artist(args[1])
+            songs.sort()
+            print("{:<10}{:<40}{:<40}{:<40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                l = str(l)
+                print("{:<10}{:<40}{:<40}{:<40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        elif args[0] == "album":
+            songs = query.list_songs_album(args[1])
+            songs.sort()
+            print("{:<10}{:<40}{:<40}{:40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                print("{:<10}{:<40}{:<40}{:40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        elif args[0] == "genre":
+            songs = query.list_songs_genre(args[1])
+            print("{:<10}{:<40}{:<40}{:40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                l = str(l)
+                print("{:<10}{:<40}{:<40}{:40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        else:
+            print("Invalid criteria!")
 
     # TODO
     def do_sort_search(self, arg):
