@@ -344,6 +344,71 @@ def songs_to_add(value):
         print("query.song_to_add(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
+        
+        
+def list_songs_song(songName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = """select s.title, s.artistName, a.name, s.length from Song as s, Album as a, Features as f
+            where title like %s AND s.songID = f.songID AND f.albumID = a.albumID"""
+        value = "%" + songName + "%"
+        curs.execute(query, (value,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.show_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+def list_songs_artist(artistName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = """select s.title, s.artistName, a.name, s.length from song as s, album as a, features as f
+            where artistName=%s AND s.songID = f.songID AND f.albumID = a.albumID"""
+        curs.execute(query, (artistName,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.show_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+def list_songs_album(albumName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = """select s.title, s.artistName, a.name, s.length from song as s, album as a, features as f
+        where a.name like %s"""
+        curs.execute(query, (albumName,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.show_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
+
+
+def list_songs_genre(genreName):
+    result = conn = curs = None
+    try:
+        conn = starbug.connect(server)
+        curs = conn.cursor()
+        query = """select s.title, s.artistName, a.name, s.length from song as s, genre as g, album as a,
+        features as f where g.genreID = s.genreID and g.name=%s AND s.songID = f.songID AND f.albumID = a.albumID"""
+        curs.execute(query, (genreName,))
+        result = get_result(curs)
+    except (Exception, psycopg2.Error) as error:
+        print("query.show_collec(ERROR):", error)
+    finally:
+        starbug.disconnect(conn, curs)
+    return result
 
 # friend: find friend by email -> output info if find -> add friend by select username
 def find_friend_e(email):
