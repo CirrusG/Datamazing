@@ -126,7 +126,7 @@ def add_song_collec(username, collectionid, songid):
         conn.commit()
         result = read.get_result(curs)
     except (Exception, psycopg2.Error) as error:
-        print("query.add_song_collec(ERROR):", error)
+        print("add_song_collec(ERROR):", error)
     finally:
         starbug.disconnect(conn, curs)
         return result
