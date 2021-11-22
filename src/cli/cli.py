@@ -219,14 +219,14 @@ class DatamazingShell(cmd2.Cmd):
     @with_argparser(list_collec_parser)
     def do_show_collecs(self, opts):
         """
-        show_collecs --asc/--desc
+        show_collecs --asc(-a)/--desc(-d)
         """
         if opts.desc:
             collecs = read.list_user_collec(self.username, False)
         elif opts.asc:
             collecs = read.list_user_collec(self.username, True)
         else:
-            print("Please use --asc or --desc")
+            print("Please use --asc/-a or --desc/-d")
             return
 
         columns: List[Column] = list()
@@ -331,13 +331,13 @@ class DatamazingShell(cmd2.Cmd):
                 local_number = create.add_song_collec(self.username, args.collectionid, args.songid)[0][0]
                 print(f"Song `{song_info[1]}` has added into collection `{collection_info[2]}` at local number `{local_number}`")
 
+
     def do_play_song(self, arg):
         'Play a song: play_song songID'
         songid = arg
         if read.verify_item('song', 'songid', songid):
             info = []
             info.append(create.play_song(user, songid))
-            print(info)
             print("playing")
             columns: List[Column] = list()
             columns.append(Column("Song ID", width=20))
@@ -455,6 +455,7 @@ class DatamazingShell(cmd2.Cmd):
             self.ansi_print(table)
         else:
             print("No result!")
+
 
 if __name__ == '__main__':
     user = entrance()
