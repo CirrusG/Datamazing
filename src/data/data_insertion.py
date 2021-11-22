@@ -1,5 +1,6 @@
 # file: data_insertion.py
 # insert required artist, genre, song, album data into database
+# random data insertion for phrase 3 (music, artist, album, collections)
 import csv
 from random import randint
 
@@ -257,26 +258,7 @@ def random_plays():
         #break
 
 def main():
-    # check how long time used to import
-
-    start = time.time()
-    # -- 520.3794424533844 seconds ---
-    # artist_insert()
-    # -- 353.7282118797302 seconds ---
-    #genre_insert()
-    # -- 38019.46160531044 ---
-    #song_album_insert()
-    # -- 96.42819857597351 seconds ---
-    # user_insert()
-    # -- 53.363102436065674 seconds ---
-    #user_login_insert()
-    #collection_insert()
-    # test collection_insertion
-    # -- 810.1399581432343 seconds - --
-    #insert_song_collec()
-    random_plays()
-    print("-- %s seconds ---" % (time.time() - start))
-    starbug.disconn_server(server)
+    return
 
 if __name__ == "__main__":
     main()

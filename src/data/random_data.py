@@ -1,5 +1,8 @@
+"""
+file: random_data.py
+insert random data for phase 4 (mainly are play records)
+"""
 import psycopg2
-# will change to cli.starbug later
 from psycopg2 import sql
 
 import sys
@@ -137,9 +140,7 @@ def random_play_collection():
                     starbug.disconnect(conn, curs)
 
 def main():
-    # print(get_user_collection('ly'))
-    # print(get_collec_size('collection136'))
-    random_play_collection()
+    return
 
 
 if __name__ == '__main__':
