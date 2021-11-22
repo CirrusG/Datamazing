@@ -89,15 +89,47 @@ class DatamazingShell(cmd.Cmd):
                 c = str(collec)[1:-2]
                 print(i, ": ", c)
                 i += 1
-
-    # # TODO
-    # def do_search_song(self, arg):
-    #     """Search for songs by song by various criteria: search_song criteria searchTerm\nCriteria:
-    #     \tsong\n\tartist\n\talbum\n\tgenre"""
-    #     args = parse(arg)
-    #     DatamazingShell.last_search = query.song_list(args[0], args[1], user)
-    #     DatamazingShell.print_songs()
-    #     return
+    def do_search_song(self, arg):
+        args = parse_colon(arg)
+        if args[0] == "song":
+            # print(args)
+            songs = query.list_songs_song(args[1])
+            songs.sort()
+            print("{:<10}{:<40}{:<40}{:<40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                l = str(l)
+                print("{:<10}{:<40}{:<40}{:<40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        elif args[0] == "artist":
+            songs = query.list_songs_artist(args[1])
+            songs.sort()
+            print("{:<10}{:<40}{:<40}{:<40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                l = str(l)
+                print("{:<10}{:<40}{:<40}{:<40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        elif args[0] == "album":
+            songs = query.list_songs_album(args[1])
+            songs.sort()
+            print("{:<10}{:<40}{:<40}{:40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                l = str(l)
+                print("{:<10}{:<40}{:<40}{:40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        elif args[0] == "genre":
+            songs = query.list_songs_genre(args[1])
+            songs.sort()
+            print("{:<10}{:<40}{:<40}{:40}{:<15}".format("#", "Song", "Artist", "Album", "Length"))
+            i = 1
+            for s, a, al, l in songs:
+                l = str(l)
+                print("{:<10}{:<40}{:<40}{:40}{:<15}".format(i, s, a, al, l))
+                i += 1
+        else:
+            print("Invalid criteria!")
 
     # # TODO
     # def do_sort_search(self, arg):
@@ -111,17 +143,6 @@ class DatamazingShell(cmd.Cmd):
     #             args.append("ASC")
     #         DatamazingShell.last_search = query.song_list_sort(args[0], args[1])
     #         DatamazingShell.print_songs()
-    #     return
-
-    # # TODO
-    # def print_songs():
-    #     if DatamazingShell.last_search:
-    #         print("{:<4}{:<60}{:<30}{:<50}{:<6}".format("#", "Song", "Artist", "Album", "Length", "ID"))
-    #         i = 1
-    #         for s, a, al, l in DatamazingShell.last_search:
-    #             length = l.strftime("%H:%M")
-    #             print("{:<4}{:<60}{:<30}{:<50}{:<6}".format(i, s, a, al, length))
-    #             i += 1
     #     return
 
     # def do_add_collec_album(self, arg):
